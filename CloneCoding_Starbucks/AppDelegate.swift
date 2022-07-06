@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //프로그램이 실행될 준비가 되면 true를 반환하여 LaunchScreen 사라짐
+//        sleep(3)
         return true
     }
 
