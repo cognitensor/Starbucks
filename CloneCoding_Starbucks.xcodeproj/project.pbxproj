@@ -13,6 +13,10 @@
 		F606B106287490C70044E8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B104287490C70044E8ED /* Main.storyboard */; };
 		F606B108287490CA0044E8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F606B107287490CA0044E8ED /* Assets.xcassets */; };
 		F606B10B287490CA0044E8ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B109287490CA0044E8ED /* LaunchScreen.storyboard */; };
+		F6AA1F872875738600BFA115 /* ViewController2Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA1F862875738600BFA115 /* ViewController2Pay.swift */; };
+		F6AA1F89287587B900BFA115 /* ViewController3Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA1F88287587B900BFA115 /* ViewController3Order.swift */; };
+		F6AA1F8B287587D200BFA115 /* ViewController4Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA1F8A287587D200BFA115 /* ViewController4Gift.swift */; };
+		F6AA1F8D2875881400BFA115 /* ViewController5Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA1F8C2875881400BFA115 /* ViewController5Other.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		F606B107287490CA0044E8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F606B10A287490CA0044E8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F606B10C287490CA0044E8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6AA1F862875738600BFA115 /* ViewController2Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2Pay.swift; sourceTree = "<group>"; };
+		F6AA1F88287587B900BFA115 /* ViewController3Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3Order.swift; sourceTree = "<group>"; };
+		F6AA1F8A287587D200BFA115 /* ViewController4Gift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4Gift.swift; sourceTree = "<group>"; };
+		F6AA1F8C2875881400BFA115 /* ViewController5Other.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController5Other.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,15 @@
 			children = (
 				F606B0FE287490C70044E8ED /* AppDelegate.swift */,
 				F606B100287490C70044E8ED /* SceneDelegate.swift */,
-				F606B102287490C70044E8ED /* ViewController.swift */,
 				F606B104287490C70044E8ED /* Main.storyboard */,
 				F606B107287490CA0044E8ED /* Assets.xcassets */,
 				F606B109287490CA0044E8ED /* LaunchScreen.storyboard */,
 				F606B10C287490CA0044E8ED /* Info.plist */,
+				F606B102287490C70044E8ED /* ViewController.swift */,
+				F6AA1F862875738600BFA115 /* ViewController2Pay.swift */,
+				F6AA1F88287587B900BFA115 /* ViewController3Order.swift */,
+				F6AA1F8A287587D200BFA115 /* ViewController4Gift.swift */,
+				F6AA1F8C2875881400BFA115 /* ViewController5Other.swift */,
 			);
 			path = CloneCoding_Starbucks;
 			sourceTree = "<group>";
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AA1F89287587B900BFA115 /* ViewController3Order.swift in Sources */,
+				F6AA1F8D2875881400BFA115 /* ViewController5Other.swift in Sources */,
 				F606B103287490C70044E8ED /* ViewController.swift in Sources */,
+				F6AA1F8B287587D200BFA115 /* ViewController4Gift.swift in Sources */,
 				F606B0FF287490C70044E8ED /* AppDelegate.swift in Sources */,
 				F606B101287490C70044E8ED /* SceneDelegate.swift in Sources */,
+				F6AA1F872875738600BFA115 /* ViewController2Pay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

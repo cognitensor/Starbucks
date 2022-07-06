@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="z4Y-Qu-mZ1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -16,17 +16,117 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="아이콘_홈(흑)" selectedImage="아이콘_홈" id="6NS-tT-kEb" userLabel="Tab Bar Item 1홈"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="91"/>
+            <point key="canvasLocation" x="90" y="830"/>
+        </scene>
+        <!--View Controller2 Pay-->
+        <scene sceneID="KTE-zu-Ve8">
+            <objects>
+                <viewController id="RVi-pW-TcL" customClass="ViewController2Pay" customModule="CloneCoding_Starbucks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u6Y-n0-TLD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QUU-o0-OSx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="아이폰_페이(흑)" selectedImage="아이폰_페이" id="Q18-fH-ajX" userLabel="Tab Bar Item 2페이"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcO-ZB-EKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="830"/>
+        </scene>
+        <!--View Controller3 Order-->
+        <scene sceneID="ls3-Z8-nNy">
+            <objects>
+                <viewController id="K7V-ua-9FK" customClass="ViewController3Order" customModule="CloneCoding_Starbucks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a0n-Tp-cWe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4uw-oj-Y7I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="아이콘_오더(흑)" selectedImage="아이콘_오더" id="gHi-KM-hRN" userLabel="Tab Bar Item 3오더"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vwd-D3-ibA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1807" y="830"/>
+        </scene>
+        <!--View Controller4 Gift-->
+        <scene sceneID="lvB-m8-gfu">
+            <objects>
+                <viewController id="duc-Jh-BRo" customClass="ViewController4Gift" customModule="CloneCoding_Starbucks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NHf-su-Aqh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="N7D-vO-G54"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="아이콘_기프트(흑)" selectedImage="아이콘_기프트" id="vrL-w6-2NS" userLabel="Tab Bar Item 4기프트"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZ1-Am-O8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2675" y="830"/>
+        </scene>
+        <!--View Controller5 Other-->
+        <scene sceneID="hCt-gL-deG">
+            <objects>
+                <viewController id="fML-ot-5Xe" customClass="ViewController5Other" customModule="CloneCoding_Starbucks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWJ-2r-ejd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Kcm-L7-6Ne"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="아이콘_다른(흑)" selectedImage="아이콘_다른" id="Rna-cF-tNq" userLabel="Tab Bar Item 5다른"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEm-fx-gre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3525" y="830"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zPH-2S-syr">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="z4Y-Qu-mZ1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kac-ik-mmd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.31144011020000001" green="0.68887442350000005" blue="0.49016857149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2R2-gT-hvU"/>
+                        <segue destination="RVi-pW-TcL" kind="relationship" relationship="viewControllers" id="fv1-aY-g7i"/>
+                        <segue destination="K7V-ua-9FK" kind="relationship" relationship="viewControllers" id="FAR-Iu-Jga"/>
+                        <segue destination="duc-Jh-BRo" kind="relationship" relationship="viewControllers" id="09Y-hM-CRX"/>
+                        <segue destination="fML-ot-5Xe" kind="relationship" relationship="viewControllers" id="Cnf-Xd-KZs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1q-nu-eZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89.855072463768124" y="90.401785714285708"/>
         </scene>
     </scenes>
     <resources>
+        <image name="아이콘_기프트" width="71" height="70.5"/>
+        <image name="아이콘_기프트(흑)" width="71" height="71"/>
+        <image name="아이콘_다른" width="71" height="70.5"/>
+        <image name="아이콘_다른(흑)" width="71" height="71"/>
+        <image name="아이콘_오더" width="71" height="71"/>
+        <image name="아이콘_오더(흑)" width="71" height="70.5"/>
+        <image name="아이콘_홈" width="70.5" height="70.5"/>
+        <image name="아이콘_홈(흑)" width="70.5" height="70.5"/>
+        <image name="아이폰_페이" width="71" height="70.5"/>
+        <image name="아이폰_페이(흑)" width="71" height="71"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
