@@ -13,6 +13,8 @@
 		F606B106287490C70044E8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B104287490C70044E8ED /* Main.storyboard */; };
 		F606B108287490CA0044E8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F606B107287490CA0044E8ED /* Assets.xcassets */; };
 		F606B10B287490CA0044E8ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B109287490CA0044E8ED /* LaunchScreen.storyboard */; };
+		F65763E72876EF8C00E7DF01 /* TableViewCell3Order.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */; };
+		F65763E92876F3DC00E7DF01 /* TableViewCell3Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */; };
 		F6AA1F872875738600BFA115 /* ViewController2Pay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA1F862875738600BFA115 /* ViewController2Pay.swift */; };
 		F6AA1F89287587B900BFA115 /* ViewController3Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA1F88287587B900BFA115 /* ViewController3Order.swift */; };
 		F6AA1F8B287587D200BFA115 /* ViewController4Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AA1F8A287587D200BFA115 /* ViewController4Gift.swift */; };
@@ -37,6 +39,8 @@
 		F606B107287490CA0044E8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F606B10A287490CA0044E8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F606B10C287490CA0044E8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell3Order.xib; sourceTree = "<group>"; };
+		F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell3Order.swift; sourceTree = "<group>"; };
 		F6AA1F862875738600BFA115 /* ViewController2Pay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2Pay.swift; sourceTree = "<group>"; };
 		F6AA1F88287587B900BFA115 /* ViewController3Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3Order.swift; sourceTree = "<group>"; };
 		F6AA1F8A287587D200BFA115 /* ViewController4Gift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4Gift.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				F6AA1F88287587B900BFA115 /* ViewController3Order.swift */,
 				F6AA1F8A287587D200BFA115 /* ViewController4Gift.swift */,
 				F6AA1F8C2875881400BFA115 /* ViewController5Other.swift */,
+				F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */,
+				F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */,
 				F6AA1F8E2875F03600BFA115 /* font */,
 			);
 			path = CloneCoding_Starbucks;
@@ -174,6 +180,7 @@
 			files = (
 				F6AA1F9F2875F13100BFA115 /* Pretendard-Bold.otf in Resources */,
 				F606B10B287490CA0044E8ED /* LaunchScreen.storyboard in Resources */,
+				F65763E72876EF8C00E7DF01 /* TableViewCell3Order.xib in Resources */,
 				F6AA1F992875F13100BFA115 /* Pretendard-Thin.otf in Resources */,
 				F606B108287490CA0044E8ED /* Assets.xcassets in Resources */,
 				F6AA1F982875F13100BFA115 /* Pretendard-ExtraBold.otf in Resources */,
@@ -200,6 +207,7 @@
 				F6AA1F8B287587D200BFA115 /* ViewController4Gift.swift in Sources */,
 				F606B0FF287490C70044E8ED /* AppDelegate.swift in Sources */,
 				F606B101287490C70044E8ED /* SceneDelegate.swift in Sources */,
+				F65763E92876F3DC00E7DF01 /* TableViewCell3Order.swift in Sources */,
 				F6AA1F872875738600BFA115 /* ViewController2Pay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
