@@ -18,7 +18,7 @@ class TableViewCell3Order: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        print("TableViewCell3Order -awakeFromNib")
+//        print("TableViewCell3Order -awakeFromNib")
         
         
         orderTitleImage.layer.cornerRadius = orderTitleImage.frame.height/2

@@ -7,12 +7,27 @@
 
 import UIKit
 
-class ViewController3Order: UIViewController {
-    
-    @IBOutlet weak var tableView3Order: UITableView!
+class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     let titleArray = ["New", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
+    
+    
+    
+    let maxHeight: CGFloat = 200.0
+    let minHeight: CGFloat = 150.0
+    
+    @IBOutlet weak var tableView3Order: UITableView! {
+        didSet {
+            tableView3Order.contentInset = UIEdgeInsets(top: maxHeight, left: 0, bottom: 0, right: 0)
+        }
+    }
+    
+    @IBOutlet weak var orderMainHeaderViewHeight: NSLayoutConstraint! {
+        didSet {
+            orderMainHeaderViewHeight.constant = maxHeight
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -54,30 +69,36 @@ class ViewController3Order: UIViewController {
     }
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBOutlet weak var viewOrderHeader: UIView!
+    @IBOutlet weak var labelHiddenTitle: UILabel!
+    @IBOutlet weak var viewBigTitle: UIView!
+    
+    //--UITableViewDelegate--
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let scrollOffset = scrollView.contentOffset.y
+        print(scrollOffset)
+        
+        if scrollOffset <= -maxHeight {
+            labelHiddenTitle.isHidden = true
+            
+        } else if scrollOffset > -maxHeight && scrollOffset < -160 {
+            labelHiddenTitle.isHidden = false
+            
+            viewOrderHeader.transform = CGAffineTransform(translationX: 0, y: abs(scrollOffset)-maxHeight)
+            
+        } else {
+            labelHiddenTitle.isHidden = false
+        }
+        
     }
-    */
-
-}
-
-extension ViewController3Order: UITableViewDelegate{
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        
-//        
-//    }
     
-}
-extension ViewController3Order: UITableViewDataSource {
     
+    
+    //--UITableViewDataSource--
     //테이블 뷰 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titleArray.count
@@ -93,5 +114,18 @@ extension ViewController3Order: UITableViewDataSource {
         
     }
     
-    
+}
+
+
+
+//UILabel 자간 설정하는 클래스
+open class CustomLabel : UILabel {
+    @IBInspectable open var characterSpacing:CGFloat = 1 {
+        didSet {
+            let attributedString = NSMutableAttributedString(string: self.text!)
+            attributedString.addAttribute(NSAttributedString.Key.kern, value: self.characterSpacing, range: NSRange(location: 0, length: attributedString.length))
+            self.attributedText = attributedString
+        }
+
+    }
 }
