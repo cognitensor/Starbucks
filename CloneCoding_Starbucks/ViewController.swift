@@ -14,7 +14,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var viewStartApp: UIView!
     
     //헤더뷰의 최대높이값과 최소높이값
-
     let maxHeight = (UIScreen.main.bounds.size.height)/2
     let minHeight: CGFloat = 50.0
 
@@ -29,11 +28,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             headerViewHeight.constant = maxHeight
         }
     }
-    
-    
+
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
+//        print(scrollView.contentOffset.y)
         let scrollOffset = scrollView.contentOffset.y
         if scrollOffset > -maxHeight && scrollOffset < -48{
             headerView.transform = CGAffineTransform(translationX: 0, y:abs(scrollOffset)-maxHeight)
@@ -44,22 +42,54 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       }
     
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
         
+        //스크롤뷰 scrollViewDidScroll 연결
         mainScrollView.delegate = self
         
+        //그림자설정
         viewStartApp.layer.shadowOffset = CGSize(width: 2, height: 3)   //그림자 크기
         viewStartApp.layer.shadowOpacity = 0.15                          //그림자 투명도 0이 투명 1이 불투명
         viewStartApp.layer.shadowRadius = 5
         
         
+        //푸시알림권한요청함수 호출
+        notificationPermission()
         
-        
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear")
+    }
+    
+    
+    
+    //푸시알림권한요청
+    func notificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge], completionHandler: {didAllow,Error in
+            if didAllow {
+                print("Push: 권한 허용")
+            } else {
+                print("Push: 권한 거부")
+            }
+        })
+    }
 }
 
  

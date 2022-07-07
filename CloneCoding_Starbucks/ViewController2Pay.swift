@@ -11,8 +11,24 @@ class ViewController2Pay: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("viewDidLoad 2nd")
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear 2nd")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear 2nd")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear 2nd")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear 2nd")
     }
     
 
