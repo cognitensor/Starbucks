@@ -136,7 +136,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yun-8Z-IIa" userLabel="ViewStartApp">
                                                         <rect key="frame" x="10" y="137.66666666666666" width="408" height="202.99999999999997"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="배경_스타트앱" translatesAutoresizingMaskIntoConstraints="NO" id="4CH-jq-LQ1">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_startapp" translatesAutoresizingMaskIntoConstraints="NO" id="4CH-jq-LQ1">
                                                                 <rect key="frame" x="3" y="3" width="402" height="197"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="e9P-Ad-mwR">
@@ -279,7 +279,7 @@
                             <constraint firstAttribute="bottom" secondItem="udl-gJ-BHc" secondAttribute="bottom" id="t63-jW-EQd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="아이콘_홈(흑)" selectedImage="아이콘_홈" id="6NS-tT-kEb" userLabel="Tab Bar Item 1홈"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_home(gray)" selectedImage="icon_home" id="6NS-tT-kEb" userLabel="Tab Bar Item 1홈"/>
                     <connections>
                         <outlet property="alphaHeaderView" destination="WOl-ab-Bbu" id="2Yq-X9-8nS"/>
                         <outlet property="headerView" destination="T5e-mZ-jfS" id="MYA-ZS-yke"/>
@@ -302,7 +302,7 @@
                         <viewLayoutGuide key="safeArea" id="QUU-o0-OSx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="아이폰_페이(흑)" selectedImage="아이폰_페이" id="Q18-fH-ajX" userLabel="Tab Bar Item 2페이"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_pay(gray)" selectedImage="icon_pay" id="Q18-fH-ajX" userLabel="Tab Bar Item 2페이"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcO-ZB-EKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -342,7 +342,7 @@
                             <constraint firstItem="5km-eh-kW8" firstAttribute="leading" secondItem="4uw-oj-Y7I" secondAttribute="leading" id="efh-ua-edg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="아이콘_오더(흑)" selectedImage="아이콘_오더" id="gHi-KM-hRN" userLabel="Tab Bar Item 3오더"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_order(gray)" selectedImage="icon_order" id="gHi-KM-hRN" userLabel="Tab Bar Item 3오더"/>
                     <connections>
                         <outlet property="tableView3Order" destination="OrR-rP-i4a" id="i5T-dV-IHM"/>
                     </connections>
@@ -361,7 +361,7 @@
                         <viewLayoutGuide key="safeArea" id="N7D-vO-G54"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="아이콘_기프트(흑)" selectedImage="아이콘_기프트" id="vrL-w6-2NS" userLabel="Tab Bar Item 4기프트"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_gift(gray)" selectedImage="icon_gift" id="vrL-w6-2NS" userLabel="Tab Bar Item 4기프트"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZ1-Am-O8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -377,7 +377,7 @@
                         <viewLayoutGuide key="safeArea" id="Kcm-L7-6Ne"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="아이콘_다른(흑)" selectedImage="아이콘_다른" id="Rna-cF-tNq" userLabel="Tab Bar Item 5다른"/>
+                    <tabBarItem key="tabBarItem" title="" image="icon_order(gray)" selectedImage="icon_order" id="Rna-cF-tNq" userLabel="Tab Bar Item 5다른"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEm-fx-gre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -409,18 +409,16 @@
     </scenes>
     <resources>
         <image name="bell" catalog="system" width="128" height="124"/>
+        <image name="bg_startapp" width="1824" height="971"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
-        <image name="배경_스타트앱" width="608" height="323.66665649414062"/>
-        <image name="아이콘_기프트" width="47.333332061767578" height="47"/>
-        <image name="아이콘_기프트(흑)" width="47.333332061767578" height="47.333332061767578"/>
-        <image name="아이콘_다른" width="47.333332061767578" height="47"/>
-        <image name="아이콘_다른(흑)" width="47.333332061767578" height="47.333332061767578"/>
-        <image name="아이콘_오더" width="47.333332061767578" height="47.333332061767578"/>
-        <image name="아이콘_오더(흑)" width="47.333332061767578" height="47"/>
-        <image name="아이콘_홈" width="47" height="47"/>
-        <image name="아이콘_홈(흑)" width="47" height="47"/>
-        <image name="아이폰_페이" width="47.333332061767578" height="47"/>
-        <image name="아이폰_페이(흑)" width="47.333332061767578" height="47.333332061767578"/>
+        <image name="icon_gift" width="12" height="11"/>
+        <image name="icon_gift(gray)" width="11" height="12"/>
+        <image name="icon_home" width="12" height="11"/>
+        <image name="icon_home(gray)" width="12" height="12"/>
+        <image name="icon_order" width="11" height="12"/>
+        <image name="icon_order(gray)" width="11" height="12"/>
+        <image name="icon_pay" width="12" height="12"/>
+        <image name="icon_pay(gray)" width="12" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

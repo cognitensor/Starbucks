@@ -26,8 +26,8 @@ class ViewController3Order: UIViewController {
         //셀가져온 리소스 등록
         self.tableView3Order.register(tableViewCellNib, forCellReuseIdentifier: "TableViewCell3Order")
         
-        self.tableView3Order.rowHeight = UITableView.automaticDimension
-        self.tableView3Order.estimatedRowHeight = 100
+//        self.tableView3Order.rowHeight = UITableView.automaticDimension
+        self.tableView3Order.rowHeight = 80
         
         //****아주 중요****
         self.tableView3Order.delegate = self

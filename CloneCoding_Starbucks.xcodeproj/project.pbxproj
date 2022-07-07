@@ -99,12 +99,12 @@
 				F6AA1F8C2875881400BFA115 /* ViewController5Other.swift */,
 				F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */,
 				F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */,
-				F6AA1F8E2875F03600BFA115 /* font */,
+				F6AA1F8E2875F03600BFA115 /* Font */,
 			);
 			path = CloneCoding_Starbucks;
 			sourceTree = "<group>";
 		};
-		F6AA1F8E2875F03600BFA115 /* font */ = {
+		F6AA1F8E2875F03600BFA115 /* Font */ = {
 			isa = PBXGroup;
 			children = (
 				F6AA1F932875F13000BFA115 /* Pretendard-Black.otf */,
@@ -117,7 +117,7 @@
 				F6AA1F942875F13000BFA115 /* Pretendard-SemiBold.otf */,
 				F6AA1F902875F12F00BFA115 /* Pretendard-Thin.otf */,
 			);
-			path = font;
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
