@@ -13,6 +13,7 @@ class TableViewCell3Order: UITableViewCell {
     @IBOutlet weak var orderContentView: UIView!
     @IBOutlet weak var orderTitleImage: UIImageView!
     @IBOutlet weak var orderTitleLabel: UILabel!
+    @IBOutlet weak var orderSubTitleLabel: UILabel!
     
     //셀이 렌더링(그릴때) 될때
     override func awakeFromNib() {

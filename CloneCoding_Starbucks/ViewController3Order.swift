@@ -11,6 +11,7 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     let titleArray = ["New", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
+    let titleImageArray = ["order_1new", "order_2recommend", "order_3reserve", "order_4drip", "order_5refreshers", "order_6coldbrew", "order_7blonde", "order_8espresso", "order_9decaf", "order_10frappuccino", "order_11blended", "order_12fizzio", "order_13tevana", "order_14brewed", "order_15others", "order_16rtd"]
     
     
     
@@ -107,8 +108,15 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     //각 셀에 대한 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView3Order.dequeueReusableCell(withIdentifier: "TableViewCell3Order", for: indexPath) as! TableViewCell3Order
-        
+    
         cell.orderTitleLabel.text = titleArray[indexPath.row]
+        cell.orderTitleImage.image = UIImage(named: titleImageArray[indexPath.row])
+        
+        if indexPath.row == 0 {
+            cell.orderSubTitleLabel.isHidden = true
+            
+        }
+        
         
         return cell
         

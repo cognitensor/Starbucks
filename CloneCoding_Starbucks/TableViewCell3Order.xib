@@ -56,6 +56,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="orderContentView" destination="wYR-3j-UhD" id="jQN-Xh-MzO"/>
+                <outlet property="orderSubTitleLabel" destination="a0K-1Y-kis" id="tLx-gE-y2t"/>
                 <outlet property="orderTitleImage" destination="PxP-eP-iQw" id="zho-dk-gac"/>
                 <outlet property="orderTitleLabel" destination="vvX-o5-uWz" id="rHT-fV-0lH"/>
             </connections>
