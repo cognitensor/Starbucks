@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var alphaHeaderView: UIView!
     @IBOutlet weak var viewStartApp: UIView!
+    @IBOutlet weak var viewHeaderBottom: UIView!
     
     //헤더뷰의 최대높이값과 최소높이값
     let maxHeight = (UIScreen.main.bounds.size.height)/2

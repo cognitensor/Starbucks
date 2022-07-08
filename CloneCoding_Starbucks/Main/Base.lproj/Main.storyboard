@@ -285,6 +285,7 @@
                         <outlet property="headerView" destination="T5e-mZ-jfS" id="MYA-ZS-yke"/>
                         <outlet property="headerViewHeight" destination="FQ0-xR-IA4" id="L3a-6l-5QQ"/>
                         <outlet property="mainScrollView" destination="aQ8-a1-h9b" id="92F-l1-XrX"/>
+                        <outlet property="viewHeaderBottom" destination="XRX-fY-UfA" id="ps1-cf-woR"/>
                         <outlet property="viewStartApp" destination="Yun-8Z-IIa" id="Hma-cA-McD"/>
                     </connections>
                 </viewController>
@@ -319,7 +320,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5km-eh-kW8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OrR-rP-i4a">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OrR-rP-i4a">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
@@ -333,7 +334,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2w-mZ-mT8" customClass="CustomLabel" customModule="CloneCoding_Starbucks" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="7" width="77.5" height="36"/>
+                                                                <rect key="frame" x="15" y="7" width="77.5" height="36"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Order">
                                                                         <attributes>
@@ -353,7 +354,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="l2w-mZ-mT8" firstAttribute="centerY" secondItem="sAv-BK-KU0" secondAttribute="centerY" id="66Y-K2-oTh"/>
-                                                            <constraint firstItem="l2w-mZ-mT8" firstAttribute="leading" secondItem="sAv-BK-KU0" secondAttribute="leading" constant="10" id="FCU-53-7e1"/>
+                                                            <constraint firstItem="l2w-mZ-mT8" firstAttribute="leading" secondItem="sAv-BK-KU0" secondAttribute="leading" constant="15" id="FCU-53-7e1"/>
                                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l2w-mZ-mT8" secondAttribute="trailing" constant="20" symbolic="YES" id="GBX-Bm-HYd"/>
                                                             <constraint firstAttribute="height" constant="50" id="yRT-Bu-ebo"/>
                                                         </constraints>
@@ -492,13 +493,13 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                 <subviews>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsl-BP-VIP">
-                                                        <rect key="frame" x="187.5" y="16" width="39" height="18"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
-                                                        <nil key="textColor"/>
+                                                        <rect key="frame" x="185" y="15" width="44" height="20.5"/>
+                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFD-tq-Q0k">
-                                                        <rect key="frame" x="358.5" y="20" width="45.5" height="10"/>
+                                                        <rect key="frame" x="358.5" y="9.5" width="45.5" height="31"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain">
                                                             <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
@@ -508,9 +509,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="CFD-tq-Q0k" firstAttribute="centerY" secondItem="gsl-BP-VIP" secondAttribute="centerY" id="2go-0W-b1k"/>
                                                     <constraint firstItem="CFD-tq-Q0k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mrn-TO-KRf" secondAttribute="leading" constant="20" symbolic="YES" id="7q0-7f-9Lo"/>
                                                     <constraint firstItem="gsl-BP-VIP" firstAttribute="centerY" secondItem="Mrn-TO-KRf" secondAttribute="centerY" id="Jwm-jc-XGD"/>
-                                                    <constraint firstItem="CFD-tq-Q0k" firstAttribute="top" secondItem="Mrn-TO-KRf" secondAttribute="top" constant="20" symbolic="YES" id="UD9-yt-lVH"/>
                                                     <constraint firstAttribute="height" constant="50" id="eh2-9i-obp"/>
                                                     <constraint firstAttribute="trailing" secondItem="CFD-tq-Q0k" secondAttribute="trailing" constant="10" id="nj3-fb-PpW"/>
                                                     <constraint firstItem="gsl-BP-VIP" firstAttribute="centerX" secondItem="Mrn-TO-KRf" secondAttribute="centerX" id="ojV-9o-57d"/>

@@ -22,25 +22,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starbucks_simbol" translatesAutoresizingMaskIntoConstraints="NO" id="PxP-eP-iQw">
-                        <rect key="frame" x="20" y="16.666666666666671" width="50" height="50"/>
+                        <rect key="frame" x="20" y="11.666666666666664" width="60" height="59.999999999999993"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="T0V-iH-Anb"/>
-                            <constraint firstAttribute="width" constant="50" id="l7b-gg-5ue"/>
+                            <constraint firstAttribute="height" constant="60" id="T0V-iH-Anb"/>
+                            <constraint firstAttribute="width" constant="60" id="l7b-gg-5ue"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="L6l-ID-SMz">
-                        <rect key="frame" x="80" y="21.666666666666671" width="57.333333333333343" height="40"/>
+                        <rect key="frame" x="90" y="17.666666666666671" width="57.333333333333343" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvX-o5-uWz">
-                                <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="16"/>
+                                <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="20"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0K-1Y-kis">
-                                <rect key="frame" x="0.0" y="23.999999999999996" width="57.333333333333336" height="16.000000000000004"/>
+                                <rect key="frame" x="0.0" y="28" width="57.333333333333336" height="20"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="10"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

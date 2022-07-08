@@ -18,12 +18,10 @@ class TableViewCell3Order: UITableViewCell {
     //셀이 렌더링(그릴때) 될때
     override func awakeFromNib() {
         super.awakeFromNib()
-        
 //        print("TableViewCell3Order -awakeFromNib")
         
-        
+        //이미지 원으로 만들기
         orderTitleImage.layer.cornerRadius = orderTitleImage.frame.height/2
-        
         
     }
     

@@ -10,9 +10,9 @@ import UIKit
 class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    let titleArray = ["New", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
+    let titleArray = ["NEW", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
     let titleImageArray = ["order_1new", "order_2recommend", "order_3reserve", "order_4drip", "order_5refreshers", "order_6coldbrew", "order_7blonde", "order_8espresso", "order_9decaf", "order_10frappuccino", "order_11blended", "order_12fizzio", "order_13tevana", "order_14brewed", "order_15others", "order_16rtd"]
-    
+    let subTitleArray = ["", "Recommend", "Reserve Espresso", "Reserve Drip", "Starbucks Refreshers", "Cold Brew", "Blonde Coffee", "Espresso", "Decaf Coffee", "Frappuccino", "Blended", "Starbucks Fizzio", "Teavana", "Brewed Coffee", "Others", "RTD"]
     
     
     let maxHeight: CGFloat = 200.0
@@ -78,14 +78,14 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     
     //--UITableViewDelegate--
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+    
         let scrollOffset = scrollView.contentOffset.y
-        print(scrollOffset)
+//        print(scrollOffset)
         
         if scrollOffset <= -maxHeight {
             labelHiddenTitle.isHidden = true
             
-        } else if scrollOffset > -maxHeight && scrollOffset < -160 {
+        } else if scrollOffset > -maxHeight && scrollOffset < -145 {
             labelHiddenTitle.isHidden = false
             
             viewOrderHeader.transform = CGAffineTransform(translationX: 0, y: abs(scrollOffset)-maxHeight)
@@ -107,18 +107,37 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     
     //각 셀에 대한 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        //셀 파일이랑 연결시키기
         let cell = tableView3Order.dequeueReusableCell(withIdentifier: "TableViewCell3Order", for: indexPath) as! TableViewCell3Order
     
+        
+        //셀 내용넣기
         cell.orderTitleLabel.text = titleArray[indexPath.row]
         cell.orderTitleImage.image = UIImage(named: titleImageArray[indexPath.row])
         
         if indexPath.row == 0 {
             cell.orderSubTitleLabel.isHidden = true
-            
+        } else {
+            cell.orderSubTitleLabel.text = subTitleArray[indexPath.row]
         }
+        
+        //클릭했을 때 배경이 회색으로 변하는 거 없애기
+        cell.selectionStyle = .none
         
         
         return cell
+    }
+    
+    //셀 클릭시
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //스토리보드의 이름으로 스토리보드 연결
+        let storyBoardOrderClickCategory = UIStoryboard(name: "OrderClickCategory", bundle: nil)
+        //스토리보드와 ViewController파일 연결
+        let ViewController3OrderClickCategory = storyBoardOrderClickCategory.instantiateViewController(withIdentifier: "ViewController3OrderClickCategory") as! ViewController3OrderClickCategory
+        
+        ViewController3OrderClickCategory.modalPresentationStyle = .fullScreen
+        self.present(ViewController3OrderClickCategory, animated: true, completion: nil)
         
     }
     
