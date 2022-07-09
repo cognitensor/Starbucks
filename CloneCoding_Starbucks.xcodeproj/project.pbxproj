@@ -13,6 +13,7 @@
 		F606B106287490C70044E8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B104287490C70044E8ED /* Main.storyboard */; };
 		F606B108287490CA0044E8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F606B107287490CA0044E8ED /* Assets.xcassets */; };
 		F606B10B287490CA0044E8ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B109287490CA0044E8ED /* LaunchScreen.storyboard */; };
+		F62247F2287A1CE3009D598B /* ViewControllerOrder2Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62247F1287A1CE2009D598B /* ViewControllerOrder2Size.swift */; };
 		F65763E72876EF8C00E7DF01 /* TableViewCell3Order.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */; };
 		F65763E92876F3DC00E7DF01 /* TableViewCell3Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */; };
 		F6947C35287820C600E0F4C1 /* StoryboardOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6947C34287820C600E0F4C1 /* StoryboardOrder.storyboard */; };
@@ -41,6 +42,7 @@
 		F606B107287490CA0044E8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F606B10A287490CA0044E8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F606B10C287490CA0044E8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F62247F1287A1CE2009D598B /* ViewControllerOrder2Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOrder2Size.swift; sourceTree = "<group>"; };
 		F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell3Order.xib; sourceTree = "<group>"; };
 		F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell3Order.swift; sourceTree = "<group>"; };
 		F6947C34287820C600E0F4C1 /* StoryboardOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardOrder.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				F6947C34287820C600E0F4C1 /* StoryboardOrder.storyboard */,
 				F6947C38287822A600E0F4C1 /* ViewControllerOrder1Menu.swift */,
+				F62247F1287A1CE2009D598B /* ViewControllerOrder2Size.swift */,
 				F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */,
 				F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */,
 			);
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6AA1F89287587B900BFA115 /* ViewController3Order.swift in Sources */,
+				F62247F2287A1CE3009D598B /* ViewControllerOrder2Size.swift in Sources */,
 				F6AA1F8D2875881400BFA115 /* ViewController5Other.swift in Sources */,
 				F606B103287490C70044E8ED /* ViewController.swift in Sources */,
 				F6AA1F8B287587D200BFA115 /* ViewController4Gift.swift in Sources */,

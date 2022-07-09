@@ -18,8 +18,6 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     var resultSelectedSubTitle: String = ""
     var resultSelectedTitleImage: String = ""
     
-    
-    
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var naviTitle: UINavigationItem!
     @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
