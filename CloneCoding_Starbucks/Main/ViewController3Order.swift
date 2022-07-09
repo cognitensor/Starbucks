@@ -152,10 +152,21 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     
     //셀 클릭시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         //스토리보드의 이름으로 스토리보드 연결
         let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
         //스토리보드와 ViewController파일 연결
         let ViewControllerOrder1Menu = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrder1Menu") as! ViewControllerOrder1Menu
+        
+        
+        //(질문???)여기에서 배열이 아니라 셀의 위치로 해야하는 건데 .. 모르겠다..
+        //넘겨주기
+        ViewControllerOrder1Menu.resultSelectedTitle = titleArray[indexPath.row]
+        ViewControllerOrder1Menu.resultSelectedSubTitle = subTitleArray[indexPath.row]
+        ViewControllerOrder1Menu.resultSelectedTitleImage = titleImageArray[indexPath.row]
+        
+
+        
 
         ViewControllerOrder1Menu.modalPresentationStyle = .fullScreen
         self.present(ViewControllerOrder1Menu, animated: true, completion: nil)

@@ -9,20 +9,34 @@ import UIKit
 
 class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     
-    @IBAction func didTabAction(_ sender: Any) {
-        dismiss(animated: false)
-    }
-    
     //기기의 높이값
     let maxHeight = (UIScreen.main.bounds.size.height)*0.35
-//    let maxHeight = 300.0
     let minHeight: CGFloat = 40.0
-
+    
+    //넘겨받는 변수
+    var resultSelectedTitle: String = ""
+    var resultSelectedSubTitle: String = ""
+    var resultSelectedTitleImage: String = ""
+    
+    
+    
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var naviTitle: UINavigationItem!
     @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
     @IBOutlet weak var naviRightBtn: UIBarButtonItem!
     
+    @IBOutlet weak var contentTitle: UILabel!
+    @IBOutlet weak var contentSubTitle: UILabel!
+    
+    @IBOutlet weak var viewInfo: UIView!
+    @IBOutlet weak var viewAle: UIView!
+    @IBOutlet weak var viewBottom: UIView!
+    
+    @IBAction func didTabAction(_ sender: Any) {
+        dismiss(animated: false)
+    }
+    
+
     @IBOutlet weak var mainScrollView: UIScrollView! {
         didSet {
             mainScrollView.contentInset = UIEdgeInsets(top: maxHeight, left: 0, bottom: 0, right: 0)
@@ -38,7 +52,7 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollOffset = scrollView.contentOffset.y
-        print(scrollOffset)
+//        print(scrollOffset)
         
         if scrollOffset <= -maxHeight {
             naviTitle.largeTitleDisplayMode = .always
@@ -55,7 +69,7 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
             headerImageView.isHidden = false
         } else {
             naviTitle.largeTitleDisplayMode = .never
-            naviTitle.title = "메뉴이름"
+            naviTitle.title = resultSelectedTitle
             naviLeftBtn.tintColor = .darkGray
             naviRightBtn.tintColor = .darkGray
             headerImageView.isHidden = true
@@ -64,16 +78,30 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     }
     
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd_1")
         
         mainScrollView.delegate = self
         naviTitle.title = ""
+        
+        contentTitle.text = resultSelectedTitle
+        contentSubTitle.text = resultSelectedSubTitle
+        headerImageView.image = UIImage(named: resultSelectedTitleImage)
+        
+        viewInfo.layer.shadowOffset = CGSize(width: 0, height: -10)   //그림자 크기
+        viewInfo.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
+        viewInfo.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
+        
+        viewAle.layer.shadowOffset = CGSize(width: 0, height: -10)   //그림자 크기
+        viewAle.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
+        viewAle.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
+        
+        viewBottom.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기
+        viewBottom.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
+        viewBottom.layer.shadowRadius = 3  //번지는정도 (0일때 선, 높을 수록 번짐)
+        
+//        headerImageView.image = resultSelectedTitleImage
     
     }
     
