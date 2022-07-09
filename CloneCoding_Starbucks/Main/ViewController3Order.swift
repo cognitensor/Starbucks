@@ -100,10 +100,9 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
 //        print(scrollOffset)
         
         if scrollOffset <= -maxHeight {
-            navigationController?.navigationBar.prefersLargeTitles = true
             
             //라지타이틀 생기게하기
-            naviTitle.largeTitleDisplayMode = .automatic
+            naviTitle.largeTitleDisplayMode = .always
             
         } else if scrollOffset > -maxHeight && scrollOffset < -145 {
 
