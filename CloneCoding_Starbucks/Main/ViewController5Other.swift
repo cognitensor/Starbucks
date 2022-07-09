@@ -13,6 +13,10 @@ class ViewController5Other: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad 5th")
         // Do any additional setup after loading the view.
+        
+        //탭바 윗줄 없애기
+        self.tabBarController?.tabBar.clipsToBounds = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {

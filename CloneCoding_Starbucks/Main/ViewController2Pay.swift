@@ -13,6 +13,10 @@ class ViewController2Pay: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad 2nd")
         // Do any additional setup after loading the view.
+        
+        //탭바 윗줄 없애기
+        self.tabBarController?.tabBar.clipsToBounds = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -296,7 +296,6 @@
         <!--View Controller2 Pay-->
         <scene sceneID="KTE-zu-Ve8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tcO-ZB-EKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="RVi-pW-TcL" customClass="ViewController2Pay" customModule="CloneCoding_Starbucks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u6Y-n0-TLD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -306,6 +305,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_pay(gray)" selectedImage="icon_pay" id="Q18-fH-ajX" userLabel="Tab Bar Item 2페이"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcO-ZB-EKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="971" y="830"/>
         </scene>
@@ -331,7 +331,7 @@
                                                 <rect key="frame" x="0.0" y="50" width="414" height="150"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIF-MM-LGt" userLabel="View3">
-                                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="45" width="414" height="50"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rj0-DW-ZCQ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
@@ -364,7 +364,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="Rj0-DW-ZCQ" firstAttribute="leading" secondItem="CIF-MM-LGt" secondAttribute="leading" id="1QJ-6t-Tco"/>
                                                             <constraint firstAttribute="trailing" secondItem="Rj0-DW-ZCQ" secondAttribute="trailing" id="64L-59-QYI"/>
@@ -434,7 +434,7 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="QEL-A5-h8E" firstAttribute="centerY" secondItem="wNi-vm-wIj" secondAttribute="centerY" id="F1r-Av-T7D"/>
                                                             <constraint firstItem="QEL-A5-h8E" firstAttribute="centerY" secondItem="wNi-vm-wIj" secondAttribute="centerY" id="bSW-RE-Pea"/>
@@ -452,7 +452,7 @@
                                                     <constraint firstItem="CIF-MM-LGt" firstAttribute="leading" secondItem="wfV-Eq-3e5" secondAttribute="leading" id="3Kp-f8-22g"/>
                                                     <constraint firstItem="wNi-vm-wIj" firstAttribute="leading" secondItem="wfV-Eq-3e5" secondAttribute="leading" id="Hl8-tK-JNz"/>
                                                     <constraint firstAttribute="trailing" secondItem="wNi-vm-wIj" secondAttribute="trailing" id="b86-wy-ZB9"/>
-                                                    <constraint firstItem="wNi-vm-wIj" firstAttribute="top" secondItem="CIF-MM-LGt" secondAttribute="bottom" id="byd-Ha-g9n"/>
+                                                    <constraint firstItem="wNi-vm-wIj" firstAttribute="top" secondItem="CIF-MM-LGt" secondAttribute="bottom" constant="5" id="byd-Ha-g9n"/>
                                                     <constraint firstAttribute="bottom" secondItem="wNi-vm-wIj" secondAttribute="bottom" id="nek-Qg-SI0"/>
                                                     <constraint firstAttribute="trailing" secondItem="CIF-MM-LGt" secondAttribute="trailing" id="pg8-Rk-bkS"/>
                                                 </constraints>
@@ -461,25 +461,27 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                 <subviews>
                                                     <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gki-Bk-dqh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                                        <rect key="frame" x="10" y="0.0" width="394" height="96"/>
+                                                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <textAttributes key="largeTitleTextAttributes">
-                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </textAttributes>
                                                         <items>
-                                                            <navigationItem title="Order" id="7PW-mL-yfZ"/>
+                                                            <navigationItem title="Order" id="7PW-mL-yfZ">
+                                                                <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="yXB-2C-d8f">
+                                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </barButtonItem>
+                                                            </navigationItem>
                                                         </items>
-                                                        <navigationBarAppearance key="scrollEdgeAppearance">
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </navigationBarAppearance>
                                                     </navigationBar>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="gki-Bk-dqh" firstAttribute="top" secondItem="Mrn-TO-KRf" secondAttribute="top" id="G7f-MT-9TF"/>
-                                                    <constraint firstItem="gki-Bk-dqh" firstAttribute="leading" secondItem="Mrn-TO-KRf" secondAttribute="leading" id="MqO-RS-aTB"/>
+                                                    <constraint firstItem="gki-Bk-dqh" firstAttribute="leading" secondItem="Mrn-TO-KRf" secondAttribute="leading" constant="10" id="MqO-RS-aTB"/>
                                                     <constraint firstAttribute="height" constant="50" id="eh2-9i-obp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gki-Bk-dqh" secondAttribute="trailing" id="muQ-fB-Eci"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gki-Bk-dqh" secondAttribute="trailing" constant="10" id="muQ-fB-Eci"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -519,9 +521,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_order(gray)" selectedImage="icon_order" id="gHi-KM-hRN" userLabel="Tab Bar Item 3오더"/>
                     <connections>
+                        <outlet property="naviBarOrder" destination="gki-Bk-dqh" id="irY-Zl-OB3"/>
                         <outlet property="naviTitle" destination="7PW-mL-yfZ" id="oqm-xk-RAo"/>
                         <outlet property="orderMainHeaderViewHeight" destination="bgi-w9-drw" id="2TE-CS-p67"/>
                         <outlet property="tableView3Order" destination="OrR-rP-i4a" id="i5T-dV-IHM"/>
+                        <outlet property="view3" destination="CIF-MM-LGt" id="JVC-xi-vvX"/>
+                        <outlet property="view4" destination="wNi-vm-wIj" id="Lkf-js-Ms4"/>
                         <outlet property="viewOrderHeader" destination="wfV-Eq-3e5" id="TEt-zr-NRT"/>
                     </connections>
                 </viewController>
@@ -569,8 +574,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kac-ik-mmd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.31144011020000001" green="0.68887442350000005" blue="0.49016857149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2R2-gT-hvU"/>
@@ -598,6 +602,7 @@
         <image name="icon_order(gray)" width="46" height="46"/>
         <image name="icon_pay" width="46" height="46"/>
         <image name="icon_pay(gray)" width="46" height="45"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

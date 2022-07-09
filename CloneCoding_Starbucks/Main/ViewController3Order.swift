@@ -30,11 +30,33 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    @IBOutlet weak var naviBarOrder: UINavigationBar!
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view4: UIView!
+    @IBOutlet weak var viewOrderHeader: UIView!
+    @IBOutlet weak var viewBigTitle: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd")
         
+        //탭바 윗줄 없애기
+        self.tabBarController?.tabBar.clipsToBounds = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        //네비게이션 밑줄 없애기
+        naviBarOrder.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        naviBarOrder.shadowImage = UIImage()
+        
+        
+        //뷰 그림자 넣기 (그림자공간줘야함, 배경색흰색으로 안하면 안에있는 컴포넌트들 그림자 생김)
+        view3.layer.shadowOffset = CGSize(width: 0, height: 2)   //그림자 크기
+        view3.layer.shadowOpacity = 0.15                          //그림자 투명도 0이 투명 1이 불투명
+        view3.layer.shadowRadius = 2  //번지는정도 (0일때 선, 높을 수록 번짐)
+        
+        view4.layer.shadowOffset = CGSize(width: 0, height: 1)   //그림자 크기
+        view4.layer.shadowOpacity = 0.05                          //그림자 투명도 0이 투명 1이 불투명
+        view4.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
         
         //셀리소스파일 가져오기
         let tableViewCellNib = UINib(nibName: "TableViewCell3Order", bundle: nil)
@@ -72,28 +94,25 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     
-    @IBOutlet weak var viewOrderHeader: UIView!
-    @IBOutlet weak var labelHiddenTitle: UILabel!
-    @IBOutlet weak var viewBigTitle: UIView!
     
     @IBOutlet weak var naviTitle: UINavigationItem!
     //--UITableViewDelegate--
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
     
-        
-        
         let scrollOffset = scrollView.contentOffset.y
 //        print(scrollOffset)
         
         if scrollOffset <= -maxHeight {
             navigationController?.navigationBar.prefersLargeTitles = true
+            
+            //라지타이틀 생기게하기
             naviTitle.largeTitleDisplayMode = .automatic
             
         } else if scrollOffset > -maxHeight && scrollOffset < -145 {
 
-            
             viewOrderHeader.transform = CGAffineTransform(translationX: 0, y: abs(scrollOffset)-maxHeight)
             
+            //라지타이틀 없애기
             naviTitle.largeTitleDisplayMode = .never
             
         } else {

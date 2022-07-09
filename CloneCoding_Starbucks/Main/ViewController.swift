@@ -49,6 +49,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         print("viewDidLoad")
         
+        
+        //탭바 윗줄 없애기
+        self.tabBarController?.tabBar.clipsToBounds = true
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+
+        
         //스크롤뷰 scrollViewDidScroll 연결
         mainScrollView.delegate = self
         
