@@ -9,9 +9,8 @@ import UIKit
 
 class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    let titleArray = ["NEW", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
     let titleImageArray = ["order_1new", "order_2recommend", "order_3reserve", "order_4drip", "order_5refreshers", "order_6coldbrew", "order_7blonde", "order_8espresso", "order_9decaf", "order_10frappuccino", "order_11blended", "order_12fizzio", "order_13tevana", "order_14brewed", "order_15others", "order_16rtd"]
+    let titleArray = ["NEW", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
     let subTitleArray = ["", "Recommend", "Reserve Espresso", "Reserve Drip", "Starbucks Refreshers", "Cold Brew", "Blonde Coffee", "Espresso", "Decaf Coffee", "Frappuccino", "Blended", "Starbucks Fizzio", "Teavana", "Brewed Coffee", "Others", "RTD"]
     
     
@@ -20,7 +19,7 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView3Order: UITableView! {
         didSet {
-            tableView3Order.contentInset = UIEdgeInsets(top: maxHeight, left: 0, bottom: 0, right: 0)
+            tableView3Order.contentInset = UIEdgeInsets(top: maxHeight+10, left: 0, bottom: 0, right: 0)
         }
     }
     
@@ -65,7 +64,7 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         self.tableView3Order.register(tableViewCellNib, forCellReuseIdentifier: "TableViewCell3Order")
         
 //        self.tableView3Order.rowHeight = UITableView.automaticDimension
-        self.tableView3Order.rowHeight = 80
+        self.tableView3Order.rowHeight = 90
         
         //****아주 중요****
         self.tableView3Order.delegate = self
@@ -90,8 +89,6 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidDisappear(_ animated: Bool) {
         print("viewDidDisappear 3rd")
     }
-    
-    
     
     
     

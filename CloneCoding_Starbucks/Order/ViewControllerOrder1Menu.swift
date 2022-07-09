@@ -9,21 +9,33 @@ import UIKit
 
 class ViewControllerOrder1Menu: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBAction func didTabAction(_ sender: Any) {
+        
+        dismiss(animated: false)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("viewDidLoad 3rd_1")
+    
     }
-    */
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear 3rd_1")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear 3rd_1")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear 3rd_1")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear 3rd_1")
+    }
+    
 
 }
