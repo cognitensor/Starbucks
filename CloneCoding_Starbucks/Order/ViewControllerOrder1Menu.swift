@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController3OrderClickCategory: UIViewController {
+class ViewControllerOrder1Menu: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

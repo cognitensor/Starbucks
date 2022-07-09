@@ -132,12 +132,12 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     //셀 클릭시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //스토리보드의 이름으로 스토리보드 연결
-        let storyBoardOrderClickCategory = UIStoryboard(name: "OrderClickCategory", bundle: nil)
+        let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
         //스토리보드와 ViewController파일 연결
-        let ViewController3OrderClickCategory = storyBoardOrderClickCategory.instantiateViewController(withIdentifier: "ViewController3OrderClickCategory") as! ViewController3OrderClickCategory
-        
-        ViewController3OrderClickCategory.modalPresentationStyle = .fullScreen
-        self.present(ViewController3OrderClickCategory, animated: true, completion: nil)
+        let ViewControllerOrder1Menu = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrder1Menu") as! ViewControllerOrder1Menu
+
+        ViewControllerOrder1Menu.modalPresentationStyle = .fullScreen
+        self.present(ViewControllerOrder1Menu, animated: true, completion: nil)
         
     }
     
