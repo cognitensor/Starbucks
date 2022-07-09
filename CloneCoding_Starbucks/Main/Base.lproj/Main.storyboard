@@ -296,6 +296,7 @@
         <!--View Controller2 Pay-->
         <scene sceneID="KTE-zu-Ve8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcO-ZB-EKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="RVi-pW-TcL" customClass="ViewController2Pay" customModule="CloneCoding_Starbucks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u6Y-n0-TLD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -305,7 +306,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_pay(gray)" selectedImage="icon_pay" id="Q18-fH-ajX" userLabel="Tab Bar Item 2페이"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tcO-ZB-EKF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="971" y="830"/>
         </scene>
@@ -330,35 +330,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfV-Eq-3e5" userLabel="ViewOrderHeader">
                                                 <rect key="frame" x="0.0" y="50" width="414" height="150"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAv-BK-KU0" userLabel="View2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2w-mZ-mT8" customClass="CustomLabel" customModule="CloneCoding_Starbucks" customModuleProvider="target">
-                                                                <rect key="frame" x="15" y="7" width="77.5" height="36"/>
-                                                                <attributedString key="attributedText">
-                                                                    <fragment content="Order">
-                                                                        <attributes>
-                                                                            <font key="NSFont" size="30" name="AppleSDGothicNeo-Bold"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                                        <real key="value" value="2"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="l2w-mZ-mT8" firstAttribute="centerY" secondItem="sAv-BK-KU0" secondAttribute="centerY" id="66Y-K2-oTh"/>
-                                                            <constraint firstItem="l2w-mZ-mT8" firstAttribute="leading" secondItem="sAv-BK-KU0" secondAttribute="leading" constant="15" id="FCU-53-7e1"/>
-                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l2w-mZ-mT8" secondAttribute="trailing" constant="20" symbolic="YES" id="GBX-Bm-HYd"/>
-                                                            <constraint firstAttribute="height" constant="50" id="yRT-Bu-ebo"/>
-                                                        </constraints>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIF-MM-LGt" userLabel="View3">
                                                         <rect key="frame" x="0.0" y="50" width="414" height="50"/>
                                                         <subviews>
@@ -458,7 +429,7 @@
                                                                     <constraint firstItem="dCA-S3-1Rc" firstAttribute="leading" secondItem="735-5J-RJq" secondAttribute="trailing" constant="10" id="NLA-qC-qPg"/>
                                                                     <constraint firstItem="jxQ-0L-oRG" firstAttribute="leading" secondItem="PPi-bL-Ca7" secondAttribute="trailing" constant="10" id="dG1-hD-scF"/>
                                                                     <constraint firstItem="PPi-bL-Ca7" firstAttribute="top" secondItem="dCA-S3-1Rc" secondAttribute="top" id="kNf-13-Bu3"/>
-                                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kWk-E9-kb3" secondAttribute="trailing" constant="20" symbolic="YES" id="lee-iI-Yvf"/>
+                                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kWk-E9-kb3" secondAttribute="trailing" constant="20" symbolic="YES" id="oas-jb-Ype"/>
                                                                     <constraint firstItem="uTC-Hw-8VK" firstAttribute="centerY" secondItem="QEL-A5-h8E" secondAttribute="centerY" id="q9i-Fm-jnG"/>
                                                                 </constraints>
                                                             </view>
@@ -468,10 +439,10 @@
                                                             <constraint firstItem="QEL-A5-h8E" firstAttribute="centerY" secondItem="wNi-vm-wIj" secondAttribute="centerY" id="F1r-Av-T7D"/>
                                                             <constraint firstItem="QEL-A5-h8E" firstAttribute="centerY" secondItem="wNi-vm-wIj" secondAttribute="centerY" id="bSW-RE-Pea"/>
                                                             <constraint firstAttribute="bottom" secondItem="QEL-A5-h8E" secondAttribute="bottom" id="dzo-hN-dRZ"/>
+                                                            <constraint firstItem="QEL-A5-h8E" firstAttribute="leading" secondItem="wNi-vm-wIj" secondAttribute="leading" constant="30" id="inO-Zd-YzT"/>
                                                             <constraint firstAttribute="height" constant="50" id="mQr-k3-14N"/>
                                                             <constraint firstAttribute="trailing" secondItem="QEL-A5-h8E" secondAttribute="trailing" id="or4-vJ-9DX"/>
                                                             <constraint firstItem="QEL-A5-h8E" firstAttribute="centerY" secondItem="wNi-vm-wIj" secondAttribute="centerY" id="qE6-U2-0sc"/>
-                                                            <constraint firstItem="QEL-A5-h8E" firstAttribute="leading" secondItem="wNi-vm-wIj" secondAttribute="leading" constant="30" id="uqe-lP-5U8"/>
                                                             <constraint firstItem="QEL-A5-h8E" firstAttribute="top" secondItem="wNi-vm-wIj" secondAttribute="top" id="vzu-o0-Och"/>
                                                         </constraints>
                                                     </view>
@@ -479,43 +450,36 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="CIF-MM-LGt" firstAttribute="leading" secondItem="wfV-Eq-3e5" secondAttribute="leading" id="3Kp-f8-22g"/>
-                                                    <constraint firstItem="CIF-MM-LGt" firstAttribute="top" secondItem="sAv-BK-KU0" secondAttribute="bottom" id="HgR-JP-TpS"/>
                                                     <constraint firstItem="wNi-vm-wIj" firstAttribute="leading" secondItem="wfV-Eq-3e5" secondAttribute="leading" id="Hl8-tK-JNz"/>
-                                                    <constraint firstItem="sAv-BK-KU0" firstAttribute="top" secondItem="wfV-Eq-3e5" secondAttribute="top" id="URd-iQ-2Z4"/>
                                                     <constraint firstAttribute="trailing" secondItem="wNi-vm-wIj" secondAttribute="trailing" id="b86-wy-ZB9"/>
                                                     <constraint firstItem="wNi-vm-wIj" firstAttribute="top" secondItem="CIF-MM-LGt" secondAttribute="bottom" id="byd-Ha-g9n"/>
-                                                    <constraint firstItem="sAv-BK-KU0" firstAttribute="leading" secondItem="wfV-Eq-3e5" secondAttribute="leading" id="djk-mN-Apn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sAv-BK-KU0" secondAttribute="trailing" id="hvj-7P-Pwf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wNi-vm-wIj" secondAttribute="bottom" id="nek-Qg-SI0"/>
                                                     <constraint firstAttribute="trailing" secondItem="CIF-MM-LGt" secondAttribute="trailing" id="pg8-Rk-bkS"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mrn-TO-KRf" userLabel="View1">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                 <subviews>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsl-BP-VIP">
-                                                        <rect key="frame" x="185" y="15" width="44" height="20.5"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFD-tq-Q0k">
-                                                        <rect key="frame" x="358.5" y="9.5" width="45.5" height="31"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain">
-                                                            <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
-                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
-                                                    </button>
+                                                    <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gki-Bk-dqh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                                        <textAttributes key="largeTitleTextAttributes">
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </textAttributes>
+                                                        <items>
+                                                            <navigationItem title="Order" id="7PW-mL-yfZ"/>
+                                                        </items>
+                                                        <navigationBarAppearance key="scrollEdgeAppearance">
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </navigationBarAppearance>
+                                                    </navigationBar>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="CFD-tq-Q0k" firstAttribute="centerY" secondItem="gsl-BP-VIP" secondAttribute="centerY" id="2go-0W-b1k"/>
-                                                    <constraint firstItem="CFD-tq-Q0k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mrn-TO-KRf" secondAttribute="leading" constant="20" symbolic="YES" id="7q0-7f-9Lo"/>
-                                                    <constraint firstItem="gsl-BP-VIP" firstAttribute="centerY" secondItem="Mrn-TO-KRf" secondAttribute="centerY" id="Jwm-jc-XGD"/>
+                                                    <constraint firstItem="gki-Bk-dqh" firstAttribute="top" secondItem="Mrn-TO-KRf" secondAttribute="top" id="G7f-MT-9TF"/>
+                                                    <constraint firstItem="gki-Bk-dqh" firstAttribute="leading" secondItem="Mrn-TO-KRf" secondAttribute="leading" id="MqO-RS-aTB"/>
                                                     <constraint firstAttribute="height" constant="50" id="eh2-9i-obp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="CFD-tq-Q0k" secondAttribute="trailing" constant="10" id="nj3-fb-PpW"/>
-                                                    <constraint firstItem="gsl-BP-VIP" firstAttribute="centerX" secondItem="Mrn-TO-KRf" secondAttribute="centerX" id="ojV-9o-57d"/>
-                                                    <constraint firstItem="CFD-tq-Q0k" firstAttribute="centerY" secondItem="Mrn-TO-KRf" secondAttribute="centerY" id="uxv-vV-SPt"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gki-Bk-dqh" secondAttribute="trailing" id="muQ-fB-Eci"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -555,16 +519,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icon_order(gray)" selectedImage="icon_order" id="gHi-KM-hRN" userLabel="Tab Bar Item 3오더"/>
                     <connections>
-                        <outlet property="labelHiddenTitle" destination="gsl-BP-VIP" id="ae7-8z-EhO"/>
+                        <outlet property="naviTitle" destination="7PW-mL-yfZ" id="oqm-xk-RAo"/>
                         <outlet property="orderMainHeaderViewHeight" destination="bgi-w9-drw" id="2TE-CS-p67"/>
                         <outlet property="tableView3Order" destination="OrR-rP-i4a" id="i5T-dV-IHM"/>
-                        <outlet property="viewBigTitle" destination="sAv-BK-KU0" id="vK6-DQ-aTV"/>
                         <outlet property="viewOrderHeader" destination="wfV-Eq-3e5" id="TEt-zr-NRT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwd-D3-ibA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805.6074766355139" y="829.37365010799147"/>
+            <point key="canvasLocation" x="1804.3478260869567" y="829.01785714285711"/>
         </scene>
         <!--View Controller4 Gift-->
         <scene sceneID="lvB-m8-gfu">
@@ -635,7 +598,6 @@
         <image name="icon_order(gray)" width="46" height="46"/>
         <image name="icon_pay" width="46" height="46"/>
         <image name="icon_pay(gray)" width="46" height="45"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

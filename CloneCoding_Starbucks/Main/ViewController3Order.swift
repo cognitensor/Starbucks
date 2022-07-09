@@ -34,7 +34,7 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd")
-        // Do any additional setup after loading the view.
+        
         
         //셀리소스파일 가져오기
         let tableViewCellNib = UINib(nibName: "TableViewCell3Order", bundle: nil)
@@ -76,22 +76,28 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var labelHiddenTitle: UILabel!
     @IBOutlet weak var viewBigTitle: UIView!
     
+    @IBOutlet weak var naviTitle: UINavigationItem!
     //--UITableViewDelegate--
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
     
+        
+        
         let scrollOffset = scrollView.contentOffset.y
 //        print(scrollOffset)
         
         if scrollOffset <= -maxHeight {
-            labelHiddenTitle.isHidden = true
+            navigationController?.navigationBar.prefersLargeTitles = true
+            naviTitle.largeTitleDisplayMode = .automatic
             
         } else if scrollOffset > -maxHeight && scrollOffset < -145 {
-            labelHiddenTitle.isHidden = false
+
             
             viewOrderHeader.transform = CGAffineTransform(translationX: 0, y: abs(scrollOffset)-maxHeight)
             
+            naviTitle.largeTitleDisplayMode = .never
+            
         } else {
-            labelHiddenTitle.isHidden = false
+            naviTitle.largeTitleDisplayMode = .never
         }
         
     }
