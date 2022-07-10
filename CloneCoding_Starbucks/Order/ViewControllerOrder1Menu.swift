@@ -30,11 +30,18 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var viewAle: UIView!
     @IBOutlet weak var viewBottom: UIView!
     
-    @IBAction func didTabAction(_ sender: Any) {
+    @IBAction func btnBack(_ sender: Any) {
         dismiss(animated: false)
     }
     
-
+    //세그로 연결했을때의 결과 값 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ViewControllerOrder2Size = segue.destination as! ViewControllerOrder2Size
+        
+        ViewControllerOrder2Size.resultMainTitle = resultSelectedTitle
+        
+    }
+    
     @IBOutlet weak var mainScrollView: UIScrollView! {
         didSet {
             mainScrollView.contentInset = UIEdgeInsets(top: maxHeight, left: 0, bottom: 0, right: 0)

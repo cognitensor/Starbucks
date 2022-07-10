@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewControllerOrder2Size: UIViewController {
+    
+    var resultMainTitle: String = ""
 
+    @IBOutlet weak var labelMainTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd_2")
+        
+        labelMainTitle.text = resultMainTitle
         // Do any additional setup after loading the view.
     }
 
