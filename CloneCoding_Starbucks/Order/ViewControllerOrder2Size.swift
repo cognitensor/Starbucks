@@ -10,15 +10,22 @@ import UIKit
 class ViewControllerOrder2Size: UIViewController {
     
     var resultMainTitle: String = ""
-
+    
     @IBOutlet weak var labelMainTitle: UILabel!
+    @IBOutlet weak var viewOptionShawdow: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd_2")
         
         labelMainTitle.text = resultMainTitle
-        // Do any additional setup after loading the view.
+        
+        
+        viewOptionShawdow.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기
+        viewOptionShawdow.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
+        viewOptionShawdow.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
