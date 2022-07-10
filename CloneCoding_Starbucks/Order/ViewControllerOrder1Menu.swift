@@ -30,7 +30,7 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var viewAle: UIView!
     @IBOutlet weak var viewBottom: UIView!
     
-    @IBAction func btnBack(_ sender: Any) {
+    @IBAction func naviLeftBtnTabAction(_ sender: Any) {
         dismiss(animated: false)
     }
     
@@ -39,6 +39,7 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
         let ViewControllerOrder2Size = segue.destination as! ViewControllerOrder2Size
         
         ViewControllerOrder2Size.resultMainTitle = resultSelectedTitle
+        
         
     }
     
