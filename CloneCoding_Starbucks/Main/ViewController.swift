@@ -11,11 +11,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var alphaHeaderView: UIView!
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var viewStartApp: UIView!
     @IBOutlet weak var viewHeaderBottom: UIView!
     
     //헤더뷰의 최대높이값과 최소높이값
-    let maxHeight = (UIScreen.main.bounds.size.height)/2
+    let maxHeight: CGFloat = 400.0
     let minHeight: CGFloat = 50.0
 
     @IBOutlet weak var mainScrollView: UIScrollView! {
@@ -32,10 +33,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print(scrollView.contentOffset.y)
+        print(scrollView.contentOffset.y)
         let scrollOffset = scrollView.contentOffset.y
-        if scrollOffset > -maxHeight && scrollOffset < -48{
+        
+        if scrollOffset > -maxHeight && scrollOffset < -minHeight{
             headerView.transform = CGAffineTransform(translationX: 0, y:abs(scrollOffset)-maxHeight)
+//            headerViewHeight.constant = max(abs(scrollView.contentOffset.y), minHeight)
             
             let persent = (-scrollOffset-100)/50
             alphaHeaderView.alpha = persent

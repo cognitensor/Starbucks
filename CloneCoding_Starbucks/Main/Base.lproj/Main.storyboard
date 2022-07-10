@@ -285,6 +285,7 @@
                         <outlet property="headerView" destination="T5e-mZ-jfS" id="MYA-ZS-yke"/>
                         <outlet property="headerViewHeight" destination="FQ0-xR-IA4" id="L3a-6l-5QQ"/>
                         <outlet property="mainScrollView" destination="aQ8-a1-h9b" id="92F-l1-XrX"/>
+                        <outlet property="topView" destination="XRX-fY-UfA" id="DVI-99-eoa"/>
                         <outlet property="viewHeaderBottom" destination="XRX-fY-UfA" id="ps1-cf-woR"/>
                         <outlet property="viewStartApp" destination="Yun-8Z-IIa" id="Hma-cA-McD"/>
                     </connections>

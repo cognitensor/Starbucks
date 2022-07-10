@@ -19,6 +19,53 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
     @IBOutlet weak var btn1Maejang: UIButton!
     @IBOutlet weak var btn2Mine: UIButton!
     @IBOutlet weak var btn3Once: UIButton!
+
+    @IBOutlet weak var labelNum: UILabel!
+    @IBOutlet weak var labelTotalPrice: UILabel!
+    
+    @IBAction func selectOptionBtnAction(_ sender: UIButton) {
+        for btn in arrayBtnCup {
+            if btn == sender {
+                btn.isSelected = true
+                btn.backgroundColor = UIColor(rgb: 0x4AA56B)
+                btn.setTitleColor(UIColor(rgb: 0xFFFFFF), for: .normal)
+                
+            } else {
+                btn.isSelected = false
+                btn.backgroundColor = UIColor.white
+                btn.setTitleColor(UIColor(rgb: 0x000000), for: .normal)
+            }
+        }
+    }
+    
+    
+    var numCount: Int = 1
+    var totalPrice: Int = 5000
+    var onePrice: Int = 5000
+    
+    @IBAction func btnPlusAction(_ sender: Any) {
+        numCount = numCount+1
+        labelNum.text = String(numCount)
+        totalPrice = totalPrice+onePrice
+        labelTotalPrice.text = "\(String(totalPrice))원"
+    }
+
+    @IBAction func btnMinusAction(_ sender: Any) {
+        if numCount > 0 {
+            numCount = numCount-1
+            labelNum.text = String(numCount)
+            totalPrice = totalPrice-onePrice
+            labelTotalPrice.text = "\(String(totalPrice))원"
+            
+        }
+        
+    
+    }
+    
+    
+    
+    
+    var arrayBtnCup = [UIButton]()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let ViewControllerOrderLogin = segue.destination as! ViewControllerOrderLogin
@@ -33,7 +80,7 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
     }
     
     
-    var arrayBtnCup = [UIButton]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,21 +133,7 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
     }
     
     
-    @IBAction func selectOptionBtnAction(_ sender: UIButton) {
-        for btn in arrayBtnCup {
-            if btn == sender {
-                btn.isSelected = true
-                btn.backgroundColor = UIColor(rgb: 0x4AA56B)
-                btn.setTitleColor(UIColor(rgb: 0xFFFFFF), for: .normal)
-                
-            } else {
-                btn.isSelected = false
-                btn.backgroundColor = UIColor.white
-                btn.setTitleColor(UIColor(rgb: 0x000000), for: .normal)
-            }
-        }
-    }
-    
+
     
 
 }
