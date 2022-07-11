@@ -43,8 +43,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             let persent = (-scrollOffset-100)/50
             alphaHeaderView.alpha = persent
         }
-      }
-    
+    }
 
     
     
