@@ -136,8 +136,8 @@
 				F62FB58D287B010000D519E5 /* ViewControllerOrderLogin.swift */,
 				F62FB58F287B385400D519E5 /* ViewControllerOrderLocation.swift */,
 				F69DFBDF287B48F80010B620 /* ViewControllerOrderLocation2.swift */,
-				F69DFBE3287B9F0D0010B620 /* ViewControllerOrderPayResult.swift */,
 				F69DFBE1287B6EBB0010B620 /* ViewControllerOrderPay.swift */,
+				F69DFBE3287B9F0D0010B620 /* ViewControllerOrderPayResult.swift */,
 				F65763E62876EF8C00E7DF01 /* TableViewCell3Order.xib */,
 				F65763E82876F3DC00E7DF01 /* TableViewCell3Order.swift */,
 			);

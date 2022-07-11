@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     
+    var orderResult: String = ""
+    @IBOutlet weak var orderResultImage: UIImageView!
+    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var alphaHeaderView: UIView!
     @IBOutlet weak var topView: UIView!
@@ -66,13 +69,30 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         viewStartApp.layer.shadowRadius = 5
         
         
+        orderResultImage.layer.cornerRadius = orderResultImage.frame.height/2
+        
         //푸시알림권한요청함수 호출
         notificationPermission()
+        viewOrderResult.isHidden = true
         
     }
     
+    @IBOutlet weak var viewOrderResult: UIView!
+    
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
+        if orderResult == "주문완료" {
+            //스토리보드의 이름으로 스토리보드 연결
+            let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
+            //스토리보드와 ViewController파일 연결
+            let ViewControllerOrderPayResult = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrderPayResult") as! ViewControllerOrderPayResult
+            
+            viewOrderResult.isHidden = false
+
+            ViewControllerOrderPayResult.modalPresentationStyle = .formSheet
+            self.present(ViewControllerOrderPayResult, animated: true, completion: nil)
+            
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

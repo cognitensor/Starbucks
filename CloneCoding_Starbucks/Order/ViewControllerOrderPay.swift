@@ -27,14 +27,28 @@ class ViewControllerOrderPay: UIViewController {
     }
     @IBAction func btnTotalPayAction(_ sender: Any) {
         
-//        self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
-        let ViewControllerOrderPayResult = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderPayResult") as! ViewControllerOrderPayResult
-
-        guard let pvc = self.presentingViewController else { return }
-
-        self.view.window?.rootViewController?.dismiss(animated: false) {
-            pvc.present(ViewControllerOrderPayResult, animated: true, completion: nil)
+        for v in view.subviews{
+           v.removeFromSuperview()
         }
+        //스토리보드의 이름으로 스토리보드 연결
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //스토리보드와 ViewController파일 연결
+        let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+        viewController.orderResult = "주문완료"
+        
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: true, completion: nil)
+        
+        
+//        self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
+//        let ViewControllerOrderPayResult = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderPayResult") as! ViewControllerOrderPayResult
+//
+//        guard let pvc = self.presentingViewController else { return }
+//
+//        self.view.window?.rootViewController?.dismiss(animated: false) {
+//            pvc.present(ViewControllerOrderPayResult, animated: true, completion: nil)
+//        }
         
     }
     

@@ -9,9 +9,13 @@ import UIKit
 
 class ViewControllerOrderPayResult: UIViewController {
 
+    @IBOutlet weak var imageViewMenu: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        imageViewMenu.layer.cornerRadius = imageViewMenu.frame.height/2
         // Do any additional setup after loading the view.
     }
     

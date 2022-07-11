@@ -33,15 +33,14 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     @IBAction func naviLeftBtnTabAction(_ sender: Any) {
         dismiss(animated: false)
     }
-    
-    //세그로 연결했을때의 결과 값 전달
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ViewControllerOrder2Size = segue.destination as! ViewControllerOrder2Size
+    @IBAction func btnAction(_ sender: Any) {
+        let ViewControllerOrder2Size = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrder2Size") as! ViewControllerOrder2Size
         
         ViewControllerOrder2Size.resultMainTitle = resultSelectedTitle
         ViewControllerOrder2Size.resultMainImage = resultSelectedTitleImage
         
-        
+        ViewControllerOrder2Size.modalPresentationStyle = .formSheet
+        self.present(ViewControllerOrder2Size, animated: true, completion: nil)
     }
     
     @IBOutlet weak var mainScrollView: UIScrollView! {
