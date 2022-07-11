@@ -39,6 +39,7 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
         let ViewControllerOrder2Size = segue.destination as! ViewControllerOrder2Size
         
         ViewControllerOrder2Size.resultMainTitle = resultSelectedTitle
+        ViewControllerOrder2Size.resultMainImage = resultSelectedTitleImage
         
         
     }
@@ -127,6 +128,7 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     override func viewDidDisappear(_ animated: Bool) {
         print("viewDidDisappear 3rd_1")
     }
+
     
 
 }

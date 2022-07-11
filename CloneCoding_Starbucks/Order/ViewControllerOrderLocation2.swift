@@ -13,15 +13,19 @@ class ViewControllerOrderLocation2: UIViewController {
     var didDismiss2: (() -> Void)?
     
 
-    @IBAction func btnBack(_ sender: Any) {        
-        willDismiss2?()
-
-        dismiss(animated: false) {
-            self.didDismiss2?()
-        }
+    @IBAction func btnBack(_ sender: Any) {
+        dismiss(animated: false)
     }
     
-    
+    @IBAction func btnAction(_ sender: Any) {
+        let ViewControllerOrderPay = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderPay") as! ViewControllerOrderPay
+
+        guard let pvc = self.presentingViewController else { return }
+
+        self.dismiss(animated: false) {
+            pvc.present(ViewControllerOrderPay, animated: true, completion: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,7 @@ class ViewControllerOrderLocation2: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         print("viewDidDisappear 3rd_Location2")
+
     }
 
 

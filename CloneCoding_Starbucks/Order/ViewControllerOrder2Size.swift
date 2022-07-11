@@ -7,14 +7,15 @@
 
 import UIKit
 
-class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
+class ViewControllerOrder2Size: UIViewController {
     
     var resultMainTitle: String = ""
+    var resultMainImage: String = ""
     
     @IBOutlet weak var labelMainTitle: UILabel!
     @IBOutlet weak var viewOptionShawdow: UIView!
     
-    @IBOutlet var viewFullBg: UIView!
+//    @IBOutlet var viewFullBg: UIView!
     
     @IBOutlet weak var btn1Maejang: UIButton!
     @IBOutlet weak var btn2Mine: UIButton!
@@ -23,6 +24,10 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
     @IBOutlet weak var labelNum: UILabel!
     @IBOutlet weak var labelTotalPrice: UILabel!
     
+    
+    var arrayBtnCup = [UIButton]()
+    
+    //버튼 하나만 선택
     @IBAction func selectOptionBtnAction(_ sender: UIButton) {
         for btn in arrayBtnCup {
             if btn == sender {
@@ -39,6 +44,7 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
     }
     
     
+    //수량선택, 가격변동
     var numCount: Int = 1
     var totalPrice: Int = 5000
     var onePrice: Int = 5000
@@ -47,7 +53,7 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
         numCount = numCount+1
         labelNum.text = String(numCount)
         totalPrice = totalPrice+onePrice
-        labelTotalPrice.text = "\(String(totalPrice))원"
+        labelTotalPrice.text = "\(numberFormatter(number: totalPrice))원"
     }
 
     @IBAction func btnMinusAction(_ sender: Any) {
@@ -55,31 +61,38 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
             numCount = numCount-1
             labelNum.text = String(numCount)
             totalPrice = totalPrice-onePrice
-            labelTotalPrice.text = "\(String(totalPrice))원"
+            labelTotalPrice.text = "\(numberFormatter(number: totalPrice))원"
             
         }
+    }
+    
+    
+    @IBAction func btnAction(_ sender: Any) {
+        UserDefaults.standard.set(labelMainTitle.text, forKey: "MenuTitle")
+        UserDefaults.standard.set(numberFormatter(number: onePrice), forKey: "MenuOnePrice")
+        UserDefaults.standard.set(labelTotalPrice.text, forKey: "MenuTotalPrice")
+        UserDefaults.standard.set(resultMainImage, forKey: "MenuImage")
         
-    
-    }
-    
-    
-    
-    
-    var arrayBtnCup = [UIButton]()
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ViewControllerOrderLogin = segue.destination as! ViewControllerOrderLogin
+        let ViewControllerOrderLogin = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderLogin") as! ViewControllerOrderLogin
         
-        ViewControllerOrderLogin.fullbgDelegate = self
-        viewFullBg.isHidden = false
+        ViewControllerOrderLogin.modalPresentationStyle = .overCurrentContext
+        self.present(ViewControllerOrderLogin, animated: true, completion: nil)
+        
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let ViewControllerOrderLogin = segue.destination as! ViewControllerOrderLogin
+//        
+////        ViewControllerOrderLogin.fullbgDelegate = self
+////        viewFullBg.isHidden = false
+//        
+//      
+//    }
     
-    func presentFullBg(_ controller: ViewControllerOrderLogin, fullIsHidden: Bool) {
-        viewFullBg.isHidden = fullIsHidden
-    }
     
-    
+//    func presentFullBg(_ controller: ViewControllerOrderLogin, fullIsHidden: Bool) {
+//        viewFullBg.isHidden = fullIsHidden
+//    }
     
     
     override func viewDidLoad() {
@@ -87,6 +100,7 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
         print("viewDidLoad 3rd_2")
         
         labelMainTitle.text = resultMainTitle
+        
         
         viewOptionShawdow.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기
         viewOptionShawdow.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
@@ -130,9 +144,16 @@ class ViewControllerOrder2Size: UIViewController, FullBgDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         print("viewDidDisappear 3rd_2")
+
+        
     }
     
-    
+    func numberFormatter(number: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter.string(from: NSNumber(value: number))!
+    }
 
     
 

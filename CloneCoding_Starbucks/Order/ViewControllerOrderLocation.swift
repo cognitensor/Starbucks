@@ -23,24 +23,16 @@ class ViewControllerOrderLocation: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    @IBAction func btnAction(_ sender: Any) {
+        let viewControllerOrderLocation2 = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderLocation2") as! ViewControllerOrderLocation2
 
-        let viewControllerOrderLocation2 = segue.destination as! ViewControllerOrderLocation2
+        guard let pvc = self.presentingViewController else { return }
 
-        viewControllerOrderLocation2.willDismiss2 = {
-            self.view.isHidden = true
+        self.dismiss(animated: false) {
+            pvc.present(viewControllerOrderLocation2, animated: true, completion: nil)
         }
-
-        viewControllerOrderLocation2.didDismiss2 = {
-            self.dismiss(animated: false)
-            self.didDismiss?()
-            
-        }
-        
-
-
     }
+    
     
     
     override func viewDidLoad() {
@@ -65,9 +57,7 @@ class ViewControllerOrderLocation: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         print("viewWillDisappear 3rd_Location")
-//        willDismiss?()
-        
-        
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {

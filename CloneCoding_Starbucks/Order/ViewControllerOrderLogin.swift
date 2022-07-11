@@ -7,35 +7,46 @@
 
 import UIKit
 
-protocol FullBgDelegate {
-    func presentFullBg(_ controller: ViewControllerOrderLogin, fullIsHidden: Bool)
-}
+//protocol FullBgDelegate {
+//    func presentFullBg(_ controller: ViewControllerOrderLogin, fullIsHidden: Bool)
+//}
 
 class ViewControllerOrderLogin: UIViewController {
     
+//    var fullbgDelegate: FullBgDelegate?
+    
     @IBOutlet weak var labelContent: UILabel!
     
-    var fullbgDelegate: FullBgDelegate?
-
     @IBAction func btnClose(_ sender: Any) {
         dismiss(animated: true)
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func btnAction(_ sender: Any) {
+        let ViewControllerOrderLocation = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderLocation") as! ViewControllerOrderLocation
 
-        let viewControllerOrderLocation = segue.destination as! ViewControllerOrderLocation
-        self.view.isHidden = true
-        
-        viewControllerOrderLocation.willDismiss = {
-            self.view.isHidden = true
+        guard let pvc = self.presentingViewController else { return }
+
+        self.dismiss(animated: false) {
+            pvc.present(ViewControllerOrderLocation, animated: true, completion: nil)
         }
-
-        viewControllerOrderLocation.didDismiss = {
-            self.dismiss(animated: false)
-        }
-
     }
+    
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        let viewControllerOrderLocation = segue.destination as! ViewControllerOrderLocation
+//        self.view.isHidden = true
+//        
+//        viewControllerOrderLocation.willDismiss = {
+//            self.view.isHidden = true
+//        }
+//
+//        viewControllerOrderLocation.didDismiss = {
+//            self.dismiss(animated: false)
+//        }
+//        
+//        
+//
+//    }
 
     
     
@@ -60,7 +71,7 @@ class ViewControllerOrderLogin: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         print("viewWillDisappear 3rd_Login")
-        fullbgDelegate?.presentFullBg(self, fullIsHidden: true)
+//        fullbgDelegate?.presentFullBg(self, fullIsHidden: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
