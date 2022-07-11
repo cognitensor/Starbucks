@@ -51,6 +51,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
 
     
+    var viewBlur: UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         //푸시알림권한요청함수 호출
         notificationPermission()
         
-//        viewOrderResult.isHidden = true
+        
+        //뷰 배경 블러효과
+        viewBlur = UIVisualEffectView()
+        viewBlur.effect = UIBlurEffect(style: .regular)
+        //viewMain에 Blur 효과가 적용된 EffectView 추가
+        self.viewOrderResult.addSubview(viewBlur)
+        viewBlur.frame = self.viewOrderResult.bounds
     }
     
     
@@ -94,7 +101,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             ViewControllerOrderPayResult.modalPresentationStyle = .formSheet
             self.present(ViewControllerOrderPayResult, animated: true, completion: nil)
         } else {
-            viewOrderResult.isHidden = true
+            viewOrderResult.isHidden = false
         }
     }
     

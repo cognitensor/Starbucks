@@ -219,6 +219,45 @@
                                             <constraint firstAttribute="bottom" secondItem="IhU-nJ-onZ" secondAttribute="bottom" id="oIL-6p-AHe"/>
                                         </constraints>
                                     </scrollView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-Yf-ioW" userLabel="ViewOrderResult">
+                                        <rect key="frame" x="0.0" y="659" width="414" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_14brewed" translatesAutoresizingMaskIntoConstraints="NO" id="PvD-4f-qf7">
+                                                <rect key="frame" x="20" y="2.5" width="55" height="55"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="55" id="L2Y-6Y-chU"/>
+                                                    <constraint firstAttribute="height" constant="55" id="phD-9x-W3W"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-ap-DRU">
+                                                <rect key="frame" x="85" y="8" width="309" height="44"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신월IC DT점(매장내 직접 수령)에서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwI-0D-rFP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주문을 확인하고 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9F-qI-7zL">
+                                                        <rect key="frame" x="0.0" y="22" width="309" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.47985435637417218" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="2jO-uA-apn"/>
+                                            <constraint firstItem="s7V-ap-DRU" firstAttribute="height" secondItem="PvD-4f-qf7" secondAttribute="height" multiplier="0.8" id="9RG-NQ-fdK"/>
+                                            <constraint firstItem="s7V-ap-DRU" firstAttribute="leading" secondItem="PvD-4f-qf7" secondAttribute="trailing" constant="10" id="ACm-Lz-fG2"/>
+                                            <constraint firstItem="s7V-ap-DRU" firstAttribute="centerY" secondItem="cmc-Yf-ioW" secondAttribute="centerY" id="BKQ-9N-VbP"/>
+                                            <constraint firstItem="PvD-4f-qf7" firstAttribute="centerY" secondItem="cmc-Yf-ioW" secondAttribute="centerY" id="BsF-fp-Ma4"/>
+                                            <constraint firstItem="PvD-4f-qf7" firstAttribute="leading" secondItem="cmc-Yf-ioW" secondAttribute="leading" constant="20" id="n57-L8-2BN"/>
+                                            <constraint firstAttribute="trailing" secondItem="s7V-ap-DRU" secondAttribute="trailing" constant="20" id="oWl-tv-fOT"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5e-mZ-jfS" userLabel="HeaderView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                         <subviews>
@@ -361,53 +400,15 @@
                                             <constraint firstItem="WOl-ab-Bbu" firstAttribute="leading" secondItem="T5e-mZ-jfS" secondAttribute="leading" id="k5h-fp-b4n"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-Yf-ioW" userLabel="ViewOrderResult">
-                                        <rect key="frame" x="0.0" y="709" width="414" height="60"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_14brewed" translatesAutoresizingMaskIntoConstraints="NO" id="PvD-4f-qf7">
-                                                <rect key="frame" x="20" y="2.5" width="55" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="55" id="L2Y-6Y-chU"/>
-                                                    <constraint firstAttribute="height" constant="55" id="phD-9x-W3W"/>
-                                                </constraints>
-                                            </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-ap-DRU">
-                                                <rect key="frame" x="85" y="8" width="309" height="44"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신월IC DT점(매장내 직접 수령)에서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwI-0D-rFP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="22"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주문을 확인하고 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9F-qI-7zL">
-                                                        <rect key="frame" x="0.0" y="22" width="309" height="22"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.90094681291390732" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="2jO-uA-apn"/>
-                                            <constraint firstItem="s7V-ap-DRU" firstAttribute="height" secondItem="PvD-4f-qf7" secondAttribute="height" multiplier="0.8" id="9RG-NQ-fdK"/>
-                                            <constraint firstItem="s7V-ap-DRU" firstAttribute="leading" secondItem="PvD-4f-qf7" secondAttribute="trailing" constant="10" id="ACm-Lz-fG2"/>
-                                            <constraint firstItem="s7V-ap-DRU" firstAttribute="centerY" secondItem="cmc-Yf-ioW" secondAttribute="centerY" id="BKQ-9N-VbP"/>
-                                            <constraint firstItem="PvD-4f-qf7" firstAttribute="centerY" secondItem="cmc-Yf-ioW" secondAttribute="centerY" id="BsF-fp-Ma4"/>
-                                            <constraint firstItem="PvD-4f-qf7" firstAttribute="leading" secondItem="cmc-Yf-ioW" secondAttribute="leading" constant="20" id="n57-L8-2BN"/>
-                                            <constraint firstAttribute="trailing" secondItem="s7V-ap-DRU" secondAttribute="trailing" constant="20" id="oWl-tv-fOT"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="2aT-Ns-hNl"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="T5e-mZ-jfS" firstAttribute="top" secondItem="udl-gJ-BHc" secondAttribute="top" id="0GU-3W-KAQ"/>
                                     <constraint firstAttribute="bottom" secondItem="aQ8-a1-h9b" secondAttribute="bottom" id="4y2-67-UqI"/>
                                     <constraint firstItem="aQ8-a1-h9b" firstAttribute="bottom" secondItem="udl-gJ-BHc" secondAttribute="bottom" id="IKR-sR-ypF"/>
                                     <constraint firstAttribute="trailing" secondItem="T5e-mZ-jfS" secondAttribute="trailing" id="W0I-nb-TU7"/>
-                                    <constraint firstAttribute="bottom" secondItem="cmc-Yf-ioW" secondAttribute="bottom" id="WA7-qi-KCM"/>
+                                    <constraint firstItem="2aT-Ns-hNl" firstAttribute="bottom" secondItem="cmc-Yf-ioW" secondAttribute="bottom" constant="50" id="WA7-qi-KCM"/>
                                     <constraint firstItem="cmc-Yf-ioW" firstAttribute="leading" secondItem="udl-gJ-BHc" secondAttribute="leading" id="ZR3-s4-7So"/>
                                     <constraint firstItem="aQ8-a1-h9b" firstAttribute="top" secondItem="udl-gJ-BHc" secondAttribute="top" id="a6q-Mu-EhK"/>
                                     <constraint firstItem="T5e-mZ-jfS" firstAttribute="leading" secondItem="udl-gJ-BHc" secondAttribute="leading" id="gV6-jv-EI7"/>
