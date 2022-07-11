@@ -10,7 +10,9 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate {
     
     var orderResult: String = ""
-    @IBOutlet weak var orderResultImage: UIImageView!
+    
+    @IBOutlet weak var viewOrderResult: UIView!
+    @IBOutlet weak var imageViewOrderResult: UIImageView!
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var alphaHeaderView: UIView!
@@ -36,7 +38,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
+//        print(scrollView.contentOffset.y)
         let scrollOffset = scrollView.contentOffset.y
         
         if scrollOffset > -maxHeight && scrollOffset < -minHeight{
@@ -69,15 +71,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         viewStartApp.layer.shadowRadius = 5
         
         
-        orderResultImage.layer.cornerRadius = orderResultImage.frame.height/2
+        imageViewOrderResult.layer.cornerRadius = imageViewOrderResult.frame.height/2
         
         //푸시알림권한요청함수 호출
         notificationPermission()
-        viewOrderResult.isHidden = true
         
+//        viewOrderResult.isHidden = true
     }
     
-    @IBOutlet weak var viewOrderResult: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
@@ -86,12 +87,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
             //스토리보드와 ViewController파일 연결
             let ViewControllerOrderPayResult = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrderPayResult") as! ViewControllerOrderPayResult
-            
+
+            imageViewOrderResult.image = UIImage(named: UserDefaults.standard.string(forKey: "MenuImage")!)
             viewOrderResult.isHidden = false
 
             ViewControllerOrderPayResult.modalPresentationStyle = .formSheet
             self.present(ViewControllerOrderPayResult, animated: true, completion: nil)
-            
+        } else {
+            viewOrderResult.isHidden = true
         }
     }
     

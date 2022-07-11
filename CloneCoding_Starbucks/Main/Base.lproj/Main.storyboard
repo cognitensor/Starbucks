@@ -364,24 +364,24 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmc-Yf-ioW" userLabel="ViewOrderResult">
                                         <rect key="frame" x="0.0" y="709" width="414" height="60"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_14brewed" translatesAutoresizingMaskIntoConstraints="NO" id="PvD-4f-qf7">
-                                                <rect key="frame" x="10" y="2.5" width="55" height="55"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_14brewed" translatesAutoresizingMaskIntoConstraints="NO" id="PvD-4f-qf7">
+                                                <rect key="frame" x="20" y="2.5" width="55" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="L2Y-6Y-chU"/>
                                                     <constraint firstAttribute="height" constant="55" id="phD-9x-W3W"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="s7V-ap-DRU">
-                                                <rect key="frame" x="75" y="8" width="319" height="44"/>
+                                                <rect key="frame" x="85" y="8" width="309" height="44"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신월IC DT점(매장내 직접 수령)에서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwI-0D-rFP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주문을 확인하고 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9F-qI-7zL">
-                                                        <rect key="frame" x="0.0" y="22" width="319" height="22"/>
+                                                        <rect key="frame" x="0.0" y="22" width="309" height="22"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -396,7 +396,7 @@
                                             <constraint firstItem="s7V-ap-DRU" firstAttribute="leading" secondItem="PvD-4f-qf7" secondAttribute="trailing" constant="10" id="ACm-Lz-fG2"/>
                                             <constraint firstItem="s7V-ap-DRU" firstAttribute="centerY" secondItem="cmc-Yf-ioW" secondAttribute="centerY" id="BKQ-9N-VbP"/>
                                             <constraint firstItem="PvD-4f-qf7" firstAttribute="centerY" secondItem="cmc-Yf-ioW" secondAttribute="centerY" id="BsF-fp-Ma4"/>
-                                            <constraint firstItem="PvD-4f-qf7" firstAttribute="leading" secondItem="cmc-Yf-ioW" secondAttribute="leading" constant="10" id="n57-L8-2BN"/>
+                                            <constraint firstItem="PvD-4f-qf7" firstAttribute="leading" secondItem="cmc-Yf-ioW" secondAttribute="leading" constant="20" id="n57-L8-2BN"/>
                                             <constraint firstAttribute="trailing" secondItem="s7V-ap-DRU" secondAttribute="trailing" constant="20" id="oWl-tv-fOT"/>
                                         </constraints>
                                     </view>
@@ -405,8 +405,9 @@
                                 <constraints>
                                     <constraint firstItem="T5e-mZ-jfS" firstAttribute="top" secondItem="udl-gJ-BHc" secondAttribute="top" id="0GU-3W-KAQ"/>
                                     <constraint firstAttribute="bottom" secondItem="aQ8-a1-h9b" secondAttribute="bottom" id="4y2-67-UqI"/>
-                                    <constraint firstItem="aQ8-a1-h9b" firstAttribute="bottom" secondItem="cmc-Yf-ioW" secondAttribute="bottom" id="IKR-sR-ypF"/>
+                                    <constraint firstItem="aQ8-a1-h9b" firstAttribute="bottom" secondItem="udl-gJ-BHc" secondAttribute="bottom" id="IKR-sR-ypF"/>
                                     <constraint firstAttribute="trailing" secondItem="T5e-mZ-jfS" secondAttribute="trailing" id="W0I-nb-TU7"/>
+                                    <constraint firstAttribute="bottom" secondItem="cmc-Yf-ioW" secondAttribute="bottom" id="WA7-qi-KCM"/>
                                     <constraint firstItem="cmc-Yf-ioW" firstAttribute="leading" secondItem="udl-gJ-BHc" secondAttribute="leading" id="ZR3-s4-7So"/>
                                     <constraint firstItem="aQ8-a1-h9b" firstAttribute="top" secondItem="udl-gJ-BHc" secondAttribute="top" id="a6q-Mu-EhK"/>
                                     <constraint firstItem="T5e-mZ-jfS" firstAttribute="leading" secondItem="udl-gJ-BHc" secondAttribute="leading" id="gV6-jv-EI7"/>
@@ -430,8 +431,8 @@
                         <outlet property="alphaHeaderView" destination="WOl-ab-Bbu" id="2Yq-X9-8nS"/>
                         <outlet property="headerView" destination="T5e-mZ-jfS" id="MYA-ZS-yke"/>
                         <outlet property="headerViewHeight" destination="FQ0-xR-IA4" id="L3a-6l-5QQ"/>
+                        <outlet property="imageViewOrderResult" destination="PvD-4f-qf7" id="MvB-nr-Y8x"/>
                         <outlet property="mainScrollView" destination="aQ8-a1-h9b" id="92F-l1-XrX"/>
-                        <outlet property="orderResultImage" destination="PvD-4f-qf7" id="eL7-S7-L4P"/>
                         <outlet property="topView" destination="XRX-fY-UfA" id="DVI-99-eoa"/>
                         <outlet property="viewHeaderBottom" destination="XRX-fY-UfA" id="ps1-cf-woR"/>
                         <outlet property="viewOrderResult" destination="cmc-Yf-ioW" id="HXD-37-xxj"/>

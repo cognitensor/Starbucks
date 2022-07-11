@@ -10,12 +10,16 @@ import UIKit
 class ViewControllerOrderPayResult: UIViewController {
 
     @IBOutlet weak var imageViewMenu: UIImageView!
+    @IBOutlet weak var labelMenuTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         imageViewMenu.layer.cornerRadius = imageViewMenu.frame.height/2
+        
+        labelMenuTitle.text = UserDefaults.standard.string(forKey: "MenuTitle")
+        imageViewMenu.image = UIImage(named: UserDefaults.standard.string(forKey: "MenuImage")!)
         // Do any additional setup after loading the view.
     }
     

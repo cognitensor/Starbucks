@@ -27,9 +27,11 @@ class ViewControllerOrderPay: UIViewController {
     }
     @IBAction func btnTotalPayAction(_ sender: Any) {
         
+        //전에 있던 모든 뷰 지우기
         for v in view.subviews{
            v.removeFromSuperview()
         }
+        
         //스토리보드의 이름으로 스토리보드 연결
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         //스토리보드와 ViewController파일 연결
@@ -38,7 +40,7 @@ class ViewControllerOrderPay: UIViewController {
         viewController.orderResult = "주문완료"
         
         viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: true, completion: nil)
+        self.present(viewController, animated: false, completion: nil)
         
         
 //        self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
