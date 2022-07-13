@@ -16,10 +16,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var viewStartApp: UIView!
+    @IBOutlet weak var alphaHeaderView: UIView!
     
     //헤더뷰의 최대높이값과 최소높이값
     let maxHeight: CGFloat = 450.0
     
+    
+//    let height = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
 //    let statusHeight = ScreenUtils.statusBarHeight
     let minHeight: CGFloat = 50.0 + 50.0
 
@@ -117,27 +120,36 @@ class ViewController: UIViewController {
     
 }
 
- 
+//MARK: 메인 뷰 스크롤할 때
 extension ViewController: UIScrollViewDelegate {
-    //MARK: 메인 뷰 스크롤할 때
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollOffset = scrollView.contentOffset.y
-        print(scrollOffset)
+//        print(scrollOffset)
         
         if headerViewHeight.constant >= maxHeight+scrollOffset {
             //처음 전체 탑배너가 보일때
 //            print("1")
             headerViewHeight.constant = maxHeight
+            alphaHeaderView.isHidden = false
             
         } else if headerViewHeight.constant > minHeight+scrollOffset && headerViewHeight.constant < maxHeight+scrollOffset {
             //탑배너가 줄어들고 있을 때
 //            print("2")
             headerViewHeight.constant = headerViewHeight.constant - scrollOffset
             
+            
+            
+            //점점 올라갈 수록 흐리게
+            let persent = (headerViewHeight.constant)/400
+            alphaHeaderView.alpha = persent
+            alphaHeaderView.isHidden = false
+            scrollView.contentOffset.y = 0
         } else {
             //탑배너가 최소 사이즈로 줄어들었을 때
 //            print("3")
             headerViewHeight.constant = minHeight
+            alphaHeaderView.isHidden = true
         }
     }
 

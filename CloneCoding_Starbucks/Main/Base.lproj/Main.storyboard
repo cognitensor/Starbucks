@@ -45,7 +45,7 @@
                                                                 <rect key="frame" x="3" y="3" width="402" height="194"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="TC4-eF-Zjn">
-                                                                <rect key="frame" x="30" y="34.999999999999993" width="358" height="68.333333333333314"/>
+                                                                <rect key="frame" x="30" y="34.999999999999993" width="150.66666666666666" height="68.333333333333314"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="스타벅스 리워드 회원 신규가입 첫 구매 시, 무료음료 혜택을 드려요!">
                                                                         <attributes>
@@ -86,7 +86,7 @@
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="224.33000000000001" id="OGh-ID-EEL"/>
+                                                                    <constraint firstAttribute="width" constant="224.30000000000001" id="OGh-ID-EEL"/>
                                                                     <constraint firstAttribute="height" constant="34.329999999999998" id="YAt-xc-xMy"/>
                                                                 </constraints>
                                                             </stackView>
@@ -97,27 +97,25 @@
                                                             <constraint firstItem="TC4-eF-Zjn" firstAttribute="top" secondItem="hK9-Xa-Egl" secondAttribute="top" constant="35" id="A0V-X5-KxQ"/>
                                                             <constraint firstAttribute="bottom" secondItem="tPG-my-irS" secondAttribute="bottom" constant="3" id="ABX-Ye-3H7"/>
                                                             <constraint firstAttribute="trailing" secondItem="tPG-my-irS" secondAttribute="trailing" constant="3" id="Ge5-3I-OrN"/>
-                                                            <constraint firstItem="hiX-L6-T9D" firstAttribute="leading" secondItem="TC4-eF-Zjn" secondAttribute="leading" id="M3O-bd-3Eu"/>
-                                                            <constraint firstAttribute="trailing" secondItem="hiX-L6-T9D" secondAttribute="trailing" constant="153.66999999999999" id="Oc0-jX-Cbx"/>
                                                             <constraint firstItem="tPG-my-irS" firstAttribute="leading" secondItem="hK9-Xa-Egl" secondAttribute="leading" constant="3" id="S8q-fd-8Rh"/>
+                                                            <constraint firstItem="hiX-L6-T9D" firstAttribute="leading" secondItem="hK9-Xa-Egl" secondAttribute="leading" constant="30" id="ST3-mE-IgR"/>
                                                             <constraint firstAttribute="height" constant="200" id="TBC-b1-GmG"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TC4-eF-Zjn" secondAttribute="trailing" constant="20" symbolic="YES" id="VxO-rJ-D5Q"/>
                                                             <constraint firstItem="hiX-L6-T9D" firstAttribute="top" secondItem="TC4-eF-Zjn" secondAttribute="bottom" constant="24.329999999999998" id="Zlz-q2-0Bc"/>
                                                             <constraint firstAttribute="bottom" secondItem="hiX-L6-T9D" secondAttribute="bottom" constant="38" id="emg-3g-u6v"/>
-                                                            <constraint firstAttribute="trailing" secondItem="TC4-eF-Zjn" secondAttribute="trailing" constant="20" symbolic="YES" id="iAC-fc-oZV"/>
                                                             <constraint firstItem="tPG-my-irS" firstAttribute="top" secondItem="hK9-Xa-Egl" secondAttribute="top" constant="3" id="nr0-Fg-Ijb"/>
-                                                            <constraint firstAttribute="width" constant="408" id="ogG-X9-mFw"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="hK9-Xa-Egl" secondAttribute="trailing" constant="10" id="5o4-TP-EM5"/>
                                                     <constraint firstItem="Omk-j6-P3K" firstAttribute="leading" secondItem="ypf-BL-TPz" secondAttribute="leading" constant="20" id="9Oa-BZ-Y4o"/>
-                                                    <constraint firstItem="hK9-Xa-Egl" firstAttribute="leading" secondItem="ypf-BL-TPz" secondAttribute="leading" constant="10" id="Do8-qw-hRD"/>
+                                                    <constraint firstItem="hK9-Xa-Egl" firstAttribute="leading" secondItem="ypf-BL-TPz" secondAttribute="leading" constant="10" id="EF5-We-Fhg"/>
+                                                    <constraint firstItem="hK9-Xa-Egl" firstAttribute="top" secondItem="Omk-j6-P3K" secondAttribute="bottom" constant="20" id="JAh-5u-d8J"/>
                                                     <constraint firstAttribute="height" constant="400" id="OCc-9w-6eb"/>
-                                                    <constraint firstAttribute="trailing" secondItem="hK9-Xa-Egl" secondAttribute="trailing" constant="10" id="T9y-jb-397"/>
                                                     <constraint firstItem="Omk-j6-P3K" firstAttribute="top" secondItem="ypf-BL-TPz" secondAttribute="top" constant="85" id="Wnw-iE-gRD"/>
                                                     <constraint firstAttribute="trailing" secondItem="Omk-j6-P3K" secondAttribute="trailing" constant="20" id="c7g-Ps-De8"/>
-                                                    <constraint firstAttribute="bottom" secondItem="hK9-Xa-Egl" secondAttribute="bottom" constant="20" id="yBl-M8-Lxg"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRX-fY-UfA" userLabel="TopView">
@@ -430,6 +428,7 @@
                     <tabBarItem key="tabBarItem" title="" image="icon_home(gray)" selectedImage="icon_home" id="6NS-tT-kEb" userLabel="Tab Bar Item 1홈"/>
                     <size key="freeformSize" width="428" height="3000"/>
                     <connections>
+                        <outlet property="alphaHeaderView" destination="ypf-BL-TPz" id="dsO-Ks-dj7"/>
                         <outlet property="headerView" destination="T5e-mZ-jfS" id="MYA-ZS-yke"/>
                         <outlet property="headerViewHeight" destination="4vH-rI-FMO" id="c2Z-qc-XDo"/>
                         <outlet property="imageViewOrderResult" destination="PvD-4f-qf7" id="MvB-nr-Y8x"/>

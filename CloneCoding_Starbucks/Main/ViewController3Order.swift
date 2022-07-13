@@ -7,34 +7,22 @@
 
 import UIKit
 
-class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController3Order: UIViewController {
     
     let titleImageArray = ["order_1new", "order_2recommend", "order_3reserve", "order_4drip", "order_5refreshers", "order_6coldbrew", "order_7blonde", "order_8espresso", "order_9decaf", "order_10frappuccino", "order_11blended", "order_12fizzio", "order_13tevana", "order_14brewed", "order_15others", "order_16rtd"]
     let titleArray = ["NEW", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
     let subTitleArray = ["", "Recommend", "Reserve Espresso", "Reserve Drip", "Starbucks Refreshers", "Cold Brew", "Blonde Coffee", "Espresso", "Decaf Coffee", "Frappuccino", "Blended", "Starbucks Fizzio", "Teavana", "Brewed Coffee", "Others", "RTD"]
-    
-    
-    let maxHeight: CGFloat = 200.0
-    let minHeight: CGFloat = 150.0
+
     
     @IBOutlet weak var tableView3Order: UITableView!
-//    {
-//        didSet {
-//            tableView3Order.contentInset = UIEdgeInsets(top: maxHeight+10, left: 0, bottom: 0, right: 0)
-//        }
-//    }
-    
-    @IBOutlet weak var orderMainHeaderViewHeight: NSLayoutConstraint! {
-        didSet {
-            orderMainHeaderViewHeight.constant = maxHeight
-        }
-    }
     
     @IBOutlet weak var naviBarOrder: UINavigationBar!
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view4: UIView!
     @IBOutlet weak var viewOrderHeader: UIView!
-    @IBOutlet weak var viewBigTitle: UIView!
+    
+    @IBOutlet weak var naviTitle: UINavigationItem!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,14 +51,14 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         //셀가져온 리소스 등록 (여기서 ""이름은 xib파일에서 인스펙터(삼지창)에 있는 identifier)
         self.tableView3Order.register(tableViewCellNib, forCellReuseIdentifier: "TableViewCell3Order")
         
-//        self.tableView3Order.rowHeight = UITableView.automaticDimension
+        //테이블 각 셀의 높이
         self.tableView3Order.rowHeight = 90
         
         //****아주 중요****
         self.tableView3Order.delegate = self
         self.tableView3Order.dataSource = self
         
-        print("count : \(titleArray.count)")
+//        print("count : \(titleArray.count)")
         
     }
     
@@ -90,16 +78,19 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         print("viewDidDisappear 3rd")
     }
     
+}
+
+
+extension ViewController3Order: UITableViewDelegate {
     
-    @IBOutlet weak var naviTitle: UINavigationItem!
-    
-    //--UITableViewDelegate--
+    //테이블뷰 스크롤할 때
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+    
+        //스크롤할 때 LargeTitle 없애기
         naviTitle.largeTitleDisplayMode = .never
     
         let scrollOffset = scrollView.contentOffset.y
-        print(scrollOffset)
+//        print(scrollOffset)
         
         if scrollOffset <= 0 {
             naviTitle.largeTitleDisplayMode = .always
@@ -110,13 +101,18 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    //--UITableViewDataSource--
+    
+}
+
+
+//MARK: 테이블뷰데이터소스
+extension ViewController3Order: UITableViewDataSource{
     //테이블 뷰 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titleArray.count
     }
     
-    //각 셀에 대한 설정
+    //MARK: Oder테이블뷰 각 셀에 대한 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //셀 파일이랑 연결시키기
@@ -136,7 +132,7 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    //셀 클릭시
+    //MARK: Oder테이블뷰 셀 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //스토리보드의 이름으로 스토리보드 연결
@@ -159,7 +155,6 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 }
-
 
 
 //UILabel 자간 설정하는 클래스
