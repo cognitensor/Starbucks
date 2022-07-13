@@ -20,11 +20,7 @@ class ViewController: UIViewController {
     
     //헤더뷰의 최대높이값과 최소높이값
     let maxHeight: CGFloat = 450.0
-    
-    
-//    let height = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-//    let statusHeight = ScreenUtils.statusBarHeight
-    let minHeight: CGFloat = 50.0 + 50.0
+    let minHeight: CGFloat = 100.0
 
 
     @IBOutlet weak var mainScrollView: UIScrollView!
@@ -42,6 +38,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
+        
         
         //탭바 윗줄 없애기
         self.tabBarController?.tabBar.clipsToBounds = true
@@ -124,6 +121,7 @@ class ViewController: UIViewController {
 extension ViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
         let scrollOffset = scrollView.contentOffset.y
 //        print(scrollOffset)
         

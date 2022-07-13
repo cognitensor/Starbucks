@@ -17,6 +17,12 @@ class ViewControllerOrder2Size: UIViewController {
     
 //    @IBOutlet var viewFullBg: UIView!
     
+    
+    @IBOutlet weak var btn1Tall: UIButton!
+    @IBOutlet weak var btn2Grande: UIButton!
+    @IBOutlet weak var btn3Venti: UIButton!
+    
+    @IBOutlet weak var viewCupChoice: UIView!
     @IBOutlet weak var btn1Maejang: UIButton!
     @IBOutlet weak var btn2Mine: UIButton!
     @IBOutlet weak var btn3Once: UIButton!
@@ -25,15 +31,33 @@ class ViewControllerOrder2Size: UIViewController {
     @IBOutlet weak var labelTotalPrice: UILabel!
     
     
+    var arrayBtnSize = [UIButton]()
     var arrayBtnCup = [UIButton]()
     
-    //버튼 하나만 선택
+    //컵 사이즈 버튼 하나만 선택
+    @IBAction func selectSizeBtnAction(_ sender: UIButton) {
+        for btn in arrayBtnCup {
+            if btn == sender {
+                btn.isSelected = true
+                print("gpgpgp")
+                
+            } else {
+                btn.isSelected = false
+                
+            
+            }
+        }
+    }
+    
+    //컵 사이즈 버튼 하나만 선택
     @IBAction func selectOptionBtnAction(_ sender: UIButton) {
         for btn in arrayBtnCup {
             if btn == sender {
                 btn.isSelected = true
                 btn.backgroundColor = UIColor(rgb: 0x4AA56B)
-                btn.setTitleColor(UIColor(rgb: 0xFFFFFF), for: .normal)
+                //!!!!!이거 색상변경안됨
+                btn.setTitleColor(.white, for: .normal)
+
                 
             } else {
                 btn.isSelected = false
@@ -80,20 +104,6 @@ class ViewControllerOrder2Size: UIViewController {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let ViewControllerOrderLogin = segue.destination as! ViewControllerOrderLogin
-//        
-////        ViewControllerOrderLogin.fullbgDelegate = self
-////        viewFullBg.isHidden = false
-//        
-//      
-//    }
-    
-    
-//    func presentFullBg(_ controller: ViewControllerOrderLogin, fullIsHidden: Bool) {
-//        viewFullBg.isHidden = fullIsHidden
-//    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,25 +117,41 @@ class ViewControllerOrder2Size: UIViewController {
         viewOptionShawdow.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
         
         
+        viewCupChoice.layer.cornerRadius = 20 // 컵 선택 뷰의 꼭짓점 굴곡률
+        viewCupChoice.layer.borderWidth = 1 // 컵 선택 뷰의 테두리 굵기
+        viewCupChoice.layer.borderColor = UIColor.systemGray.cgColor // 컵 선택 뷰의 테두리 색상
+        
+        btn2Mine.layer.borderWidth = 1 // 개인컵 부분 테두리
+        btn2Mine.layer.borderColor = UIColor.systemGray.cgColor // 개인컵 부분 테두리 색상
+        
         //버튼 한쪽만 둥글게하기 (반지름은 높이의 반만큼해야 둥글게 됨)
-//            .layerMaxXMinYCorner : 우측상단 corner
-//            .layerMaxXMaxYCorner : 우측하단 corner
-//            .layerMinXMaxYCorner : 좌측하단 corner
-//            .layerMinXMinYCorner : 좌측상단 corner
+        //.layerMaxXMinYCorner : 우측상단 corner
+        //.layerMaxXMaxYCorner : 우측하단 corner
+        //.layerMinXMaxYCorner : 좌측하단 corner
+        //.layerMinXMinYCorner : 좌측상단 corner
         btn1Maejang.clipsToBounds = true
         btn1Maejang.layer.cornerRadius = 20
         btn1Maejang.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMinXMinYCorner)
         
         btn2Mine.clipsToBounds = true
-        
+                
         btn3Once.clipsToBounds = true
         btn3Once.layer.cornerRadius = 20
         btn3Once.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMaxXMinYCorner, .layerMaxXMaxYCorner)
+
         
-        //버튼배열만들기
+        //컵사이즈 버튼 배열 만들기
+        arrayBtnSize.append(btn1Tall)
+        arrayBtnSize.append(btn2Grande)
+        arrayBtnSize.append(btn3Venti)
+        
+        
+        //컵선택 버튼 배열 만들기
         arrayBtnCup.append(btn1Maejang)
         arrayBtnCup.append(btn2Mine)
         arrayBtnCup.append(btn3Once)
+        
+        
         
         
     }
