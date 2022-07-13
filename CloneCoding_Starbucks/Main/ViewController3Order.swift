@@ -17,11 +17,12 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     let maxHeight: CGFloat = 200.0
     let minHeight: CGFloat = 150.0
     
-    @IBOutlet weak var tableView3Order: UITableView! {
-        didSet {
-            tableView3Order.contentInset = UIEdgeInsets(top: maxHeight+10, left: 0, bottom: 0, right: 0)
-        }
-    }
+    @IBOutlet weak var tableView3Order: UITableView!
+//    {
+//        didSet {
+//            tableView3Order.contentInset = UIEdgeInsets(top: maxHeight+10, left: 0, bottom: 0, right: 0)
+//        }
+//    }
     
     @IBOutlet weak var orderMainHeaderViewHeight: NSLayoutConstraint! {
         didSet {
@@ -57,10 +58,9 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         view4.layer.shadowOpacity = 0.05                          //그림자 투명도 0이 투명 1이 불투명
         view4.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
         
-        //셀리소스파일 가져오기
+        //셀리소스파일 가져오기 (여기서 ""이름은 xib파일 이름!!)
         let tableViewCellNib = UINib(nibName: "TableViewCell3Order", bundle: nil)
-        
-        //셀가져온 리소스 등록
+        //셀가져온 리소스 등록 (여기서 ""이름은 xib파일에서 인스펙터(삼지창)에 있는 identifier)
         self.tableView3Order.register(tableViewCellNib, forCellReuseIdentifier: "TableViewCell3Order")
         
 //        self.tableView3Order.rowHeight = UITableView.automaticDimension
@@ -91,34 +91,24 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    
     @IBOutlet weak var naviTitle: UINavigationItem!
+    
     //--UITableViewDelegate--
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        naviTitle.largeTitleDisplayMode = .never
     
         let scrollOffset = scrollView.contentOffset.y
-//        print(scrollOffset)
+        print(scrollOffset)
         
-        if scrollOffset <= -maxHeight {
-            
-            //라지타이틀 생기게하기
+        if scrollOffset <= 0 {
             naviTitle.largeTitleDisplayMode = .always
-            
-        } else if scrollOffset > -maxHeight && scrollOffset < -145 {
-
-            viewOrderHeader.transform = CGAffineTransform(translationX: 0, y: abs(scrollOffset)-maxHeight)
-            
-            //라지타이틀 없애기
-            naviTitle.largeTitleDisplayMode = .never
-            
         } else {
             naviTitle.largeTitleDisplayMode = .never
         }
+
         
     }
-    
-    
-    
     
     //--UITableViewDataSource--
     //테이블 뷰 셀의 갯수
@@ -136,12 +126,8 @@ class ViewController3Order: UIViewController, UITableViewDelegate, UITableViewDa
         //셀 내용넣기
         cell.orderTitleLabel.text = titleArray[indexPath.row]
         cell.orderTitleImage.image = UIImage(named: titleImageArray[indexPath.row])
-        
-        if indexPath.row == 0 {
-            cell.orderSubTitleLabel.isHidden = true
-        } else {
-            cell.orderSubTitleLabel.text = subTitleArray[indexPath.row]
-        }
+        cell.orderSubTitleLabel.text = subTitleArray[indexPath.row]
+
         
         //클릭했을 때 배경이 회색으로 변하는 거 없애기
         cell.selectionStyle = .none

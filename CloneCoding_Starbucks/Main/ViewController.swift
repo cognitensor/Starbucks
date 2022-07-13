@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController {
     
     var orderResult: String = ""
     
@@ -15,21 +15,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var imageViewOrderResult: UIImageView!
     
     @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var alphaHeaderView: UIView!
-    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var viewStartApp: UIView!
-    @IBOutlet weak var viewHeaderBottom: UIView!
     
     //헤더뷰의 최대높이값과 최소높이값
-    let maxHeight: CGFloat = 400.0
-    let minHeight: CGFloat = 50.0
+    let maxHeight: CGFloat = 450.0
+    
+//    let statusHeight = ScreenUtils.statusBarHeight
+    let minHeight: CGFloat = 50.0 + 50.0
 
-    @IBOutlet weak var mainScrollView: UIScrollView! {
-        didSet {
-            mainScrollView.contentInset = UIEdgeInsets(top: maxHeight, left: 0, bottom: 0, right: 0)
-        }
-    }
-        
+
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint! {
         didSet {
             headerViewHeight.constant = maxHeight
@@ -37,19 +33,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
 
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print(scrollView.contentOffset.y)
-        let scrollOffset = scrollView.contentOffset.y
-        
-        if scrollOffset > -maxHeight && scrollOffset < -minHeight{
-            headerView.transform = CGAffineTransform(translationX: 0, y:abs(scrollOffset)-maxHeight)
-//            headerViewHeight.constant = max(abs(scrollView.contentOffset.y), minHeight)
-            
-            let persent = (-scrollOffset-100)/50
-            alphaHeaderView.alpha = persent
-        }
-    }
-
     
     var viewBlur: UIVisualEffectView!
     
@@ -57,11 +40,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         print("viewDidLoad")
         
-        
         //탭바 윗줄 없애기
         self.tabBarController?.tabBar.clipsToBounds = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
+        
         
         //스크롤뷰 scrollViewDidScroll 연결
         mainScrollView.delegate = self
@@ -82,8 +65,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         viewBlur = UIVisualEffectView()
         viewBlur.effect = UIBlurEffect(style: .regular)
         //viewMain에 Blur 효과가 적용된 EffectView 추가
-        self.viewOrderResult.addSubview(viewBlur)
-        viewBlur.frame = self.viewOrderResult.bounds
+        viewOrderResult.addSubview(viewBlur)
+        viewBlur.frame = viewOrderResult.bounds
+        viewOrderResult.sendSubviewToBack(viewBlur)
     }
     
     
@@ -101,7 +85,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             ViewControllerOrderPayResult.modalPresentationStyle = .formSheet
             self.present(ViewControllerOrderPayResult, animated: true, completion: nil)
         } else {
-            viewOrderResult.isHidden = false
+            viewOrderResult.isHidden = true
         }
     }
     
@@ -119,7 +103,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     
     
-    //푸시알림권한요청
+    //MARK: 함수:푸시알림권한요청
     func notificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge], completionHandler: {didAllow,Error in
             if didAllow {
@@ -129,6 +113,32 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             }
         })
     }
+    
+    
 }
 
  
+extension ViewController: UIScrollViewDelegate {
+    //MARK: 메인 뷰 스크롤할 때
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollOffset = scrollView.contentOffset.y
+        print(scrollOffset)
+        
+        if headerViewHeight.constant >= maxHeight+scrollOffset {
+            //처음 전체 탑배너가 보일때
+//            print("1")
+            headerViewHeight.constant = maxHeight
+            
+        } else if headerViewHeight.constant > minHeight+scrollOffset && headerViewHeight.constant < maxHeight+scrollOffset {
+            //탑배너가 줄어들고 있을 때
+//            print("2")
+            headerViewHeight.constant = headerViewHeight.constant - scrollOffset
+            
+        } else {
+            //탑배너가 최소 사이즈로 줄어들었을 때
+//            print("3")
+            headerViewHeight.constant = minHeight
+        }
+    }
+
+}
