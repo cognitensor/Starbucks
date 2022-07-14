@@ -436,45 +436,38 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4hg-K5-Mss">
                                                                 <rect key="frame" x="20" y="42" width="374" height="141.5"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oho-le-Wu5">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oho-le-Wu5">
                                                                         <rect key="frame" x="0.0" y="0.0" width="118" height="141.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="oho-le-Wu5" secondAttribute="height" multiplier="1:1.2" id="HA1-MV-G9p"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="filled">
-                                                                            <backgroundConfiguration key="background" image="bg_sizeTall2" imageContentMode="scaleAspectFit" strokeWidth="2">
-                                                                                <color key="strokeColor" red="0.31480523939999999" green="0.59815412759999997" blue="0.44311654569999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                            </backgroundConfiguration>
-                                                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </buttonConfiguration>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" backgroundImage="bg_sizeTall">
+                                                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="selectSizeBtnAction:" destination="C5q-lU-f9V" eventType="touchUpInside" id="1X9-1D-nEx"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-Gx-6nt">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-Gx-6nt">
                                                                         <rect key="frame" x="128" y="0.0" width="118" height="141.5"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="filled">
-                                                                            <backgroundConfiguration key="background" image="bg_sizeGrande" imageContentMode="scaleAspectFit" strokeWidth="2">
-                                                                                <color key="strokeColor" red="0.80781739949999998" green="0.80392366650000002" blue="0.8039215207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                            </backgroundConfiguration>
-                                                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </buttonConfiguration>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" backgroundImage="bg_sizeGrande">
+                                                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="selectSizeBtnAction:" destination="C5q-lU-f9V" eventType="touchUpInside" id="xhF-E1-Fpc"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-8J-4op">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-8J-4op">
                                                                         <rect key="frame" x="256" y="0.0" width="118" height="141.5"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="filled">
-                                                                            <backgroundConfiguration key="background" image="bg_sizeVenti" imageContentMode="scaleAspectFit" strokeWidth="2">
-                                                                                <color key="strokeColor" red="0.80781739949999998" green="0.80392366650000002" blue="0.8039215207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                            </backgroundConfiguration>
-                                                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </buttonConfiguration>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" backgroundImage="bg_sizeVenti">
+                                                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="selectSizeBtnAction:" destination="C5q-lU-f9V" eventType="touchUpInside" id="DaG-wB-6j0"/>
                                                                         </connections>
@@ -507,39 +500,38 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-nf-dke">
                                                                 <rect key="frame" x="20" y="42" width="374" height="40"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUZ-gk-3gP">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUZ-gk-3gP">
                                                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="40"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="filled" title="매장컵">
-                                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </buttonConfiguration>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="매장컵">
+                                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="selectOptionBtnAction:" destination="C5q-lU-f9V" eventType="touchUpInside" id="Fc6-gV-yOZ"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWN-hK-EGV">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWN-hK-EGV">
                                                                         <rect key="frame" x="124.5" y="0.0" width="125" height="40"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="filled" title="개인컵">
-                                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </buttonConfiguration>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="개인컵">
+                                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="selectOptionBtnAction:" destination="C5q-lU-f9V" eventType="touchUpInside" id="3Yy-PF-4fg"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1e-gr-42R">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1e-gr-42R">
                                                                         <rect key="frame" x="249.5" y="0.0" width="124.5" height="40"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="filled" title="일회용컵">
-                                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <color key="baseBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </buttonConfiguration>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="일회용컵">
+                                                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="selectOptionBtnAction:" destination="C5q-lU-f9V" eventType="touchUpInside" id="Du3-T6-Oky"/>
                                                                         </connections>
@@ -654,6 +646,7 @@
                                                                     <color key="baseForegroundColor" red="0.80781739949999998" green="0.80392366650000002" blue="0.8039215207" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
+                                                                    <action selector="btnMinus:" destination="C5q-lU-f9V" eventType="touchUpInside" id="FyV-iN-Mw7"/>
                                                                     <action selector="btnMinusAction:" destination="C5q-lU-f9V" eventType="touchUpInside" id="p5t-r0-Pqd"/>
                                                                 </connections>
                                                             </button>
@@ -797,6 +790,7 @@
                         <outlet property="btn2Mine" destination="DWN-hK-EGV" id="YlO-sR-Uif"/>
                         <outlet property="btn3Once" destination="e1e-gr-42R" id="UBm-n2-Wet"/>
                         <outlet property="btn3Venti" destination="aFE-8J-4op" id="ZaC-vX-IxS"/>
+                        <outlet property="btnMinus" destination="Jd6-1l-Ysf" id="jsm-Hr-lP4"/>
                         <outlet property="labelMainTitle" destination="t6K-iN-VFR" id="Zvm-kG-xlk"/>
                         <outlet property="labelNum" destination="Gum-Q0-wpB" id="Vwy-s5-Qdo"/>
                         <outlet property="labelTotalPrice" destination="aD6-hW-8xe" id="f3a-aP-9c1"/>
@@ -1676,7 +1670,7 @@
         <image name="bg_locationSelected" width="1125" height="2222"/>
         <image name="bg_payresult" width="1265" height="2475"/>
         <image name="bg_sizeGrande" width="253" height="289"/>
-        <image name="bg_sizeTall2" width="253" height="288"/>
+        <image name="bg_sizeTall" width="254" height="288"/>
         <image name="bg_sizeVenti" width="254" height="289"/>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>

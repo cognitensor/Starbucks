@@ -36,14 +36,36 @@ class ViewControllerOrder2Size: UIViewController {
     
     //컵 사이즈 버튼 하나만 선택
     @IBAction func selectSizeBtnAction(_ sender: UIButton) {
-        for btn in arrayBtnCup {
+        for btn in arrayBtnSize {
+            btn.layer.cornerRadius = 6
+
             if btn == sender {
                 btn.isSelected = true
-                print("gpgpgp")
+
+                btn.layer.borderWidth = 2
+                btn.layer.borderColor = UIColor(named: "sizeSelectColor")?.cgColor
                 
+                if btn == btn1Tall {
+                    btn.setBackgroundImage(UIImage(named: "bg_sizeTall2"), for: .selected)
+                } else if btn == btn2Grande {
+                    btn.setBackgroundImage(UIImage(named: "bg_sizeGrande2"), for: .selected)
+                } else {
+                    btn.setBackgroundImage(UIImage(named: "bg_sizeVenti2"), for: .selected)
+                }
+                    
             } else {
                 btn.isSelected = false
-                
+
+                btn.layer.borderWidth = 1
+                btn.layer.borderColor = UIColor.systemGray4.cgColor
+
+                if btn == btn1Tall {
+                    btn.setBackgroundImage(UIImage(named: "bg_sizeTall"), for: .normal)
+                } else if btn == btn2Grande {
+                    btn.setBackgroundImage(UIImage(named: "bg_sizeGrande"), for: .normal)
+                } else {
+                    btn.setBackgroundImage(UIImage(named: "bg_sizeVenti"), for: .normal)
+                }
             
             }
         }
@@ -54,15 +76,13 @@ class ViewControllerOrder2Size: UIViewController {
         for btn in arrayBtnCup {
             if btn == sender {
                 btn.isSelected = true
-                btn.backgroundColor = UIColor(rgb: 0x4AA56B)
-                //!!!!!이거 색상변경안됨
-                btn.setTitleColor(.white, for: .normal)
-
+                btn.backgroundColor = UIColor(named: "sizeSelectColor")
+                btn.setTitleColor(.white, for: .selected)
                 
             } else {
                 btn.isSelected = false
                 btn.backgroundColor = UIColor.white
-                btn.setTitleColor(UIColor(rgb: 0x000000), for: .normal)
+                btn.setTitleColor(.darkGray, for: .normal)
             }
         }
     }
@@ -73,20 +93,22 @@ class ViewControllerOrder2Size: UIViewController {
     var totalPrice: Int = 5000
     var onePrice: Int = 5000
     
+    @IBOutlet weak var btnMinus: UIButton!
+    //플러스버튼 누를 때
     @IBAction func btnPlusAction(_ sender: Any) {
         numCount = numCount+1
         labelNum.text = String(numCount)
         totalPrice = totalPrice+onePrice
         labelTotalPrice.text = "\(numberFormatter(number: totalPrice))원"
+        
     }
-
+    //마이너스버튼 누를 때
     @IBAction func btnMinusAction(_ sender: Any) {
-        if numCount > 0 {
+        if numCount > 1 {
             numCount = numCount-1
             labelNum.text = String(numCount)
             totalPrice = totalPrice-onePrice
             labelTotalPrice.text = "\(numberFormatter(number: totalPrice))원"
-            
         }
     }
     
@@ -117,12 +139,11 @@ class ViewControllerOrder2Size: UIViewController {
         viewOptionShawdow.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
         
         
+        
+        //컵 선택 배경
         viewCupChoice.layer.cornerRadius = 20 // 컵 선택 뷰의 꼭짓점 굴곡률
         viewCupChoice.layer.borderWidth = 1 // 컵 선택 뷰의 테두리 굵기
-        viewCupChoice.layer.borderColor = UIColor.systemGray.cgColor // 컵 선택 뷰의 테두리 색상
-        
-        btn2Mine.layer.borderWidth = 1 // 개인컵 부분 테두리
-        btn2Mine.layer.borderColor = UIColor.systemGray.cgColor // 개인컵 부분 테두리 색상
+        viewCupChoice.layer.borderColor = UIColor.systemGray4.cgColor // 컵 선택 뷰의 테두리 색상
         
         //버튼 한쪽만 둥글게하기 (반지름은 높이의 반만큼해야 둥글게 됨)
         //.layerMaxXMinYCorner : 우측상단 corner
@@ -134,6 +155,8 @@ class ViewControllerOrder2Size: UIViewController {
         btn1Maejang.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMaxYCorner, .layerMinXMinYCorner)
         
         btn2Mine.clipsToBounds = true
+        btn2Mine.layer.borderWidth = 1 // 개인컵 부분 테두리
+        btn2Mine.layer.borderColor = UIColor.systemGray4.cgColor // 개인컵 부분 테두리 색상
                 
         btn3Once.clipsToBounds = true
         btn3Once.layer.cornerRadius = 20
@@ -145,13 +168,27 @@ class ViewControllerOrder2Size: UIViewController {
         arrayBtnSize.append(btn2Grande)
         arrayBtnSize.append(btn3Venti)
         
+        //컵사이즈 버튼 테두리 설정
+        btn1Tall.isSelected = true
+        btn1Tall.layer.cornerRadius = 6
+        btn1Tall.layer.borderWidth = 2
+        btn1Tall.layer.borderColor = UIColor(named: "sizeSelectColor")?.cgColor
+        btn1Tall.setBackgroundImage(UIImage(named: "bg_sizeTall2"), for: .normal)
+        
+        btn2Grande.layer.cornerRadius = 6
+        btn2Grande.layer.borderWidth = 1
+        btn2Grande.layer.borderColor = UIColor.systemGray4.cgColor
+
+        btn3Venti.layer.cornerRadius = 6
+        btn3Venti.layer.borderWidth = 1
+        btn3Venti.layer.borderColor = UIColor.systemGray4.cgColor
+
+
         
         //컵선택 버튼 배열 만들기
         arrayBtnCup.append(btn1Maejang)
         arrayBtnCup.append(btn2Mine)
         arrayBtnCup.append(btn3Once)
-        
-        
         
         
     }
@@ -182,75 +219,5 @@ class ViewControllerOrder2Size: UIViewController {
     }
 
     
-
-}
-
-
-//사용예시
-//
-//let color = UIColor(rgb: 0xFFFFFF)
-//
-//
-//
-//사용예시 : 알파값 포함을 하고자 한다면?
-//
-//let color = UIColor(rgb: 0xFFFFFF).withAlphaComponent(1.0)
-//
-//let color2 = UIColor(argb: 0xFFFFFFFF)
-
-//hex코드 사용하기
-extension UIColor {
-
-    convenience init(red: Int, green: Int, blue: Int, a: Int = 0xFF) {
-
-        self.init(
-
-            red: CGFloat(red) / 255.0,
-
-            green: CGFloat(green) / 255.0,
-
-            blue: CGFloat(blue) / 255.0,
-
-            alpha: CGFloat(a) / 255.0
-
-        )
-
-    }
-
- 
-
-    convenience init(rgb: Int) {
-
-           self.init(
-
-               red: (rgb >> 16) & 0xFF,
-
-               green: (rgb >> 8) & 0xFF,
-
-               blue: rgb & 0xFF
-
-           )
-
-       }
-
-    
-
-    // let's suppose alpha is the first component (ARGB)
-
-    convenience init(argb: Int) {
-
-        self.init(
-
-            red: (argb >> 16) & 0xFF,
-
-            green: (argb >> 8) & 0xFF,
-
-            blue: argb & 0xFF,
-
-            a: (argb >> 24) & 0xFF
-
-        )
-
-    }
 
 }
