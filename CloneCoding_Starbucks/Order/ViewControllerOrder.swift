@@ -7,16 +7,18 @@
 
 import UIKit
 
-class ViewController3Order: UIViewController {
+class ViewControllerOrder: UIViewController {
     
     let titleImageArray = ["order_1new", "order_2recommend", "order_3reserve", "order_4drip", "order_5refreshers", "order_6coldbrew", "order_7blonde", "order_8espresso", "order_9decaf", "order_10frappuccino", "order_11blended", "order_12fizzio", "order_13tevana", "order_14brewed", "order_15others", "order_16rtd"]
     let titleArray = ["NEW", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
     let subTitleArray = ["", "Recommend", "Reserve Espresso", "Reserve Drip", "Starbucks Refreshers", "Cold Brew", "Blonde Coffee", "Espresso", "Decaf Coffee", "Frappuccino", "Blended", "Starbucks Fizzio", "Teavana", "Brewed Coffee", "Others", "RTD"]
 
+    var resultSelectedTitle: String = ""
+    var resultSelectedSubTitle: String = ""
+    var resultSelectedTitleImage: String = ""
     
-    @IBOutlet weak var tableView3Order: UITableView!
+    @IBOutlet weak var tableViewOrder: UITableView!
     
-    @IBOutlet weak var naviBarOrder: UINavigationBar!
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view4: UIView!
     @IBOutlet weak var viewOrderHeader: UIView!
@@ -32,10 +34,6 @@ class ViewController3Order: UIViewController {
         self.tabBarController?.tabBar.clipsToBounds = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
-        //네비게이션 밑줄 없애기
-        naviBarOrder.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        naviBarOrder.shadowImage = UIImage()
-        
         
         //뷰 그림자 넣기 (그림자공간줘야함, 배경색흰색으로 안하면 안에있는 컴포넌트들 그림자 생김)
         view3.layer.shadowOffset = CGSize(width: 0, height: 2)   //그림자 크기
@@ -47,18 +45,24 @@ class ViewController3Order: UIViewController {
         view4.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
         
         //셀리소스파일 가져오기 (여기서 ""이름은 xib파일 이름!!)
-        let tableViewCellNib = UINib(nibName: "TableViewCell3Order", bundle: nil)
+        let tableViewCellNib = UINib(nibName: "TableViewCellOrder", bundle: nil)
         //셀가져온 리소스 등록 (여기서 ""이름은 xib파일에서 인스펙터(삼지창)에 있는 identifier)
-        self.tableView3Order.register(tableViewCellNib, forCellReuseIdentifier: "TableViewCell3Order")
+        self.tableViewOrder.register(tableViewCellNib, forCellReuseIdentifier: "TableViewCellOrder")
         
         //테이블 각 셀의 높이
-        self.tableView3Order.rowHeight = 90
+        self.tableViewOrder.rowHeight = 90
         
         //****아주 중요****
-        self.tableView3Order.delegate = self
-        self.tableView3Order.dataSource = self
+        self.tableViewOrder.delegate = self
+        self.tableViewOrder.dataSource = self
         
-//        print("count : \(titleArray.count)")
+
+        
+        //네비게이션 뒤로가기 버튼
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .darkGray
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+        
         
     }
     
@@ -81,32 +85,53 @@ class ViewController3Order: UIViewController {
 }
 
 
-extension ViewController3Order: UITableViewDelegate {
-    
+extension ViewControllerOrder: UITableViewDelegate {
     //테이블뷰 스크롤할 때
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    
-        //스크롤할 때 LargeTitle 없애기
-        naviTitle.largeTitleDisplayMode = .never
-    
         let scrollOffset = scrollView.contentOffset.y
 //        print(scrollOffset)
         
+        //스크롤할 때 LargeTitle 없애기
         if scrollOffset <= 0 {
             naviTitle.largeTitleDisplayMode = .always
         } else {
             naviTitle.largeTitleDisplayMode = .never
         }
-
-        
     }
     
+    //MARK: Oder테이블뷰 셀 클릭 시
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "goCategory", sender: nil)
+        
+//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderCategory") as! ViewControllerOrderCategory
+////        vc.userChoice = getUserShape(sender)
+//
+//        present(vc, animated: true, completion: nil)
+        
+        
+        
+//        //스토리보드의 이름으로 스토리보드 연결
+//        let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
+//        //스토리보드와 ViewController파일 연결
+//        let ViewControllerOrdeMenu = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrdeMenu") as! ViewControllerOrdeMenu
+//
+//        //(질문???)여기에서 배열이 아니라 셀의 위치로 해야하는 건데 .. 모르겠다..
+//        //넘겨주기
+//        ViewControllerOrdeMenu.resultSelectedTitle = titleArray[indexPath.row]
+//        ViewControllerOrdeMenu.resultSelectedSubTitle = subTitleArray[indexPath.row]
+//        ViewControllerOrdeMenu.resultSelectedTitleImage = titleImageArray[indexPath.row]
+//
+//        ViewControllerOrdeMenu.modalPresentationStyle = .fullScreen
+//        self.present(ViewControllerOrdeMenu, animated: true, completion: nil)
+
+    }
     
 }
 
 
 //MARK: 테이블뷰데이터소스
-extension ViewController3Order: UITableViewDataSource{
+extension ViewControllerOrder: UITableViewDataSource{
     //테이블 뷰 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titleArray.count
@@ -116,13 +141,17 @@ extension ViewController3Order: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //셀 파일이랑 연결시키기
-        let cell = tableView3Order.dequeueReusableCell(withIdentifier: "TableViewCell3Order", for: indexPath) as! TableViewCell3Order
+        let cell = tableViewOrder.dequeueReusableCell(withIdentifier: "TableViewCellOrder", for: indexPath) as! TableViewCellOrder
     
         
         //셀 내용넣기
         cell.orderTitleLabel.text = titleArray[indexPath.row]
         cell.orderTitleImage.image = UIImage(named: titleImageArray[indexPath.row])
         cell.orderSubTitleLabel.text = subTitleArray[indexPath.row]
+        
+        if indexPath.row == 0 {
+            cell.orderSubTitleLabel.isHidden = true
+        }
 
         
         //클릭했을 때 배경이 회색으로 변하는 거 없애기
@@ -131,29 +160,6 @@ extension ViewController3Order: UITableViewDataSource{
         
         return cell
     }
-    
-    //MARK: Oder테이블뷰 셀 클릭 시
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //스토리보드의 이름으로 스토리보드 연결
-        let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
-        //스토리보드와 ViewController파일 연결
-        let ViewControllerOrder1Menu = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrder1Menu") as! ViewControllerOrder1Menu
-        
-        
-        //(질문???)여기에서 배열이 아니라 셀의 위치로 해야하는 건데 .. 모르겠다..
-        //넘겨주기
-        ViewControllerOrder1Menu.resultSelectedTitle = titleArray[indexPath.row]
-        ViewControllerOrder1Menu.resultSelectedSubTitle = subTitleArray[indexPath.row]
-        ViewControllerOrder1Menu.resultSelectedTitleImage = titleImageArray[indexPath.row]
-        
-        
-
-        ViewControllerOrder1Menu.modalPresentationStyle = .fullScreen
-        self.present(ViewControllerOrder1Menu, animated: true, completion: nil)
-        
-    }
-    
 }
 
 

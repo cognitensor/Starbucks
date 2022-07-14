@@ -14,7 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell3Order" rowHeight="83" id="91b-z8-H3B" customClass="TableViewCell3Order" customModule="CloneCoding_Starbucks" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCellOrder" rowHeight="83" id="91b-z8-H3B" customClass="TableViewCellOrder" customModule="CloneCoding_Starbucks" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="91b-z8-H3B" id="wYR-3j-UhD">
@@ -47,6 +47,7 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="PxP-eP-iQw" firstAttribute="leading" secondItem="wYR-3j-UhD" secondAttribute="leading" constant="20" id="1Ig-Cn-5iq"/>
                     <constraint firstItem="L6l-ID-SMz" firstAttribute="height" secondItem="PxP-eP-iQw" secondAttribute="height" multiplier="0.6" id="D4W-rF-ybt"/>
                     <constraint firstItem="PxP-eP-iQw" firstAttribute="leading" secondItem="wYR-3j-UhD" secondAttribute="leading" constant="20" id="GAL-PU-Foy"/>
                     <constraint firstItem="L6l-ID-SMz" firstAttribute="leading" secondItem="PxP-eP-iQw" secondAttribute="trailing" constant="10" id="LTS-EM-iFu"/>

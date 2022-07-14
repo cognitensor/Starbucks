@@ -1,5 +1,5 @@
 //
-//  ViewControllerOrder2Size.swift
+//  ViewControllerOrderSize.swift
 //  CloneCoding_Starbucks
 //
 //  Created by 하늘이 on 2022/07/10.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewControllerOrder2Size: UIViewController {
+class ViewControllerOrderSize: UIViewController {
     
     var resultMainTitle: String = ""
     var resultMainImage: String = ""
@@ -100,7 +100,7 @@ class ViewControllerOrder2Size: UIViewController {
         labelNum.text = String(numCount)
         totalPrice = totalPrice+onePrice
         labelTotalPrice.text = "\(numberFormatter(number: totalPrice))원"
-        
+        btnMinus.tintColor = .darkGray
     }
     //마이너스버튼 누를 때
     @IBAction func btnMinusAction(_ sender: Any) {
@@ -109,6 +109,8 @@ class ViewControllerOrder2Size: UIViewController {
             labelNum.text = String(numCount)
             totalPrice = totalPrice-onePrice
             labelTotalPrice.text = "\(numberFormatter(number: totalPrice))원"
+        } else {
+            btnMinus.tintColor = .systemGray3
         }
     }
     
@@ -211,13 +213,4 @@ class ViewControllerOrder2Size: UIViewController {
         
     }
     
-    func numberFormatter(number: Int) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        
-        return numberFormatter.string(from: NSNumber(value: number))!
-    }
-
-    
-
 }

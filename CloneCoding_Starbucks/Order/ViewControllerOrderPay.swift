@@ -9,6 +9,10 @@ import UIKit
 
 class ViewControllerOrderPay: UIViewController {
 
+    @IBOutlet weak var naviBarPay: UINavigationBar!
+    @IBOutlet weak var naviTitle: UINavigationItem!
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    
     @IBOutlet weak var viewCoupon: UIView!
     @IBOutlet weak var viewReceipt: UIView!
     
@@ -57,7 +61,11 @@ class ViewControllerOrderPay: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainScrollView.delegate = self
         
+        //네비게이션 밑줄 없애기
+        naviBarPay.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        naviBarPay.shadowImage = UIImage()
 
         labelMenuTitle.text = UserDefaults.standard.string(forKey: "MenuTitle")
         labelOnePrice.text = "\(UserDefaults.standard.string(forKey: "MenuOnePrice")!)원"
@@ -81,15 +89,22 @@ class ViewControllerOrderPay: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//MARK: 메인 뷰 스크롤할 때
+extension ViewControllerOrderPay: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {      
+        let scrollOffset = scrollView.contentOffset.y
+//        print(scrollOffset)
+        
+        if scrollOffset <= 0 {
+            naviTitle.largeTitleDisplayMode = .always
+        } else {
+            naviTitle.largeTitleDisplayMode = .never
+        }
+
     }
-    */
-
 }

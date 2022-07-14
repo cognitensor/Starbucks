@@ -1,5 +1,5 @@
 //
-//  ViewController3Order1ClickCategory.swift
+//  ViewControllerOrder1ClickCategory.swift
 //  CloneCoding_Starbucks
 //
 //  Created by 하늘이 on 2022/07/08.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
+class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
     
     //기기의 높이값
-    let maxHeight = (UIScreen.main.bounds.size.height)*0.35
-    let minHeight: CGFloat = 40.0
+    let maxHeight = 400.0
+    let minHeight: CGFloat = 150.0
     
     //넘겨받는 변수
     var resultSelectedTitle: String = ""
@@ -19,8 +19,13 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     var resultSelectedTitleImage: String = ""
     
     @IBOutlet weak var headerImageView: UIImageView!
+    @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var naviTitle: UINavigationItem!
     @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
+    //뒤로가기버튼 클릭
+    @IBAction func naviLeftBtnTabAction(_ sender: Any) {
+        dismiss(animated: false)
+    }
     @IBOutlet weak var naviRightBtn: UIBarButtonItem!
     
     @IBOutlet weak var contentTitle: UILabel!
@@ -30,55 +35,69 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var viewAle: UIView!
     @IBOutlet weak var viewBottom: UIView!
     
-    @IBAction func naviLeftBtnTabAction(_ sender: Any) {
-        dismiss(animated: false)
-    }
+    //주문하기버튼 클릭
     @IBAction func btnAction(_ sender: Any) {
-        let ViewControllerOrder2Size = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrder2Size") as! ViewControllerOrder2Size
+        let ViewControllerOrderSize = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderSize") as! ViewControllerOrderSize
         
-        ViewControllerOrder2Size.resultMainTitle = resultSelectedTitle
-        ViewControllerOrder2Size.resultMainImage = resultSelectedTitleImage
+        ViewControllerOrderSize.resultMainTitle = resultSelectedTitle
+        ViewControllerOrderSize.resultMainImage = resultSelectedTitleImage
         
-        ViewControllerOrder2Size.modalPresentationStyle = .formSheet
-        self.present(ViewControllerOrder2Size, animated: true, completion: nil)
+//        ViewControllerOrderSize.modalPresentationStyle = .formSheet
+        self.present(ViewControllerOrderSize, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var mainScrollView: UIScrollView! {
-        didSet {
-            mainScrollView.contentInset = UIEdgeInsets(top: maxHeight, left: 0, bottom: 0, right: 0)
-        }
-    }
     
-    @IBOutlet weak var fullImageBtnTopHeight: NSLayoutConstraint! {
+    
+    
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    
+    @IBOutlet weak var headerViewHeight: NSLayoutConstraint! {
         didSet {
-            fullImageBtnTopHeight.constant = maxHeight
+            headerViewHeight.constant = maxHeight
         }
     }
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scrollOffset = scrollView.contentOffset.y
-//        print(scrollOffset)
-        
-        if scrollOffset <= -maxHeight {
+        if headerViewHeight.constant >= maxHeight+scrollOffset {
+            //처음 전체 탑배너가 보일때
+//            print("1")
+            headerViewHeight.constant = maxHeight
+            headerImageView.isHidden = false
+            
             naviTitle.largeTitleDisplayMode = .always
             naviTitle.title = ""
             naviLeftBtn.tintColor = .white
             naviRightBtn.tintColor = .white
+            
+        } else if headerViewHeight.constant > minHeight+scrollOffset && headerViewHeight.constant < maxHeight+scrollOffset {
+            //탑배너가 줄어들고 있을 때
+//            print("2")
+            headerViewHeight.constant = headerViewHeight.constant - scrollOffset
+            
+            
+            //점점 올라갈 수록 흐리게
+            let persent = (headerViewHeight.constant)/250
+            headerImageView.alpha = persent
             headerImageView.isHidden = false
-        } else if scrollOffset > -maxHeight && scrollOffset < -minHeight-20 {
-            headerImageView.transform = CGAffineTransform(translationX: 0, y: abs(scrollOffset)-maxHeight)
+            scrollView.contentOffset.y = 0
+            
             naviTitle.largeTitleDisplayMode = .always
             naviTitle.title = ""
             naviLeftBtn.tintColor = .white
             naviRightBtn.tintColor = .white
-            headerImageView.isHidden = false
         } else {
+            //탑배너가 최소 사이즈로 줄어들었을 때
+//            print("3")
+            headerViewHeight.constant = minHeight
+            headerImageView.isHidden = true
+            
+            naviBar.shadowImage = UIImage()
             naviTitle.largeTitleDisplayMode = .never
             naviTitle.title = resultSelectedTitle
             naviLeftBtn.tintColor = .darkGray
             naviRightBtn.tintColor = .darkGray
-            headerImageView.isHidden = true
         }
         
     }
@@ -87,6 +106,9 @@ class ViewControllerOrder1Menu: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd_1")
+        
+        //네비게이션바 지우기
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         
         mainScrollView.delegate = self
         naviTitle.title = ""
