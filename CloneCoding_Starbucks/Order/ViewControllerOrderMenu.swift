@@ -21,7 +21,8 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var naviTitle: UINavigationItem!
-//    @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
+    @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
+    
     @IBOutlet weak var naviRightBtn: UIBarButtonItem!
     
     @IBOutlet weak var contentTitle: UILabel!
@@ -33,16 +34,39 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var viewBottom: UIView!
     
     //주문하기버튼 클릭
-    @IBAction func btnAction(_ sender: Any) {
-        let ViewControllerOrderSize = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderSize") as! ViewControllerOrderSize
+//    @IBAction func btnAction(_ sender: Any) {
+//        let ViewControllerOrderSize = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderSize") as! ViewControllerOrderSize
+//
+//        ViewControllerOrderSize.resultMainTitle = resultTitle
+//        ViewControllerOrderSize.resultMainImage = resultTitleImage
+//        ViewControllerOrderSize.resultMainPrice = resultPrice
+//
+////        ViewControllerOrderSize.modalPresentationStyle = .formSheet
+//        self.present(ViewControllerOrderSize, animated: true, completion: nil)
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("ViewControllerOrderMenu 메뉴선택 주문하기")
         
-        ViewControllerOrderSize.resultMainTitle = resultTitle
-        ViewControllerOrderSize.resultMainImage = resultTitleImage
-        ViewControllerOrderSize.resultMainPrice = resultPrice
+        if segue.identifier == "goViewControllerOrderSize" {
+            let ViewControllerOrderSize = segue.destination as! ViewControllerOrderSize
+            ViewControllerOrderSize.resultMainTitle = resultTitle
+            ViewControllerOrderSize.resultMainImage = resultTitleImage
+            ViewControllerOrderSize.resultMainPrice = resultPrice
+        }
         
-//        ViewControllerOrderSize.modalPresentationStyle = .formSheet
-        self.present(ViewControllerOrderSize, animated: true, completion: nil)
+        
+//
+//        let ViewControllerOrderSize = segue.destination as! ViewControllerOrderSize
+//
+//        ViewControllerOrderSize.resultMainTitle = resultTitle
+//        ViewControllerOrderSize.resultMainImage = resultTitleImage
+//        ViewControllerOrderSize.resultMainPrice = resultPrice
+//
+//        performSegue(withIdentifier: "goViewControllerOrderSize", sender: nil)
+//
     }
+    
     
     
     
@@ -66,7 +90,7 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
             
             naviTitle.largeTitleDisplayMode = .always
             naviTitle.title = ""
-//            naviLeftBtn.tintColor = .white
+            naviLeftBtn.tintColor = .white
             naviRightBtn.tintColor = .white
             
         } else if headerViewHeight.constant > minHeight+scrollOffset && headerViewHeight.constant < maxHeight+scrollOffset {
@@ -83,7 +107,7 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
             
             naviTitle.largeTitleDisplayMode = .always
             naviTitle.title = ""
-//            naviLeftBtn.tintColor = .white
+            naviLeftBtn.tintColor = .white
             naviRightBtn.tintColor = .white
         } else {
             //탑배너가 최소 사이즈로 줄어들었을 때
@@ -93,7 +117,7 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
             
             naviTitle.largeTitleDisplayMode = .never
             naviTitle.title = resultTitle
-//            naviLeftBtn.tintColor = .darkGray
+            naviLeftBtn.tintColor = .darkGray
             naviRightBtn.tintColor = .darkGray
         }
         
@@ -115,18 +139,20 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
         headerImageView.image = UIImage(named: resultTitleImage)
         contentPrice.text = "\(numberFormatter(number: resultPrice))원"
         
-        viewInfo.layer.shadowOffset = CGSize(width: 0, height: -10)   //그림자 크기
-        viewInfo.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
-        viewInfo.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
         
-        viewAle.layer.shadowOffset = CGSize(width: 0, height: -10)   //그림자 크기
-        viewAle.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
-        viewAle.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
+        //제품 영양정보 테두리
+        viewInfo.layer.addBorder([.top], color: UIColor.systemGray6, width: 1.0)
+        
+        //알레르기 유발요인 테두리
+        viewAle.layer.addBorder([.top], color: UIColor.systemGray6, width: 1.0)
+
+        
         
         viewBottom.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기
         viewBottom.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
         viewBottom.layer.shadowRadius = 3  //번지는정도 (0일때 선, 높을 수록 번짐)
-        
+        viewBottom.layer.shadowPath = UIBezierPath(rect: viewBottom.bounds).cgPath
+
 //        headerImageView.image = resultSelectedTitleImage
     
     }

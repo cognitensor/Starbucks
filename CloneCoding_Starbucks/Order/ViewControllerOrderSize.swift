@@ -18,13 +18,11 @@ class ViewControllerOrderSize: UIViewController {
     var totalPrice: Int = 0
     var onePrice: Int = 0
     
+    @IBOutlet weak var naviTitle: UINavigationItem!
     @IBOutlet weak var labelMainTitle: UILabel!
     @IBOutlet weak var labelMainPrice: UILabel!
     
     @IBOutlet weak var viewOptionShawdow: UIView!
-    
-//    @IBOutlet var viewFullBg: UIView!
-    
     
     @IBOutlet weak var btn1Tall: UIButton!
     @IBOutlet weak var btn2Grande: UIButton!
@@ -79,7 +77,7 @@ class ViewControllerOrderSize: UIViewController {
         }
     }
     
-    //컵 사이즈 버튼 하나만 선택
+    //컵 종류 버튼 하나만 선택
     @IBAction func selectOptionBtnAction(_ sender: UIButton) {
         for btn in arrayBtnCup {
             if btn == sender {
@@ -118,7 +116,7 @@ class ViewControllerOrderSize: UIViewController {
         }
     }
  
-    @IBAction func btnAction(_ sender: Any) {
+//    @IBAction func btnAction(_ sender: Any) {
 //        UserDefaults.standard.set(labelMainTitle.text, forKey: "MenuTitle")
 //        UserDefaults.standard.set(numberFormatter(number: onePrice), forKey: "MenuOnePrice")
 //        UserDefaults.standard.set(labelTotalPrice.text, forKey: "MenuTotalPrice")
@@ -128,25 +126,28 @@ class ViewControllerOrderSize: UIViewController {
 //
 //        ViewControllerOrderLogin.modalPresentationStyle = .overCurrentContext
 //        self.present(ViewControllerOrderLogin, animated: true, completion: nil)
-        
-        
-        performSegue(withIdentifier: "goViewControllerOrderPay", sender: nil)
-
-    }
+//
+//
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let ViewControllerOrderPay = segue.destination as! ViewControllerOrderPay
+        if segue.identifier == "goViewControllerOrderPay" {
+            
+            //MARK: UserDefaults에 데이터 저장
+            UserDefaults.standard.set(labelMainTitle.text, forKey: "MenuTitle")
+            UserDefaults.standard.set(numberFormatter(number: onePrice), forKey: "MenuOnePrice")
+            UserDefaults.standard.set(labelTotalPrice.text, forKey: "MenuTotalPrice")
+            UserDefaults.standard.set(resultMainImage, forKey: "MenuImage")
+        }
         
-        UserDefaults.standard.set(labelMainTitle.text, forKey: "MenuTitle")
-        UserDefaults.standard.set(numberFormatter(number: onePrice), forKey: "MenuOnePrice")
-        UserDefaults.standard.set(labelTotalPrice.text, forKey: "MenuTotalPrice")
-        UserDefaults.standard.set(resultMainImage, forKey: "MenuImage")
-
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd_2")
+        
+        
         
         labelMainTitle.text = resultMainTitle
         labelMainPrice.text = "\(numberFormatter(number: resultMainPrice))원"
@@ -155,10 +156,8 @@ class ViewControllerOrderSize: UIViewController {
         onePrice = resultMainPrice
         
         
-        viewOptionShawdow.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기
-        viewOptionShawdow.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명
-        viewOptionShawdow.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
-        
+        //퍼스널옵션 테두리
+        viewOptionShawdow.layer.addBorder([.top], color: UIColor.systemGray4, width: 1.0) 
         
         
         //컵 선택 배경

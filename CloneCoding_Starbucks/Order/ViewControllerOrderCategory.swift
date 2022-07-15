@@ -18,6 +18,10 @@ class ViewControllerOrderCategory: UIViewController {
     
     @IBOutlet weak var naviTitle: UINavigationItem!
     
+    @IBAction func unwindOrderCategoryVC(_ segue: UIStoryboardSegue) {
+        print("뒤로가기")
+    }
+    
     //보낼 메뉴 이름
     var resultSelectedTitle: String = ""
     var resultSelectedEngTitle: String = ""
@@ -48,13 +52,14 @@ class ViewControllerOrderCategory: UIViewController {
         naviTitle.title = resultTitle
         
         //네비게이션 뒤로가기 버튼
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = .white
-        self.navigationItem.backBarButtonItem = backBarButtonItem
-        
-        
+//        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+//        backBarButtonItem.tintColor = .white
+//        self.navigationItem.backBarButtonItem = backBarButtonItem
+    
         
     }
+    
+    
 
 }
 
@@ -80,6 +85,9 @@ extension ViewControllerOrderCategory: UITableViewDelegate {
         ViewControllerOrderMenu.resultTitleImage = resultSelectedTitleImage
         ViewControllerOrderMenu.resultPrice = resultSelectedPrice
     }
+
+
+    
 }
 
 extension ViewControllerOrderCategory: UITableViewDataSource {

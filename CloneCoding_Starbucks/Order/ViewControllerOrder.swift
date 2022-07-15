@@ -39,10 +39,14 @@ class ViewControllerOrder: UIViewController {
         view3.layer.shadowOffset = CGSize(width: 0, height: 2)   //그림자 크기
         view3.layer.shadowOpacity = 0.15                          //그림자 투명도 0이 투명 1이 불투명
         view3.layer.shadowRadius = 2  //번지는정도 (0일때 선, 높을 수록 번짐)
+        view3.layer.shadowPath = UIBezierPath(rect: view3.bounds).cgPath
+
         
         view4.layer.shadowOffset = CGSize(width: 0, height: 1)   //그림자 크기
         view4.layer.shadowOpacity = 0.05                          //그림자 투명도 0이 투명 1이 불투명
         view4.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
+        view4.layer.shadowPath = UIBezierPath(rect: view4.bounds).cgPath
+
         
         //셀리소스파일 가져오기 (여기서 ""이름은 xib파일 이름!!)
         let tableViewCellNib = UINib(nibName: "TableViewCellOrder", bundle: nil)

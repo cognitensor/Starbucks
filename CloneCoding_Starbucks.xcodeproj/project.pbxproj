@@ -36,6 +36,8 @@
 		F6AA1F9E2875F13100BFA115 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6AA1F952875F13000BFA115 /* Pretendard-Regular.otf */; };
 		F6AA1F9F2875F13100BFA115 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6AA1F962875F13100BFA115 /* Pretendard-Bold.otf */; };
 		F6AA1FA02875F13100BFA115 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6AA1F972875F13100BFA115 /* Pretendard-ExtraLight.otf */; };
+		F6E4BB032881E0A60026DACB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4BB022881E0A60026DACB /* TabBarController.swift */; };
+		F6E4BB05288203430026DACB /* AddBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E4BB04288203430026DACB /* AddBorder.swift */; };
 		F6EA91AE28805A25007AF9D4 /* ViewControllerOrderCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA91AD28805A25007AF9D4 /* ViewControllerOrderCategory.swift */; };
 		F6EA91B1288064F5007AF9D4 /* TableViewCellOrderCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA91AF288064F5007AF9D4 /* TableViewCellOrderCategory.swift */; };
 		F6EA91B2288064F5007AF9D4 /* TableViewCellOrderCategory.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6EA91B0288064F5007AF9D4 /* TableViewCellOrderCategory.xib */; };
@@ -74,6 +76,8 @@
 		F6AA1F952875F13000BFA115 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		F6AA1F962875F13100BFA115 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F6AA1F972875F13100BFA115 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		F6E4BB022881E0A60026DACB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F6E4BB04288203430026DACB /* AddBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBorder.swift; sourceTree = "<group>"; };
 		F6EA91AD28805A25007AF9D4 /* ViewControllerOrderCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOrderCategory.swift; sourceTree = "<group>"; };
 		F6EA91AF288064F5007AF9D4 /* TableViewCellOrderCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellOrderCategory.swift; sourceTree = "<group>"; };
 		F6EA91B0288064F5007AF9D4 /* TableViewCellOrderCategory.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellOrderCategory.xib; sourceTree = "<group>"; };
@@ -110,15 +114,16 @@
 		F606B0FD287490C70044E8ED /* CloneCoding_Starbucks */ = {
 			isa = PBXGroup;
 			children = (
+				F6AA1F8E2875F03600BFA115 /* Font */,
 				F606B109287490CA0044E8ED /* LaunchScreen.storyboard */,
 				F606B0FE287490C70044E8ED /* AppDelegate.swift */,
 				F606B100287490C70044E8ED /* SceneDelegate.swift */,
 				F606B107287490CA0044E8ED /* Assets.xcassets */,
 				F606B10C287490CA0044E8ED /* Info.plist */,
 				F6EA91B3288070CA007AF9D4 /* NumberFormatter.swift */,
+				F6E4BB04288203430026DACB /* AddBorder.swift */,
 				F6947C362878220100E0F4C1 /* Main */,
 				F6947C372878222700E0F4C1 /* Order */,
-				F6AA1F8E2875F03600BFA115 /* Font */,
 			);
 			path = CloneCoding_Starbucks;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				F6AA1F862875738600BFA115 /* ViewController2Pay.swift */,
 				F6AA1F8A287587D200BFA115 /* ViewController4Gift.swift */,
 				F6AA1F8C2875881400BFA115 /* ViewController5Other.swift */,
+				F6E4BB022881E0A60026DACB /* TabBarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -272,6 +278,8 @@
 				F606B0FF287490C70044E8ED /* AppDelegate.swift in Sources */,
 				F6EA91B4288070CA007AF9D4 /* NumberFormatter.swift in Sources */,
 				F69DFBE2287B6EBB0010B620 /* ViewControllerOrderPay.swift in Sources */,
+				F6E4BB05288203430026DACB /* AddBorder.swift in Sources */,
+				F6E4BB032881E0A60026DACB /* TabBarController.swift in Sources */,
 				F606B101287490C70044E8ED /* SceneDelegate.swift in Sources */,
 				F65763E92876F3DC00E7DF01 /* TableViewCellOrder.swift in Sources */,
 				F69DFBE0287B48F80010B620 /* ViewControllerOrderLocation2.swift in Sources */,

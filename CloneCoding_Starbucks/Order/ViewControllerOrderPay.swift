@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewControllerOrderPay: UIViewController {
+    
 
     @IBOutlet weak var naviBarPay: UINavigationBar!
     @IBOutlet weak var naviTitle: UINavigationItem!
@@ -29,22 +30,44 @@ class ViewControllerOrderPay: UIViewController {
     @IBAction func btnBack(_ sender: Any) {
         dismiss(animated: false)
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        dismiss(animated: false)
+//        
+//    }
+//    
+    
     @IBAction func btnTotalPayAction(_ sender: Any) {
-        
+
+//        dismiss(animated: false)
+
         //전에 있던 모든 뷰 지우기
-        for v in view.subviews{
-           v.removeFromSuperview()
-        }
+//        for v in view.subviews{
+//           v.removeFromSuperview()
+//        }
         
-        //스토리보드의 이름으로 스토리보드 연결
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //스토리보드와 ViewController파일 연결
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let TabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
         
-        viewController.orderResult = "주문완료"
+        UserDefaults.standard.set("주문완료", forKey: "주문결과")
+
+        TabBarController.modalPresentationStyle = .fullScreen
+        self.present(TabBarController, animated: false, completion: nil)
         
-        viewController.modalPresentationStyle = .fullScreen
-        self.present(viewController, animated: false, completion: nil)
+        
+    }
+        
+        
+//
+//        //스토리보드의 이름으로 스토리보드 연결
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        //스토리보드와 ViewController파일 연결
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//
+//        viewController.orderResult = "주문완료"
+//
+//        viewController.modalPresentationStyle = .fullScreen
+//        self.present(viewController, animated: false, completion: nil)
         
         
         
@@ -58,12 +81,13 @@ class ViewControllerOrderPay: UIViewController {
 //            pvc.present(ViewControllerOrderPayResult, animated: true, completion: nil)
 //        }
         
-    }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainScrollView.delegate = self
+        
         
         //네비게이션 밑줄 없애기
         naviBarPay.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -79,11 +103,13 @@ class ViewControllerOrderPay: UIViewController {
         viewCoupon.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기
         viewCoupon.layer.shadowOpacity = 0.05                          //그림자 투명도 0이 투명 1이 불투명
         viewCoupon.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
+        viewCoupon.layer.shadowPath = UIBezierPath(rect: viewCoupon.bounds).cgPath
         
         viewReceipt.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기
         viewReceipt.layer.shadowOpacity = 0.05                          //그림자 투명도 0이 투명 1이 불투명
         viewReceipt.layer.shadowRadius = 0  //번지는정도 (0일때 선, 높을 수록 번짐)
-        
+        viewReceipt.layer.shadowPath = UIBezierPath(rect: viewReceipt.bounds).cgPath
+
         
         //원으로 만들기
         imageViewMenu.layer.cornerRadius = imageViewMenu.frame.height/2

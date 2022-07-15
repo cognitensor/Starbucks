@@ -7,9 +7,8 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
-    
-    var orderResult: String = ""
     
     @IBOutlet weak var viewOrderResult: UIView!
     @IBOutlet weak var imageViewOrderResult: UIImageView!
@@ -39,54 +38,46 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad")
         
-        
         //탭바 윗줄 없애기
         self.tabBarController?.tabBar.clipsToBounds = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
         
-        
         //스크롤뷰 scrollViewDidScroll 연결
         mainScrollView.delegate = self
         
         //그림자설정
-        viewStartApp.layer.shadowOffset = CGSize(width: 1, height: 2)   //그림자 크기
-        viewStartApp.layer.shadowOpacity = 0.15                          //그림자 투명도 0이 투명 1이 불투명
-        viewStartApp.layer.shadowRadius = 3
-        
+        viewStartApp.layer.shadowOffset = CGSize(width: 1, height: 1)   //그림자 크기
+        viewStartApp.layer.shadowOpacity = 0.2                          //그림자 투명도 0이 투명 1이 불투명
+        viewStartApp.layer.shadowRadius = 2
+//        viewStartApp.layer.shadowPath = UIBezierPath(rect: viewStartApp.bounds).cgPath
         
         imageViewOrderResult.layer.cornerRadius = imageViewOrderResult.frame.height/2
         
-        //푸시알림권한요청함수 호출
-        notificationPermission()
-        
-        
         //뷰 배경 블러효과
+        viewOrderResult.layer.cornerRadius = 10
         viewBlur = UIVisualEffectView()
         viewBlur.effect = UIBlurEffect(style: .regular)
-        //viewMain에 Blur 효과가 적용된 EffectView 추가
+        viewBlur.layer.cornerRadius = 10
+        viewBlur.clipsToBounds = true
+//        //viewMain에 Blur 효과가 적용된 EffectView 추가
         viewOrderResult.addSubview(viewBlur)
-        viewBlur.frame = viewOrderResult.bounds
+        viewBlur.frame = CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.size.width)*0.97, height: 60)
         viewOrderResult.sendSubviewToBack(viewBlur)
+        
+        
+        //푸시알림권한요청함수 호출
+        notificationPermission()
+        //주문결과창 유무 호출
+        visibleOrderResult()
+        
+        
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
-        if orderResult == "주문완료" {
-            //스토리보드의 이름으로 스토리보드 연결
-            let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
-            //스토리보드와 ViewController파일 연결
-            let ViewControllerOrderPayResult = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrderPayResult") as! ViewControllerOrderPayResult
-
-            imageViewOrderResult.image = UIImage(named: UserDefaults.standard.string(forKey: "MenuImage")!)
-            viewOrderResult.isHidden = false
-
-            ViewControllerOrderPayResult.modalPresentationStyle = .formSheet
-            self.present(ViewControllerOrderPayResult, animated: true, completion: nil)
-        } else {
-            viewOrderResult.isHidden = true
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -114,6 +105,30 @@ class ViewController: UIViewController {
         })
     }
     
+    //MARK: 주문결과창
+    func visibleOrderResult() {
+        print(UserDefaults.standard.string(forKey: "주문결과") ?? "처음")
+
+        if UserDefaults.standard.string(forKey: "주문결과") == "주문완료" {
+            
+            //주문 초기화
+            UserDefaults.standard.set("주문 진행 전", forKey: "주문결과")
+            
+            //스토리보드의 이름으로 스토리보드 연결
+            let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
+            //스토리보드와 ViewController파일 연결
+            let ViewControllerOrderPayResult = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrderPayResult") as! ViewControllerOrderPayResult
+
+            imageViewOrderResult.image = UIImage(named: UserDefaults.standard.string(forKey: "MenuImage")!)
+            viewOrderResult.isHidden = false
+
+            ViewControllerOrderPayResult.modalPresentationStyle = .formSheet
+            self.present(ViewControllerOrderPayResult, animated: true, completion: nil)
+            
+        } else {
+            viewOrderResult.isHidden = true
+        }
+    }
     
 }
 
