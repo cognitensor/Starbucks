@@ -13,23 +13,20 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
     let maxHeight = 400.0
     let minHeight: CGFloat = 150.0
     
-    //넘겨받는 변수
-    var resultSelectedTitle: String = ""
-    var resultSelectedSubTitle: String = ""
-    var resultSelectedTitleImage: String = ""
+    //바로 전에 받은 메뉴 이름
+    var resultTitle: String = ""
+    var resultEngTitle: String = ""
+    var resultTitleImage: String = ""
+    var resultPrice: Int = 0
     
     @IBOutlet weak var headerImageView: UIImageView!
-    @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var naviTitle: UINavigationItem!
-    @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
-    //뒤로가기버튼 클릭
-    @IBAction func naviLeftBtnTabAction(_ sender: Any) {
-        dismiss(animated: false)
-    }
+//    @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
     @IBOutlet weak var naviRightBtn: UIBarButtonItem!
     
     @IBOutlet weak var contentTitle: UILabel!
-    @IBOutlet weak var contentSubTitle: UILabel!
+    @IBOutlet weak var contentEngTitle: UILabel!
+    @IBOutlet weak var contentPrice: UILabel!
     
     @IBOutlet weak var viewInfo: UIView!
     @IBOutlet weak var viewAle: UIView!
@@ -39,8 +36,9 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
     @IBAction func btnAction(_ sender: Any) {
         let ViewControllerOrderSize = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderSize") as! ViewControllerOrderSize
         
-        ViewControllerOrderSize.resultMainTitle = resultSelectedTitle
-        ViewControllerOrderSize.resultMainImage = resultSelectedTitleImage
+        ViewControllerOrderSize.resultMainTitle = resultTitle
+        ViewControllerOrderSize.resultMainImage = resultTitleImage
+        ViewControllerOrderSize.resultMainPrice = resultPrice
         
 //        ViewControllerOrderSize.modalPresentationStyle = .formSheet
         self.present(ViewControllerOrderSize, animated: true, completion: nil)
@@ -68,7 +66,7 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
             
             naviTitle.largeTitleDisplayMode = .always
             naviTitle.title = ""
-            naviLeftBtn.tintColor = .white
+//            naviLeftBtn.tintColor = .white
             naviRightBtn.tintColor = .white
             
         } else if headerViewHeight.constant > minHeight+scrollOffset && headerViewHeight.constant < maxHeight+scrollOffset {
@@ -85,7 +83,7 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
             
             naviTitle.largeTitleDisplayMode = .always
             naviTitle.title = ""
-            naviLeftBtn.tintColor = .white
+//            naviLeftBtn.tintColor = .white
             naviRightBtn.tintColor = .white
         } else {
             //탑배너가 최소 사이즈로 줄어들었을 때
@@ -93,10 +91,9 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
             headerViewHeight.constant = minHeight
             headerImageView.isHidden = true
             
-            naviBar.shadowImage = UIImage()
             naviTitle.largeTitleDisplayMode = .never
-            naviTitle.title = resultSelectedTitle
-            naviLeftBtn.tintColor = .darkGray
+            naviTitle.title = resultTitle
+//            naviLeftBtn.tintColor = .darkGray
             naviRightBtn.tintColor = .darkGray
         }
         
@@ -113,9 +110,10 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
         mainScrollView.delegate = self
         naviTitle.title = ""
         
-        contentTitle.text = resultSelectedTitle
-        contentSubTitle.text = resultSelectedSubTitle
-        headerImageView.image = UIImage(named: resultSelectedTitleImage)
+        contentTitle.text = resultTitle
+        contentEngTitle.text = resultEngTitle
+        headerImageView.image = UIImage(named: resultTitleImage)
+        contentPrice.text = "\(numberFormatter(number: resultPrice))원"
         
         viewInfo.layer.shadowOffset = CGSize(width: 0, height: -10)   //그림자 크기
         viewInfo.layer.shadowOpacity = 0.1                          //그림자 투명도 0이 투명 1이 불투명

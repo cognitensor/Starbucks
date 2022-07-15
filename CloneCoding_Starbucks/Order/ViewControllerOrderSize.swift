@@ -11,8 +11,16 @@ class ViewControllerOrderSize: UIViewController {
     
     var resultMainTitle: String = ""
     var resultMainImage: String = ""
+    var resultMainPrice: Int = 0
+    
+    //수량선택, 가격변동
+    var numCount: Int = 1
+    var totalPrice: Int = 0
+    var onePrice: Int = 0
     
     @IBOutlet weak var labelMainTitle: UILabel!
+    @IBOutlet weak var labelMainPrice: UILabel!
+    
     @IBOutlet weak var viewOptionShawdow: UIView!
     
 //    @IBOutlet var viewFullBg: UIView!
@@ -87,11 +95,7 @@ class ViewControllerOrderSize: UIViewController {
         }
     }
     
-    
-    //수량선택, 가격변동
-    var numCount: Int = 1
-    var totalPrice: Int = 5000
-    var onePrice: Int = 5000
+  
     
     @IBOutlet weak var btnMinus: UIButton!
     //플러스버튼 누를 때
@@ -113,27 +117,42 @@ class ViewControllerOrderSize: UIViewController {
             btnMinus.tintColor = .systemGray3
         }
     }
-    
-    
+ 
     @IBAction func btnAction(_ sender: Any) {
+//        UserDefaults.standard.set(labelMainTitle.text, forKey: "MenuTitle")
+//        UserDefaults.standard.set(numberFormatter(number: onePrice), forKey: "MenuOnePrice")
+//        UserDefaults.standard.set(labelTotalPrice.text, forKey: "MenuTotalPrice")
+//        UserDefaults.standard.set(resultMainImage, forKey: "MenuImage")
+//
+//        let ViewControllerOrderLogin = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderLogin") as! ViewControllerOrderLogin
+//
+//        ViewControllerOrderLogin.modalPresentationStyle = .overCurrentContext
+//        self.present(ViewControllerOrderLogin, animated: true, completion: nil)
+        
+        
+        performSegue(withIdentifier: "goViewControllerOrderPay", sender: nil)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let ViewControllerOrderPay = segue.destination as! ViewControllerOrderPay
+        
         UserDefaults.standard.set(labelMainTitle.text, forKey: "MenuTitle")
         UserDefaults.standard.set(numberFormatter(number: onePrice), forKey: "MenuOnePrice")
         UserDefaults.standard.set(labelTotalPrice.text, forKey: "MenuTotalPrice")
         UserDefaults.standard.set(resultMainImage, forKey: "MenuImage")
-        
-        let ViewControllerOrderLogin = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderLogin") as! ViewControllerOrderLogin
-        
-        ViewControllerOrderLogin.modalPresentationStyle = .overCurrentContext
-        self.present(ViewControllerOrderLogin, animated: true, completion: nil)
-        
+
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd_2")
         
         labelMainTitle.text = resultMainTitle
+        labelMainPrice.text = "\(numberFormatter(number: resultMainPrice))원"
+        
+        totalPrice = resultMainPrice
+        onePrice = resultMainPrice
         
         
         viewOptionShawdow.layer.shadowOffset = CGSize(width: 0, height: -1)   //그림자 크기

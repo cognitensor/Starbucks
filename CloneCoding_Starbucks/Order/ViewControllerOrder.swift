@@ -57,7 +57,6 @@ class ViewControllerOrder: UIViewController {
         self.tableViewOrder.dataSource = self
         
 
-        
         //네비게이션 뒤로가기 버튼
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         backBarButtonItem.tintColor = .darkGray
@@ -102,7 +101,9 @@ extension ViewControllerOrder: UITableViewDelegate {
     //MARK: Oder테이블뷰 셀 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "goCategory", sender: nil)
+        resultSelectedTitle = titleArray[indexPath.row]
+        //세그의 identifier
+        performSegue(withIdentifier: "goViewControllerOrderCategory", sender: nil)
         
 //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderCategory") as! ViewControllerOrderCategory
 ////        vc.userChoice = getUserShape(sender)
@@ -125,6 +126,12 @@ extension ViewControllerOrder: UITableViewDelegate {
 //        ViewControllerOrdeMenu.modalPresentationStyle = .fullScreen
 //        self.present(ViewControllerOrdeMenu, animated: true, completion: nil)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let ViewControllerOrderCategory = segue.destination as! ViewControllerOrderCategory
+        
+        ViewControllerOrderCategory.resultTitle = resultSelectedTitle
     }
     
 }

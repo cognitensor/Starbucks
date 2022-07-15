@@ -50,9 +50,9 @@ class ViewController: UIViewController {
         mainScrollView.delegate = self
         
         //그림자설정
-        viewStartApp.layer.shadowOffset = CGSize(width: 2, height: 3)   //그림자 크기
+        viewStartApp.layer.shadowOffset = CGSize(width: 1, height: 2)   //그림자 크기
         viewStartApp.layer.shadowOpacity = 0.15                          //그림자 투명도 0이 투명 1이 불투명
-        viewStartApp.layer.shadowRadius = 5
+        viewStartApp.layer.shadowRadius = 3
         
         
         imageViewOrderResult.layer.cornerRadius = imageViewOrderResult.frame.height/2

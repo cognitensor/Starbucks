@@ -39,10 +39,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hK9-Xa-Egl" userLabel="ViewStartApp">
-                                                        <rect key="frame" x="10" y="180" width="408" height="200"/>
+                                                        <rect key="frame" x="20" y="180" width="388" height="200"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_startapp" translatesAutoresizingMaskIntoConstraints="NO" id="tPG-my-irS">
-                                                                <rect key="frame" x="3" y="3" width="402" height="194"/>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_startapp" translatesAutoresizingMaskIntoConstraints="NO" id="tPG-my-irS">
+                                                                <rect key="frame" x="3" y="3" width="382" height="194"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="TC4-eF-Zjn">
                                                                 <rect key="frame" x="30" y="34.999999999999993" width="150.66666666666666" height="68.333333333333314"/>
@@ -109,12 +109,12 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="hK9-Xa-Egl" secondAttribute="trailing" constant="10" id="5o4-TP-EM5"/>
                                                     <constraint firstItem="Omk-j6-P3K" firstAttribute="leading" secondItem="ypf-BL-TPz" secondAttribute="leading" constant="20" id="9Oa-BZ-Y4o"/>
-                                                    <constraint firstItem="hK9-Xa-Egl" firstAttribute="leading" secondItem="ypf-BL-TPz" secondAttribute="leading" constant="10" id="EF5-We-Fhg"/>
-                                                    <constraint firstItem="hK9-Xa-Egl" firstAttribute="top" secondItem="Omk-j6-P3K" secondAttribute="bottom" constant="20" id="JAh-5u-d8J"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hK9-Xa-Egl" secondAttribute="bottom" constant="20" id="Cac-iZ-XbE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hK9-Xa-Egl" secondAttribute="trailing" constant="20" id="Cv8-5z-SiR"/>
                                                     <constraint firstAttribute="height" constant="400" id="OCc-9w-6eb"/>
                                                     <constraint firstItem="Omk-j6-P3K" firstAttribute="top" secondItem="ypf-BL-TPz" secondAttribute="top" constant="85" id="Wnw-iE-gRD"/>
+                                                    <constraint firstItem="hK9-Xa-Egl" firstAttribute="leading" secondItem="ypf-BL-TPz" secondAttribute="leading" constant="20" id="YfR-Oj-Ayx"/>
                                                     <constraint firstAttribute="trailing" secondItem="Omk-j6-P3K" secondAttribute="trailing" constant="20" id="c7g-Ps-De8"/>
                                                 </constraints>
                                             </view>

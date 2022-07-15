@@ -47,6 +47,8 @@ class ViewControllerOrderPay: UIViewController {
         self.present(viewController, animated: false, completion: nil)
         
         
+        
+        
 //        self.view.window?.rootViewController?.dismiss(animated: false, completion: nil)
 //        let ViewControllerOrderPayResult = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderPayResult") as! ViewControllerOrderPayResult
 //
