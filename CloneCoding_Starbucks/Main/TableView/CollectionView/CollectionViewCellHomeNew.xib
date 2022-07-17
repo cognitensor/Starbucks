@@ -17,20 +17,20 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q9R-cJ-ZcE">
-                        <rect key="frame" x="10" y="0.0" width="240" height="160"/>
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="160"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="160" id="Atx-AH-5w8"/>
                             <constraint firstAttribute="width" constant="240" id="T0I-au-Zkc"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션 e-스티커 추가 증정 이벤트" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tm-Sr-0if">
-                        <rect key="frame" x="10" y="180" width="240" height="21.5"/>
+                        <rect key="frame" x="0.0" y="180" width="240" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐거운 여행 속 '나에게 기대감과 즐거움을 주는 스타벅스의 여름 이야기" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt9-uJ-4xR">
-                        <rect key="frame" x="10" y="208.5" width="240" height="31.5"/>
+                        <rect key="frame" x="0.0" y="208.5" width="240" height="31.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.21188323666351006" green="0.21188323666351006" blue="0.21188323666351006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
             <constraints>
                 <constraint firstItem="Xt9-uJ-4xR" firstAttribute="width" secondItem="q9R-cJ-ZcE" secondAttribute="width" id="8X3-Ro-4dm"/>
                 <constraint firstItem="2tm-Sr-0if" firstAttribute="top" secondItem="q9R-cJ-ZcE" secondAttribute="bottom" constant="20" id="Fx4-1l-9O9"/>
-                <constraint firstItem="q9R-cJ-ZcE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="GgB-eF-zq4"/>
+                <constraint firstItem="q9R-cJ-ZcE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GgB-eF-zq4"/>
                 <constraint firstItem="2tm-Sr-0if" firstAttribute="leading" secondItem="q9R-cJ-ZcE" secondAttribute="leading" id="R1z-yY-1cH"/>
                 <constraint firstItem="2tm-Sr-0if" firstAttribute="width" secondItem="q9R-cJ-ZcE" secondAttribute="width" id="UQw-PE-TxQ"/>
                 <constraint firstItem="q9R-cJ-ZcE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WzB-Ed-KhD"/>

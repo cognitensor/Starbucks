@@ -21,6 +21,8 @@ class TableViewCellHomeNew: UITableViewCell {
         registerXib()
         registerDelegate()
         
+        //컬렉션뷰안에 있는 컨텐츠에 대한 위치
+        collectionViewHomeNew.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
     }
     
