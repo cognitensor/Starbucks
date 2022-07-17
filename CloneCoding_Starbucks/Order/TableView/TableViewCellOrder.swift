@@ -8,9 +8,15 @@
 import Foundation
 import UIKit
 
+protocol SwitchOnDelegate {
+    func switchChange(index: Int, switchIs: Bool)
+}
 
 class TableViewCellOrder: UITableViewCell {
+
+    var switchOnDelegate: SwitchOnDelegate?
     
+    var orderCellIndex: Int = 0
     
     @IBOutlet weak var orderContentView: UIView!
     @IBOutlet weak var orderTitleImage: UIImageView!
@@ -20,8 +26,11 @@ class TableViewCellOrder: UITableViewCell {
     @IBAction func orderSwitchAction(_ sender: Any) {
         if orderSwitch.isOn {
             print("on")
+            self.switchOnDelegate?.switchChange(index: orderCellIndex, switchIs: true)
+
         } else{
             print("off")
+            self.switchOnDelegate?.switchChange(index: orderCellIndex, switchIs: false)
         }
     }
     
@@ -32,7 +41,7 @@ class TableViewCellOrder: UITableViewCell {
         
         //이미지 원으로 만들기
         orderTitleImage.layer.cornerRadius = orderTitleImage.frame.height/2
-        
+        orderSwitch.isOn = false
     }
     
     

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -2030,8 +2031,12 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pox-zC-Xh1">
-                                                                <rect key="frame" x="20" y="51.666666666666686" width="388" height="4"/>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.33000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Pox-zC-Xh1">
+                                                                <rect key="frame" x="20" y="51.666666666666686" width="388" height="7"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="7" id="kku-3z-R8P"/>
+                                                                </constraints>
+                                                                <color key="progressTintColor" name="sizeSelectColor"/>
                                                             </progressView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2200,6 +2205,7 @@
                         <outlet property="imageViewMenu" destination="8NS-Rb-gMQ" id="G43-3k-DXx"/>
                         <outlet property="labelContent" destination="b8P-J8-jbd" id="rYy-cB-JLa"/>
                         <outlet property="labelMenuTitle" destination="L6H-JT-cF9" id="fPM-6Q-mkE"/>
+                        <outlet property="progressViewResult" destination="Pox-zC-Xh1" id="7vU-wg-ZYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fh3-2d-eg7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2256,6 +2262,9 @@
         <image name="starbucks_simbol" width="1920" height="1920"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <image name="막대기" width="136" height="26"/>
+        <namedColor name="sizeSelectColor">
+            <color red="0.29399999976158142" green="0.65100002288818359" blue="0.41999998688697815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

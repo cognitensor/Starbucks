@@ -12,20 +12,35 @@ class ViewControllerOrderPayResult: UIViewController {
     @IBOutlet weak var imageViewMenu: UIImageView!
     @IBOutlet weak var labelMenuTitle: UILabel!
     @IBOutlet weak var labelContent: UILabel!
+    @IBOutlet weak var progressViewResult: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad OrderPayResult")
 
         self.labelContent.lineBreakStrategy = .hangulWordPriority
 
-        
         imageViewMenu.layer.cornerRadius = imageViewMenu.frame.height/2
         
         labelMenuTitle.text = UserDefaults.standard.string(forKey: "MenuTitle")
         imageViewMenu.image = UIImage(named: UserDefaults.standard.string(forKey: "MenuImage")!)
-        // Do any additional setup after loading the view.
+        
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear OrderPayResult")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("viewDidAppear OrderPayResult")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("viewWillDisappear OrderPayResult")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear OrderPayResult")
+    }
 
 }

@@ -14,12 +14,8 @@ class TableViewCellHomeBanner: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        //배너 테이블뷰셀 그림자 설정
         imageViewBanner.addShadow(location: .bottom)
-        
-//        imageViewBanner.layer.shadowOffset = CGSize(width: 1, height: 5)   //그림자 크기
-//        imageViewBanner.layer.shadowOpacity = 0.15                          //그림자 투명도 0이 투명 1이 불투명
-//        imageViewBanner.layer.shadowRadius = 20
-//        imageViewBanner.layer.shadowPath = UIBezierPath(rect: imageViewBanner.bounds).cgPath
     
     }
 

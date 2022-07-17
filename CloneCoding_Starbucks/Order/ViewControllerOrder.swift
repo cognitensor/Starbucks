@@ -7,18 +7,13 @@
 
 import UIKit
 
+
+
 class ViewControllerOrder: UIViewController {
-    
-
-    let titleImageArray = ["order_1new", "order_2recommend", "order_3reserve", "order_4drip", "order_5refreshers", "order_6coldbrew", "order_7blonde", "order_8espresso", "order_9decaf", "order_10frappuccino", "order_11blended", "order_12fizzio", "order_13tevana", "order_14brewed", "order_15others", "order_16rtd"]
-    let titleArray = ["NEW", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
-    let subTitleArray = ["", "Recommend", "Reserve Espresso", "Reserve Drip", "Starbucks Refreshers", "Cold Brew", "Blonde Coffee", "Espresso", "Decaf Coffee", "Frappuccino", "Blended", "Starbucks Fizzio", "Teavana", "Brewed Coffee", "Others", "RTD"]
-
-
+        
     var resultSelectedTitle: String = ""
     var resultSelectedSubTitle: String = ""
     var resultSelectedTitleImage: String = ""
- 
     
     @IBOutlet weak var tableViewOrder: UITableView!
     
@@ -105,33 +100,13 @@ extension ViewControllerOrder: UITableViewDelegate {
         }
     }
     
+    
     //MARK: Oder테이블뷰 셀 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        resultSelectedTitle = titleArray[indexPath.row]
+        resultSelectedTitle = orderCategoryData[indexPath.row].orderTitle
         //세그의 identifier
         performSegue(withIdentifier: "goViewControllerOrderCategory", sender: nil)
-        
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerOrderCategory") as! ViewControllerOrderCategory
-////        vc.userChoice = getUserShape(sender)
-//
-//        present(vc, animated: true, completion: nil)
-        
-        
-        
-//        //스토리보드의 이름으로 스토리보드 연결
-//        let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
-//        //스토리보드와 ViewController파일 연결
-//        let ViewControllerOrdeMenu = storyboardOrder.instantiateViewController(withIdentifier: "ViewControllerOrdeMenu") as! ViewControllerOrdeMenu
-//
-//        //(질문???)여기에서 배열이 아니라 셀의 위치로 해야하는 건데 .. 모르겠다..
-//        //넘겨주기
-//        ViewControllerOrdeMenu.resultSelectedTitle = titleArray[indexPath.row]
-//        ViewControllerOrdeMenu.resultSelectedSubTitle = subTitleArray[indexPath.row]
-//        ViewControllerOrdeMenu.resultSelectedTitleImage = titleImageArray[indexPath.row]
-//
-//        ViewControllerOrdeMenu.modalPresentationStyle = .fullScreen
-//        self.present(ViewControllerOrdeMenu, animated: true, completion: nil)
 
     }
     
@@ -146,9 +121,11 @@ extension ViewControllerOrder: UITableViewDelegate {
 
 //MARK: 테이블뷰데이터소스
 extension ViewControllerOrder: UITableViewDataSource{
+    
+    
     //테이블 뷰 셀의 갯수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.titleArray.count
+        return orderCategoryData.count
     }
     
     //MARK: Oder테이블뷰 각 셀에 대한 설정
@@ -158,27 +135,35 @@ extension ViewControllerOrder: UITableViewDataSource{
         let cell = tableViewOrder.dequeueReusableCell(withIdentifier: "TableViewCellOrder", for: indexPath) as! TableViewCellOrder
     
         //셀 내용넣기
-        cell.orderTitleLabel.text = titleArray[indexPath.row]
-        cell.orderTitleImage.image = UIImage(named: titleImageArray[indexPath.row])
-        cell.orderSubTitleLabel.text = subTitleArray[indexPath.row]
-//        cell.orderSwitch.isOn = swichArray[indexPath.row]
+        cell.orderTitleImage.image = orderCategoryData[indexPath.row].orderImage
+        cell.orderTitleLabel.text = orderCategoryData[indexPath.row].orderTitle
+        cell.orderSubTitleLabel.text = orderCategoryData[indexPath.row].orderEngTitle
+        cell.orderSwitch.isOn = orderCategoryData[indexPath.row].switchOn
         
         if indexPath.row == 0 {
             cell.orderSubTitleLabel.isHidden = true
         }
         
         
-//        cell.orderSwitch.isSelected = cell.orderSwitch.i
+        cell.orderCellIndex = indexPath.row
+        cell.switchOnDelegate = self
 
         
         //클릭했을 때 배경이 회색으로 변하는 거 없애기
         cell.selectionStyle = .none
         
-        
         return cell
     }
-    
+
 }
+
+extension ViewControllerOrder: SwitchOnDelegate{
+    func switchChange(index: Int, switchIs: Bool) {
+        orderCategoryData[index].switchOn = switchIs
+    }
+}
+
+
 
 
 //UILabel 자간 설정하는 클래스

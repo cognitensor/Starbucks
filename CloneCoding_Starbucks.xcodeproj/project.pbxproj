@@ -22,6 +22,7 @@
 		F62FB590287B385400D519E5 /* ViewControllerOrderLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62FB58F287B385400D519E5 /* ViewControllerOrderLocation.swift */; };
 		F65763E72876EF8C00E7DF01 /* TableViewCellOrder.xib in Resources */ = {isa = PBXBuildFile; fileRef = F65763E62876EF8C00E7DF01 /* TableViewCellOrder.xib */; };
 		F65763E92876F3DC00E7DF01 /* TableViewCellOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65763E82876F3DC00E7DF01 /* TableViewCellOrder.swift */; };
+		F66D5DD228844D7D0068FC71 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66D5DD128844D7C0068FC71 /* Order.swift */; };
 		F678CB6E2882D243007E3E9D /* HomeRecommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678CB6D2882D243007E3E9D /* HomeRecommend.swift */; };
 		F678CB712882DF9D007E3E9D /* TableViewCellHomeBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F678CB6F2882DF9D007E3E9D /* TableViewCellHomeBanner.swift */; };
 		F678CB722882DF9D007E3E9D /* TableViewCellHomeBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = F678CB702882DF9D007E3E9D /* TableViewCellHomeBanner.xib */; };
@@ -76,6 +77,7 @@
 		F62FB58F287B385400D519E5 /* ViewControllerOrderLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOrderLocation.swift; sourceTree = "<group>"; };
 		F65763E62876EF8C00E7DF01 /* TableViewCellOrder.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellOrder.xib; sourceTree = "<group>"; };
 		F65763E82876F3DC00E7DF01 /* TableViewCellOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellOrder.swift; sourceTree = "<group>"; };
+		F66D5DD128844D7C0068FC71 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		F678CB6D2882D243007E3E9D /* HomeRecommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommend.swift; sourceTree = "<group>"; };
 		F678CB6F2882DF9D007E3E9D /* TableViewCellHomeBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHomeBanner.swift; sourceTree = "<group>"; };
 		F678CB702882DF9D007E3E9D /* TableViewCellHomeBanner.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellHomeBanner.xib; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				F678CB6D2882D243007E3E9D /* HomeRecommend.swift */,
 				F678CB7F28834B97007E3E9D /* HomeNew.swift */,
 				F678CB73288311E8007E3E9D /* Banner.swift */,
+				F66D5DD128844D7C0068FC71 /* Order.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				F6AA1F8B287587D200BFA115 /* ViewController4Gift.swift in Sources */,
 				F606B0FF287490C70044E8ED /* AppDelegate.swift in Sources */,
 				F6EA91B4288070CA007AF9D4 /* NumberFormatter.swift in Sources */,
+				F66D5DD228844D7D0068FC71 /* Order.swift in Sources */,
 				F69DFBE2287B6EBB0010B620 /* ViewControllerOrderPay.swift in Sources */,
 				F6E4BB05288203430026DACB /* AddBorder.swift in Sources */,
 				F60A338E2882C414002E0BB3 /* TableViewCellHomeRecommend.swift in Sources */,

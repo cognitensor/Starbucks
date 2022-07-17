@@ -72,7 +72,6 @@ class ViewController: UIViewController {
         let tableViewCellHNNib = UINib(nibName: "TableViewCellHomeNew", bundle: nil)
         self.mainTableView.register(tableViewCellHNNib, forCellReuseIdentifier: "TableViewCellHomeNew")
         
-        
         //테이블뷰 딜리게이트
         mainTableView.delegate = self
         mainTableView.dataSource = self
@@ -80,16 +79,21 @@ class ViewController: UIViewController {
         
         //푸시알림권한요청 메서드 호출
         notificationPermission()
-        //주문결과창 유무 호출
-        visibleOrderResult()
+
         
         
+        //바텀뷰(결제결과창) 클릭이벤트
+        let orderResultTapGesture = UITapGestureRecognizer(target: self, action: #selector(visibleOrderResult))
+        viewOrderResult.addGestureRecognizer(orderResultTapGesture)
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear")
+        
+        //주문결과창 유무 호출 -다른 탭을 갔다 왔을 때 주문이 완료된 상태를 표현하기 위해 (다른 탭을 갔다 오면 willappear부터 진행되기떄문에)
+        visibleOrderResult()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,6 +106,8 @@ class ViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         print("viewDidDisappear")
+        //주문 초기화
+        UserDefaults.standard.set("주문 진행 전", forKey: "주문결과")
     }
     
     
@@ -117,14 +123,15 @@ class ViewController: UIViewController {
         })
     }
     
+    @objc func visibleOrderResult1() {
+        print("zz")
+    }
+    
     //MARK: 주문결과창
-    func visibleOrderResult() {
+    @objc func visibleOrderResult() {
         print(UserDefaults.standard.string(forKey: "주문결과") ?? "처음")
 
         if UserDefaults.standard.string(forKey: "주문결과") == "주문완료" {
-            
-            //주문 초기화
-            UserDefaults.standard.set("주문 진행 전", forKey: "주문결과")
             
             //스토리보드의 이름으로 스토리보드 연결
             let storyboardOrder = UIStoryboard(name: "StoryboardOrder", bundle: nil)
