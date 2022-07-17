@@ -45,11 +45,19 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGJ-0w-3wU">
+                        <rect key="frame" x="345" y="26" width="51" height="31"/>
+                        <connections>
+                            <action selector="orderSwitchAction:" destination="91b-z8-H3B" eventType="valueChanged" id="B9f-i8-TLe"/>
+                        </connections>
+                    </switch>
                 </subviews>
                 <constraints>
                     <constraint firstItem="PxP-eP-iQw" firstAttribute="leading" secondItem="wYR-3j-UhD" secondAttribute="leading" constant="20" id="1Ig-Cn-5iq"/>
+                    <constraint firstItem="wGJ-0w-3wU" firstAttribute="centerY" secondItem="wYR-3j-UhD" secondAttribute="centerY" id="AME-K0-dJa"/>
                     <constraint firstItem="L6l-ID-SMz" firstAttribute="height" secondItem="PxP-eP-iQw" secondAttribute="height" multiplier="0.6" id="D4W-rF-ybt"/>
                     <constraint firstItem="PxP-eP-iQw" firstAttribute="leading" secondItem="wYR-3j-UhD" secondAttribute="leading" constant="20" id="GAL-PU-Foy"/>
+                    <constraint firstAttribute="trailing" secondItem="wGJ-0w-3wU" secondAttribute="trailing" constant="20" id="Hc2-h6-0rO"/>
                     <constraint firstItem="L6l-ID-SMz" firstAttribute="leading" secondItem="PxP-eP-iQw" secondAttribute="trailing" constant="10" id="LTS-EM-iFu"/>
                     <constraint firstItem="PxP-eP-iQw" firstAttribute="centerY" secondItem="wYR-3j-UhD" secondAttribute="centerY" id="hCM-KY-fZY"/>
                     <constraint firstItem="L6l-ID-SMz" firstAttribute="centerY" secondItem="PxP-eP-iQw" secondAttribute="centerY" id="rcb-Ve-xVm"/>
@@ -58,6 +66,7 @@
             <connections>
                 <outlet property="orderContentView" destination="wYR-3j-UhD" id="jQN-Xh-MzO"/>
                 <outlet property="orderSubTitleLabel" destination="a0K-1Y-kis" id="tLx-gE-y2t"/>
+                <outlet property="orderSwitch" destination="wGJ-0w-3wU" id="GPT-CM-OyT"/>
                 <outlet property="orderTitleImage" destination="PxP-eP-iQw" id="zho-dk-gac"/>
                 <outlet property="orderTitleLabel" destination="vvX-o5-uWz" id="rHT-fV-0lH"/>
             </connections>

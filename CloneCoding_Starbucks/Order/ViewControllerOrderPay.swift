@@ -27,8 +27,10 @@ class ViewControllerOrderPay: UIViewController {
     
     @IBOutlet weak var btnTotalPay: UIButton!
     
+    
+    //뒤로가기 버튼
     @IBAction func btnBack(_ sender: Any) {
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -9,13 +9,16 @@ import UIKit
 
 class ViewControllerOrder: UIViewController {
     
+
     let titleImageArray = ["order_1new", "order_2recommend", "order_3reserve", "order_4drip", "order_5refreshers", "order_6coldbrew", "order_7blonde", "order_8espresso", "order_9decaf", "order_10frappuccino", "order_11blended", "order_12fizzio", "order_13tevana", "order_14brewed", "order_15others", "order_16rtd"]
     let titleArray = ["NEW", "추천", "리저브 에스프레소", "리저브 드립", "리프레서", "콜드브루", "블론드", "에스프레소", "디카페인 커피", "프라푸치노", "블렌디드", "피지오", "티바나", "브루드 커피", "기타", "병음료"]
     let subTitleArray = ["", "Recommend", "Reserve Espresso", "Reserve Drip", "Starbucks Refreshers", "Cold Brew", "Blonde Coffee", "Espresso", "Decaf Coffee", "Frappuccino", "Blended", "Starbucks Fizzio", "Teavana", "Brewed Coffee", "Others", "RTD"]
 
+
     var resultSelectedTitle: String = ""
     var resultSelectedSubTitle: String = ""
     var resultSelectedTitleImage: String = ""
+ 
     
     @IBOutlet weak var tableViewOrder: UITableView!
     
@@ -154,15 +157,18 @@ extension ViewControllerOrder: UITableViewDataSource{
         //셀 파일이랑 연결시키기
         let cell = tableViewOrder.dequeueReusableCell(withIdentifier: "TableViewCellOrder", for: indexPath) as! TableViewCellOrder
     
-        
         //셀 내용넣기
         cell.orderTitleLabel.text = titleArray[indexPath.row]
         cell.orderTitleImage.image = UIImage(named: titleImageArray[indexPath.row])
         cell.orderSubTitleLabel.text = subTitleArray[indexPath.row]
+//        cell.orderSwitch.isOn = swichArray[indexPath.row]
         
         if indexPath.row == 0 {
             cell.orderSubTitleLabel.isHidden = true
         }
+        
+        
+//        cell.orderSwitch.isSelected = cell.orderSwitch.i
 
         
         //클릭했을 때 배경이 회색으로 변하는 거 없애기
@@ -171,6 +177,7 @@ extension ViewControllerOrder: UITableViewDataSource{
         
         return cell
     }
+    
 }
 
 

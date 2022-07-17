@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCellHomeRecommend" id="gTV-IL-0wX" customClass="CollectionViewCellHomeRecommend" customModule="CloneCoding_Starbucks" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="245"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="256" height="245"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KS9-sd-zAN">
+                        <rect key="frame" x="63" y="0.0" width="130" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="HYg-i5-EkX"/>
+                            <constraint firstAttribute="height" constant="130" id="kvx-5z-kYR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="부드러운 생크림카스텔라" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjL-qZ-HlW">
+                        <rect key="frame" x="63" y="145" width="130" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.28156134094854801" green="0.28156134094854801" blue="0.28156134094854801" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="KS9-sd-zAN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4vL-ue-37U"/>
+                <constraint firstItem="WjL-qZ-HlW" firstAttribute="centerX" secondItem="KS9-sd-zAN" secondAttribute="centerX" id="StC-7e-0by"/>
+                <constraint firstItem="WjL-qZ-HlW" firstAttribute="top" secondItem="KS9-sd-zAN" secondAttribute="bottom" constant="15" id="a89-Iq-nkz"/>
+                <constraint firstItem="KS9-sd-zAN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bkz-mX-v5s"/>
+                <constraint firstItem="WjL-qZ-HlW" firstAttribute="width" secondItem="KS9-sd-zAN" secondAttribute="width" id="ilJ-R9-vo1"/>
+            </constraints>
+            <size key="customSize" width="256" height="245"/>
+            <connections>
+                <outlet property="homeRecommendImage" destination="KS9-sd-zAN" id="lUx-IM-8ax"/>
+                <outlet property="homeRecommendTitle" destination="WjL-qZ-HlW" id="aIL-gL-Iez"/>
+                <outlet property="imageleftAnchor" destination="bkz-mX-v5s" id="fmt-jX-e8w"/>
+            </connections>
+            <point key="canvasLocation" x="101.44927536231884" y="60.602678571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>
