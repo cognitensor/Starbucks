@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import PanModal
 
 class ViewControllerOrderSize: UIViewController {
     
-    var resultMainTitle: String = ""
     var resultMainImage: String = ""
+    var resultMainTitle: String = ""
+    var resultMainEngTitle: String = ""
     var resultMainPrice: Int = 0
     
     //수량선택, 가격변동
@@ -36,6 +38,16 @@ class ViewControllerOrderSize: UIViewController {
     @IBOutlet weak var labelNum: UILabel!
     @IBOutlet weak var labelTotalPrice: UILabel!
     
+    //담기 버튼 클릭!
+    @IBAction func btnCartGoAction(_ sender: Any) {
+        
+        cartData.append(Cart(cartImage: UIImage(named: resultMainImage)!, cartTitle: resultMainTitle, cartEngTitle: resultMainEngTitle, cartPrice: resultMainPrice, cartCount: numCount, cartToTalPrice: totalPrice))
+        
+        
+        let ViewControllerCartGo = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerCartGo") as! ViewControllerCartGo
+
+        presentPanModal(ViewControllerCartGo)
+    }
     
     var arrayBtnSize = [UIButton]()
     var arrayBtnCup = [UIButton]()
@@ -231,4 +243,16 @@ class ViewControllerOrderSize: UIViewController {
         
     }
     
+}
+
+
+extension ViewControllerOrderSize: PanModalPresentable {
+
+    var panScrollable: UIScrollView? {
+        return nil
+    }
+    
+    var shortFormHeight: PanModalHeight {
+        return .contentHeight(300)
+    }
 }

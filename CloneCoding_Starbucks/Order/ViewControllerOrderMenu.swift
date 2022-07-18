@@ -22,7 +22,6 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var naviTitle: UINavigationItem!
     @IBOutlet weak var naviLeftBtn: UIBarButtonItem!
-    
     @IBOutlet weak var naviRightBtn: UIBarButtonItem!
     
     @IBOutlet weak var contentTitle: UILabel!
@@ -50,8 +49,10 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
         
         if segue.identifier == "goViewControllerOrderSize" {
             let ViewControllerOrderSize = segue.destination as! ViewControllerOrderSize
-            ViewControllerOrderSize.resultMainTitle = resultTitle
+            
             ViewControllerOrderSize.resultMainImage = resultTitleImage
+            ViewControllerOrderSize.resultMainEngTitle = resultEngTitle
+            ViewControllerOrderSize.resultMainTitle = resultTitle
             ViewControllerOrderSize.resultMainPrice = resultPrice
         }
         
@@ -160,6 +161,7 @@ class ViewControllerOrderMenu: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear 3rd_1")
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

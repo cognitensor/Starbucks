@@ -13,6 +13,18 @@
 		F606B106287490C70044E8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B104287490C70044E8ED /* Main.storyboard */; };
 		F606B108287490CA0044E8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F606B107287490CA0044E8ED /* Assets.xcassets */; };
 		F606B10B287490CA0044E8ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F606B109287490CA0044E8ED /* LaunchScreen.storyboard */; };
+		F6084BCD288527510056FCAC /* ViewControllerCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084BCC288527510056FCAC /* ViewControllerCart.swift */; };
+		F6084BD2288555E10056FCAC /* TableViewCellCartHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084BD0288555E10056FCAC /* TableViewCellCartHeader.swift */; };
+		F6084BD3288555E10056FCAC /* TableViewCellCartHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6084BD1288555E10056FCAC /* TableViewCellCartHeader.xib */; };
+		F6084BD628855CA70056FCAC /* TableViewCellCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084BD428855CA70056FCAC /* TableViewCellCart.swift */; };
+		F6084BD728855CA70056FCAC /* TableViewCellCart.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6084BD528855CA70056FCAC /* TableViewCellCart.xib */; };
+		F6084BDA28856B2E0056FCAC /* TableViewCellCartFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084BD828856B2E0056FCAC /* TableViewCellCartFooter.swift */; };
+		F6084BDB28856B2E0056FCAC /* TableViewCellCartFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6084BD928856B2E0056FCAC /* TableViewCellCartFooter.xib */; };
+		F6084BDD288584E50056FCAC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084BDC288584E50056FCAC /* Cart.swift */; };
+		F6084BE028858DA00056FCAC /* TableViewCellCartZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084BDE28858DA00056FCAC /* TableViewCellCartZero.swift */; };
+		F6084BE128858DA00056FCAC /* TableViewCellCartZero.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6084BDF28858DA00056FCAC /* TableViewCellCartZero.xib */; };
+		F6084BE4288597850056FCAC /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = F6084BE3288597850056FCAC /* PanModal */; };
+		F6084BE628859A3E0056FCAC /* ViewControllerCartGo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6084BE528859A3E0056FCAC /* ViewControllerCartGo.swift */; };
 		F60A338E2882C414002E0BB3 /* TableViewCellHomeRecommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A338C2882C414002E0BB3 /* TableViewCellHomeRecommend.swift */; };
 		F60A338F2882C414002E0BB3 /* TableViewCellHomeRecommend.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60A338D2882C414002E0BB3 /* TableViewCellHomeRecommend.xib */; };
 		F60A33922882C685002E0BB3 /* CollectionViewCellHomeRecommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A33902882C685002E0BB3 /* CollectionViewCellHomeRecommend.swift */; };
@@ -68,6 +80,17 @@
 		F606B107287490CA0044E8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F606B10A287490CA0044E8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F606B10C287490CA0044E8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6084BCC288527510056FCAC /* ViewControllerCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCart.swift; sourceTree = "<group>"; };
+		F6084BD0288555E10056FCAC /* TableViewCellCartHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCartHeader.swift; sourceTree = "<group>"; };
+		F6084BD1288555E10056FCAC /* TableViewCellCartHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCartHeader.xib; sourceTree = "<group>"; };
+		F6084BD428855CA70056FCAC /* TableViewCellCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCart.swift; sourceTree = "<group>"; };
+		F6084BD528855CA70056FCAC /* TableViewCellCart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCart.xib; sourceTree = "<group>"; };
+		F6084BD828856B2E0056FCAC /* TableViewCellCartFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCartFooter.swift; sourceTree = "<group>"; };
+		F6084BD928856B2E0056FCAC /* TableViewCellCartFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCartFooter.xib; sourceTree = "<group>"; };
+		F6084BDC288584E50056FCAC /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		F6084BDE28858DA00056FCAC /* TableViewCellCartZero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCartZero.swift; sourceTree = "<group>"; };
+		F6084BDF28858DA00056FCAC /* TableViewCellCartZero.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCartZero.xib; sourceTree = "<group>"; };
+		F6084BE528859A3E0056FCAC /* ViewControllerCartGo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCartGo.swift; sourceTree = "<group>"; };
 		F60A338C2882C414002E0BB3 /* TableViewCellHomeRecommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellHomeRecommend.swift; sourceTree = "<group>"; };
 		F60A338D2882C414002E0BB3 /* TableViewCellHomeRecommend.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellHomeRecommend.xib; sourceTree = "<group>"; };
 		F60A33902882C685002E0BB3 /* CollectionViewCellHomeRecommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellHomeRecommend.swift; sourceTree = "<group>"; };
@@ -119,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6084BE4288597850056FCAC /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +214,7 @@
 			children = (
 				F678CB6D2882D243007E3E9D /* HomeRecommend.swift */,
 				F678CB7F28834B97007E3E9D /* HomeNew.swift */,
+				F6084BDC288584E50056FCAC /* Cart.swift */,
 				F678CB73288311E8007E3E9D /* Banner.swift */,
 				F66D5DD128844D7C0068FC71 /* Order.swift */,
 			);
@@ -218,11 +243,13 @@
 				F6EA91AD28805A25007AF9D4 /* ViewControllerOrderCategory.swift */,
 				F6947C38287822A600E0F4C1 /* ViewControllerOrderMenu.swift */,
 				F62247F1287A1CE2009D598B /* ViewControllerOrderSize.swift */,
+				F6084BE528859A3E0056FCAC /* ViewControllerCartGo.swift */,
+				F69DFBE1287B6EBB0010B620 /* ViewControllerOrderPay.swift */,
+				F69DFBE3287B9F0D0010B620 /* ViewControllerOrderPayResult.swift */,
+				F6084BCC288527510056FCAC /* ViewControllerCart.swift */,
 				F62FB58D287B010000D519E5 /* ViewControllerOrderLogin.swift */,
 				F62FB58F287B385400D519E5 /* ViewControllerOrderLocation.swift */,
 				F69DFBDF287B48F80010B620 /* ViewControllerOrderLocation2.swift */,
-				F69DFBE1287B6EBB0010B620 /* ViewControllerOrderPay.swift */,
-				F69DFBE3287B9F0D0010B620 /* ViewControllerOrderPayResult.swift */,
 				F6D20E3228802AFF003B65F2 /* TableView */,
 			);
 			path = Order;
@@ -251,6 +278,14 @@
 				F65763E82876F3DC00E7DF01 /* TableViewCellOrder.swift */,
 				F6EA91B0288064F5007AF9D4 /* TableViewCellOrderCategory.xib */,
 				F6EA91AF288064F5007AF9D4 /* TableViewCellOrderCategory.swift */,
+				F6084BDF28858DA00056FCAC /* TableViewCellCartZero.xib */,
+				F6084BDE28858DA00056FCAC /* TableViewCellCartZero.swift */,
+				F6084BD1288555E10056FCAC /* TableViewCellCartHeader.xib */,
+				F6084BD0288555E10056FCAC /* TableViewCellCartHeader.swift */,
+				F6084BD528855CA70056FCAC /* TableViewCellCart.xib */,
+				F6084BD428855CA70056FCAC /* TableViewCellCart.swift */,
+				F6084BD928856B2E0056FCAC /* TableViewCellCartFooter.xib */,
+				F6084BD828856B2E0056FCAC /* TableViewCellCartFooter.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -271,6 +306,9 @@
 			dependencies = (
 			);
 			name = CloneCoding_Starbucks;
+			packageProductDependencies = (
+				F6084BE3288597850056FCAC /* PanModal */,
+			);
 			productName = CloneCoding_Starbucks;
 			productReference = F606B0FB287490C70044E8ED /* CloneCoding_Starbucks.app */;
 			productType = "com.apple.product-type.application";
@@ -299,6 +337,9 @@
 				Base,
 			);
 			mainGroup = F606B0F2287490C60044E8ED;
+			packageReferences = (
+				F6084BE2288597850056FCAC /* XCRemoteSwiftPackageReference "PanModal" */,
+			);
 			productRefGroup = F606B0FC287490C70044E8ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,14 +366,18 @@
 				F678CB7E288347EB007E3E9D /* CollectionViewCellHomeNew.xib in Resources */,
 				F6AA1F982875F13100BFA115 /* Pretendard-ExtraBold.otf in Resources */,
 				F6AA1F9B2875F13100BFA115 /* Pretendard-Light.otf in Resources */,
+				F6084BD3288555E10056FCAC /* TableViewCellCartHeader.xib in Resources */,
 				F6AA1FA02875F13100BFA115 /* Pretendard-ExtraLight.otf in Resources */,
 				F606B106287490C70044E8ED /* Main.storyboard in Resources */,
+				F6084BE128858DA00056FCAC /* TableViewCellCartZero.xib in Resources */,
 				F6AA1F9D2875F13100BFA115 /* Pretendard-SemiBold.otf in Resources */,
 				F6AA1F9E2875F13100BFA115 /* Pretendard-Regular.otf in Resources */,
 				F678CB722882DF9D007E3E9D /* TableViewCellHomeBanner.xib in Resources */,
 				F6AA1F9C2875F13100BFA115 /* Pretendard-Black.otf in Resources */,
+				F6084BD728855CA70056FCAC /* TableViewCellCart.xib in Resources */,
 				F6947C35287820C600E0F4C1 /* StoryboardOrder.storyboard in Resources */,
 				F6AA1F9A2875F13100BFA115 /* Pretendard-Medium.otf in Resources */,
+				F6084BDB28856B2E0056FCAC /* TableViewCellCartFooter.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +391,7 @@
 				F6AA1F89287587B900BFA115 /* ViewControllerOrder.swift in Sources */,
 				F69DFBE4287B9F0D0010B620 /* ViewControllerOrderPayResult.swift in Sources */,
 				F678CB712882DF9D007E3E9D /* TableViewCellHomeBanner.swift in Sources */,
+				F6084BE028858DA00056FCAC /* TableViewCellCartZero.swift in Sources */,
 				F678CB6E2882D243007E3E9D /* HomeRecommend.swift in Sources */,
 				F62247F2287A1CE3009D598B /* ViewControllerOrderSize.swift in Sources */,
 				F6AA1F8D2875881400BFA115 /* ViewController5Other.swift in Sources */,
@@ -357,7 +403,10 @@
 				F6EA91B4288070CA007AF9D4 /* NumberFormatter.swift in Sources */,
 				F66D5DD228844D7D0068FC71 /* Order.swift in Sources */,
 				F69DFBE2287B6EBB0010B620 /* ViewControllerOrderPay.swift in Sources */,
+				F6084BD2288555E10056FCAC /* TableViewCellCartHeader.swift in Sources */,
+				F6084BD628855CA70056FCAC /* TableViewCellCart.swift in Sources */,
 				F6E4BB05288203430026DACB /* AddBorder.swift in Sources */,
+				F6084BDD288584E50056FCAC /* Cart.swift in Sources */,
 				F60A338E2882C414002E0BB3 /* TableViewCellHomeRecommend.swift in Sources */,
 				F6E4BB032881E0A60026DACB /* TabBarController.swift in Sources */,
 				F606B101287490C70044E8ED /* SceneDelegate.swift in Sources */,
@@ -365,8 +414,11 @@
 				F69DFBE0287B48F80010B620 /* ViewControllerOrderLocation2.swift in Sources */,
 				F62FB590287B385400D519E5 /* ViewControllerOrderLocation.swift in Sources */,
 				F62FB58E287B010000D519E5 /* ViewControllerOrderLogin.swift in Sources */,
+				F6084BDA28856B2E0056FCAC /* TableViewCellCartFooter.swift in Sources */,
 				F6AA1F872875738600BFA115 /* ViewController2Pay.swift in Sources */,
+				F6084BE628859A3E0056FCAC /* ViewControllerCartGo.swift in Sources */,
 				F678CB7D288347EB007E3E9D /* CollectionViewCellHomeNew.swift in Sources */,
+				F6084BCD288527510056FCAC /* ViewControllerCart.swift in Sources */,
 				F60A33922882C685002E0BB3 /* CollectionViewCellHomeRecommend.swift in Sources */,
 				F6EA91B1288064F5007AF9D4 /* TableViewCellOrderCategory.swift in Sources */,
 				F678CB8628835D2A007E3E9D /* AddShadow.swift in Sources */,
@@ -590,6 +642,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6084BE2288597850056FCAC /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6084BE3288597850056FCAC /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6084BE2288597850056FCAC /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F606B0F3287490C60044E8ED /* Project object */;
 }

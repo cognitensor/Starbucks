@@ -14,25 +14,29 @@ class ViewControllerOrderCategory: UIViewController {
     let arrayCategoryTitle = ["아이스 카페 아메리카노", "아이스 자몽 허니 블랙 티", "아이스 카페 라떼", "서머 픽 시트러스 블렌디드", "카페 아메리카노", "커피 드로잉 말차 프라푸치노", "아이스 스타벅스 돌체 라떼", "퍼를 사워 블렌디드", "콜드 브루", "아이스 디카페인 카페 아메리카노"]
     let arrayCategoryEngTitle = ["Iced Caffe Americano", "Iced Frapefruit Honey Black Tea", "Iced Caffe Latte", "Summer Pick Citrus Blended", "Caffe Americano", "Coffe drawing Malcha Frappuccino", "Iced Starbucks Dolce Latte", "Purple Sour Blended", "Cold Brew", "Iced DECAF Caffe Americano"]
     let arrayCategoryPrice = [4500, 5700, 5000, 6500, 4500, 6300, 5900, 6300, 4900, 4800]
+    
 
-    
-    @IBOutlet weak var naviTitle: UINavigationItem!
-    
     @IBAction func unwindOrderCategoryVC(_ segue: UIStoryboardSegue) {
         print("뒤로가기")
     }
     
+    @IBOutlet weak var tableViewCategory: UITableView!
+    @IBOutlet weak var naviTitle: UINavigationItem!
+  
     //보낼 메뉴 이름
     var resultSelectedTitle: String = ""
     var resultSelectedEngTitle: String = ""
     var resultSelectedTitleImage: String = ""
     var resultSelectedPrice: Int = 0
 
-    
     //바로 전에 받은 메뉴 이름
     var resultTitle: String = ""
     
-    @IBOutlet weak var tableViewCategory: UITableView!
+    @IBOutlet weak var btnBagZero: UIButton!
+    @IBOutlet weak var btnBagIcon: UIButton!
+    @IBOutlet weak var labelBagCount: UILabel!
+
+    var countSum2: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,23 +52,79 @@ class ViewControllerOrderCategory: UIViewController {
         self.tableViewCategory.delegate = self
         self.tableViewCategory.dataSource = self
         
-        naviTitle.largeTitleDisplayMode = .always
         naviTitle.title = resultTitle
         
-        //네비게이션 뒤로가기 버튼
-//        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-//        backBarButtonItem.tintColor = .white
-//        self.navigationItem.backBarButtonItem = backBarButtonItem
-    
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        var countSum: Int = 0
+
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        if cartData.count != 0 {
+            btnBagIcon.isHidden = false
+            labelBagCount.isHidden = false
+            btnBagZero.isHidden = true
+            
+            for count in 0...cartData.count-1 {
+                countSum = countSum + cartData[count].cartCount
+            }
+            labelBagCount.text = String(countSum)
+            countSum2 = countSum
+            
+        } else {
+            btnBagIcon.isHidden = true
+            labelBagCount.isHidden = true
+            btnBagZero.isHidden = false
+        }
+    }
+    
+    //세그 전달경로
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goViewControllerOrderMenu" {
+            let ViewControllerOrderMenu = segue.destination as! ViewControllerOrderMenu
+            
+            ViewControllerOrderMenu.resultTitle = resultSelectedTitle
+            ViewControllerOrderMenu.resultEngTitle = resultSelectedEngTitle
+            ViewControllerOrderMenu.resultTitleImage = resultSelectedTitleImage
+            ViewControllerOrderMenu.resultPrice = resultSelectedPrice
+            
+        } else if segue.identifier == "goViewControllerCart" {
+            let ViewControllerCart = segue.destination as! ViewControllerCart
+    
+            ViewControllerCart.resultCountSum = countSum2
+            
+            //네비게이션 뒤로가기 버튼
+            let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            backBarButtonItem.tintColor = .white
+            self.navigationItem.backBarButtonItem = backBarButtonItem
+            
+        } else {
+            print("세그연결해줘야함")
+        }
+    }
     
 
 }
 
 extension ViewControllerOrderCategory: UITableViewDelegate {
-    //MARK: Oder테이블뷰 셀 클릭 시
+    
+    //MARK: OderCategory테이블뷰 스크롤
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollOffset = scrollView.contentOffset.y
+        
+        //스크롤할 때 LargeTitle 없애기
+        if scrollOffset <= 0 {
+            naviTitle.largeTitleDisplayMode = .always
+        } else {
+            naviTitle.largeTitleDisplayMode = .never
+        }
+    }
+    
+    
+    //MARK: OderCategory테이블뷰 셀 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         resultSelectedTitle = arrayCategoryTitle[indexPath.row]
@@ -72,21 +132,9 @@ extension ViewControllerOrderCategory: UITableViewDelegate {
         resultSelectedTitleImage = arrayCategoryTitleImage[indexPath.row]
         resultSelectedPrice = arrayCategoryPrice[indexPath.row]
         
-        //세그의 identifier
+        //세그의 identifier, 세그이동 수행(prepare)
         performSegue(withIdentifier: "goViewControllerOrderMenu", sender: nil)
-
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ViewControllerOrderMenu = segue.destination as! ViewControllerOrderMenu
-        
-        ViewControllerOrderMenu.resultTitle = resultSelectedTitle
-        ViewControllerOrderMenu.resultEngTitle = resultSelectedEngTitle
-        ViewControllerOrderMenu.resultTitleImage = resultSelectedTitleImage
-        ViewControllerOrderMenu.resultPrice = resultSelectedPrice
-    }
-
-
     
 }
 

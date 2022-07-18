@@ -22,12 +22,19 @@ class ViewControllerOrder: UIViewController {
     @IBOutlet weak var viewOrderHeader: UIView!
     
     @IBOutlet weak var naviTitle: UINavigationItem!
-
     
+    @IBOutlet weak var btnBagZero: UIButton!
+    @IBOutlet weak var btnBagIcon: UIButton!
+    @IBOutlet weak var labelBagCount: UILabel!
+
+    var countSum2: Int = 0
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad 3rd")
         
+
         //탭바 윗줄 없애기
         self.tabBarController?.tabBar.clipsToBounds = true
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -59,16 +66,34 @@ class ViewControllerOrder: UIViewController {
         self.tableViewOrder.dataSource = self
         
 
-        //네비게이션 뒤로가기 버튼
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = .darkGray
-        self.navigationItem.backBarButtonItem = backBarButtonItem
-        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear 3rd")
+        
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        
+        var countSum: Int = 0
+
+        if cartData.count != 0 {
+            btnBagIcon.isHidden = false
+            labelBagCount.isHidden = false
+            btnBagZero.isHidden = true
+            
+            for count in 0...cartData.count-1 {
+                countSum = countSum + cartData[count].cartCount
+            }
+            labelBagCount.text = String(countSum)
+            countSum2 = countSum
+            
+        } else {
+            btnBagIcon.isHidden = true
+            labelBagCount.isHidden = true
+            btnBagZero.isHidden = false
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,6 +106,36 @@ class ViewControllerOrder: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         print("viewDidDisappear 3rd")
+    }
+    
+    
+    //세그 전달경로
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goViewControllerOrderCategory" {
+            let ViewControllerOrderCategory = segue.destination as! ViewControllerOrderCategory
+            ViewControllerOrderCategory.resultTitle = resultSelectedTitle
+            
+            //네비게이션 뒤로가기 버튼
+            let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            backBarButtonItem.tintColor = .darkGray
+            self.navigationItem.backBarButtonItem = backBarButtonItem
+            
+            
+        } else if segue.identifier == "goViewControllerCart" {
+            let ViewControllerCart = segue.destination as! ViewControllerCart
+            ViewControllerCart.resultCountSum = countSum2
+            
+            
+            //네비게이션 뒤로가기 버튼
+            let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            backBarButtonItem.tintColor = .white
+            self.navigationItem.backBarButtonItem = backBarButtonItem
+            
+        } else {
+            print("세그연결해줘야함")
+        }
+        
     }
     
 }
@@ -105,17 +160,11 @@ extension ViewControllerOrder: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         resultSelectedTitle = orderCategoryData[indexPath.row].orderTitle
-        //세그의 identifier
+        
+        //세그의 identifier, prepare로 전달
         performSegue(withIdentifier: "goViewControllerOrderCategory", sender: nil)
 
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ViewControllerOrderCategory = segue.destination as! ViewControllerOrderCategory
-        
-        ViewControllerOrderCategory.resultTitle = resultSelectedTitle
-    }
-    
 }
 
 
