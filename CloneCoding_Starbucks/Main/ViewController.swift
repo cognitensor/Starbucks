@@ -232,6 +232,7 @@ extension ViewController: UITableViewDataSource {
 
             cell.config()
             
+            cell.selectionStyle = .none
             return cell
             
         case 3:

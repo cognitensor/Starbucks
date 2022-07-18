@@ -1035,6 +1035,9 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" red="0.29517561199999998" green="0.64995539189999996" blue="0.4195722938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="btnOtherMenuAction:" destination="vRs-5b-ifY" eventType="touchUpInside" id="cf1-UP-Fw1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

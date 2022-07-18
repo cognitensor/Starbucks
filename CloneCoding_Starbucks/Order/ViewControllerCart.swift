@@ -206,8 +206,10 @@ extension ViewControllerCart: NumCountDelegate {
     
     func numCountChangeLabel() {
         var countSum: Int = 0
-        for count in 0...cartData.count-1 {
-            countSum = countSum+cartData[count].cartCount
+        if cartData.count != 0 {
+            for count in 0...cartData.count-1 {
+                countSum = countSum+cartData[count].cartCount
+            }
         }
         labelCount.text = String(countSum)
     }

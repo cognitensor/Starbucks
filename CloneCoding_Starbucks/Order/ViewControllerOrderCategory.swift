@@ -71,14 +71,16 @@ class ViewControllerOrderCategory: UIViewController {
             for count in 0...cartData.count-1 {
                 countSum = countSum + cartData[count].cartCount
             }
-            labelBagCount.text = String(countSum)
-            countSum2 = countSum
             
         } else {
             btnBagIcon.isHidden = true
             labelBagCount.isHidden = true
             btnBagZero.isHidden = false
         }
+        
+        labelBagCount.text = String(countSum)
+        countSum2 = countSum
+
     }
     
     //세그 전달경로

@@ -10,6 +10,10 @@ import PanModal
 
 class ViewControllerCartGo: UIViewController {
 
+    @IBAction func btnOtherMenuAction(_ sender: Any) {
+        
+        dismiss(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
