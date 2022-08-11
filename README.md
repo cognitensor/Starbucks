@@ -34,7 +34,8 @@
 - Navigation 의 Large Title <br/>
   → Inspector 에서 Prefers Large Titles 선택 → 스크롤하면 다시 작아지게 설정
 - 테이블뷰안에 컬렉션뷰를 넣었을 때 컬렉션뷰 너비 건들이지 않고 간격 주기 <br/>
-  → 컬렉션뷰.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20) → 컬렉션뷰 안에 있는 아이템의 위치를 조절해줌  - 테이블뷰안에 컬렉션뷰를 넣었을 때 컬렉션뷰 너비 건들이지 않고 간격 주기 <br/>
+  → 컬렉션뷰.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20) → 컬렉션뷰 안에 있는 아이템의 위치를 조절해줌
+- 테이블뷰안에 컬렉션뷰를 넣었을 때 컬렉션뷰 너비 건들이지 않고 간격 주기 <br/>
   → 원본이미지의 가로세로 비율을 구하여 테이블뷰의 너비에 나누어주어 높이를 할당
 
 
