@@ -15,16 +15,23 @@
 - App Switcher 상태에서 화면 blur 처리 <br/>
 - TableView Cell 안에 CollectionView 구현 <br/>
 - CRUD 로직 구현 : 장바구니 조회, 추가, 수정, 삭제 기능 구현<br/>
-- 바텀시트 구현 (PanModal라이브러리 사용) 
+- 바텀시트 구현 (PanModal라이브러리 사용)
 
 
 <br/><br/>
-## 📌 사용된 UI 컴포넌트들
+## 📌 사용한 UI 컴포넌트들
 - Label
 - Button, Filled Button
 - View, ScrollView, StackView, ImageView
 - Tabbar, Navigation
 - TableView, CollectionView
+
+
+<br/><br/>
+## 📌 사용한 라이브러리
+- PanModal
+  - SPM를 이용하여 설치
+  - https://github.com/slackhq/PanModal 
 
 
 <br/><br/>
